@@ -1,0 +1,265 @@
+
+<!-- <body class="bg-gray-900 text-white font-sans"> -->
+    <div class="bg-gray-900 text-white font-sans">
+    <!-- Header -->
+    <header class="bg-black py-4 px-6 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://www.formula1.com/etc/designs/fom-website/images/f1_logo.svg" alt="F1 Logo" class="h-12 mr-4">
+                <h1 class="text-2xl font-bold text-red-600">FORMULA WIKI</h1>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToHome()">HOME</button>
+                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToTeams()">TEAMS</button>
+                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToDrivers()">DRIVERS</button>
+                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToHistory()">HISTORY</button>
+                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToRules()">RULES</button>
+                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToCareer()">CAREER</button>
+            </nav>
+            <button class="md:hidden text-white">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Carousel -->
+    <div class="relative overflow-hidden h-screen">
+        <div class="absolute inset-0 bg-f1-pattern"></div>
+        <div class="relative h-full flex items-center">
+            <div id="carousel" class="w-full h-full flex">
+                <!-- Slide 1 -->
+                <div class="carousel-slide w-full h-full flex-shrink-0 relative">
+                    <div class="absolute inset-0 bg-black opacity-50"></div>
+                    <img src="https://www.formula1.com/content/dam/fom-website/manual/Misc/2023manual/2023Races/SaudiArabianGP/GettyImages-1473761202.jpg" 
+                         alt="F1 Cars Racing" 
+                         class="w-full h-full object-cover">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="text-center px-4 max-w-4xl fade-in">
+                            <h2 class="text-4xl md:text-6xl font-bold mb-4 text-red-600 slide-in-left">THE PINNACLE OF MOTORSPORT</h2>
+                            <p class="text-xl md:text-2xl mb-8 slide-in-right">Experience the ultimate racing competition with cutting-edge technology and world-class drivers.</p>
+                            <button class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+                                EXPLORE NOW
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 2 -->
+                <div class="carousel-slide w-full h-full flex-shrink-0 relative">
+                    <div class="absolute inset-0 bg-black opacity-50"></div>
+                    <img src="https://www.formula1.com/content/dam/fom-website/manual/Misc/2023manual/2023Races/BahrainGP/GettyImages-1473005431.jpg" 
+                         alt="F1 Cars Racing" 
+                         class="w-full h-full object-cover">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="text-center px-4 max-w-4xl fade-in">
+                            <h2 class="text-4xl md:text-6xl font-bold mb-4 text-red-600">2023 SEASON</h2>
+                            <p class="text-xl md:text-2xl mb-8">Follow the most exciting championship battle with 23 races around the world.</p>
+                            <button class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+                                VIEW CALENDAR
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 3 -->
+                <div class="carousel-slide w-full h-full flex-shrink-0 relative">
+                    <div class="absolute inset-0 bg-black opacity-50"></div>
+                    <img src="https://www.formula1.com/content/dam/fom-website/manual/Misc/2023manual/2023Races/MonacoGP/GettyImages-1255441213.jpg" 
+                         alt="F1 Cars Racing" 
+                         class="w-full h-full object-cover">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="text-center px-4 max-w-4xl fade-in">
+                            <h2 class="text-4xl md:text-6xl font-bold mb-4 text-red-600">LEGENDARY CIRCUITS</h2>
+                            <p class="text-xl md:text-2xl mb-8">From Monaco to Silverstone, experience racing on the most iconic tracks.</p>
+                            <button class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+                                EXPLORE TRACKS
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Carousel Controls -->
+            <button id="prevBtn" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-70 transition duration-300">
+                <i class="fas fa-chevron-left text-xl"></i>
+            </button>
+            <button id="nextBtn" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-70 transition duration-300">
+                <i class="fas fa-chevron-right text-xl"></i>
+            </button>
+            
+            <!-- Carousel Indicators -->
+            <div class="absolute bottom-8 left-0 right-0 flex justify-center space-x-2">
+                <button class="carousel-indicator w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 transition duration-300" data-index="0"></button>
+                <button class="carousel-indicator w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 transition duration-300" data-index="1"></button>
+                <button class="carousel-indicator w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 transition duration-300" data-index="2"></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Latest News Section -->
+    <section class="py-16 px-6 bg-gray-800">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold mb-12 text-center relative">
+                <span class="relative inline-block">
+                    LATEST NEWS
+                    <span class="absolute bottom-0 left-0 w-full h-1 bg-red-600"></span>
+                </span>
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- News Card 1 -->
+                <div class="bg-gray-900 rounded-lg overflow-hidden shadow-lg transform transition duration-500 hover:scale-105">
+                    <img src="https://www.formula1.com/content/dam/fom-website/manual/Misc/2023manual/2023Races/BahrainGP/GettyImages-1473005431.jpg" 
+                         alt="News Image" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-red-600 text-sm font-semibold">RACE REPORT</span>
+                        <h3 class="text-xl font-bold mt-2 mb-3">Verstappen dominates season opener in Bahrain</h3>
+                        <p class="text-gray-400 mb-4">Max Verstappen kicked off his title defense with a commanding victory at the Bahrain Grand Prix.</p>
+                        <a href="#" class="text-red-600 font-semibold hover:text-red-400 transition duration-300 flex items-center">
+                            Read More <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- News Card 2 -->
+                <div class="bg-gray-900 rounded-lg overflow-hidden shadow-lg transform transition duration-500 hover:scale-105">
+                    <img src="https://www.formula1.com/content/dam/fom-website/manual/Misc/2023manual/2023Races/SaudiArabianGP/GettyImages-1473761202.jpg" 
+                         alt="News Image" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-red-600 text-sm font-semibold">TEAM NEWS</span>
+                        <h3 class="text-xl font-bold mt-2 mb-3">Aston Martin reveals major upgrades for upcoming races</h3>
+                        <p class="text-gray-400 mb-4">The Silverstone-based team has announced a comprehensive upgrade package to be introduced at the next race.</p>
+                        <a href="#" class="text-red-600 font-semibold hover:text-red-400 transition duration-300 flex items-center">
+                            Read More <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- News Card 3 -->
+                <div class="bg-gray-900 rounded-lg overflow-hidden shadow-lg transform transition duration-500 hover:scale-105">
+                    <img src="https://www.formula1.com/content/dam/fom-website/manual/Misc/2023manual/2023Races/MonacoGP/GettyImages-1255441213.jpg" 
+                         alt="News Image" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-red-600 text-sm font-semibold">DRIVER MARKET</span>
+                        <h3 class="text-xl font-bold mt-2 mb-3">Hamilton signs new multi-year contract with Mercedes</h3>
+                        <p class="text-gray-400 mb-4">Seven-time world champion Lewis Hamilton has committed his future to Mercedes with a new two-year deal.</p>
+                        <a href="#" class="text-red-600 font-semibold hover:text-red-400 transition duration-300 flex items-center">
+                            Read More <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="border-2 border-red-600 text-red-600 hover:bg-red-600 hover:text-white font-bold py-3 px-8 rounded-full transition duration-300">
+                    VIEW ALL NEWS
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Next Race Countdown -->
+    <section class="py-16 px-6 bg-gradient-to-r from-gray-900 to-gray-800">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <h2 class="text-3xl font-bold mb-4">NEXT RACE: SAUDI ARABIAN GRAND PRIX</h2>
+                    <p class="text-xl mb-6">The second round of the 2023 season takes place at the Jeddah Corniche Circuit under the lights.</p>
+                    
+                    <div class="grid grid-cols-4 gap-4 mb-8">
+                        <div class="bg-gray-800 rounded-lg p-4 text-center">
+                            <div class="text-4xl font-bold text-red-600" id="countdown-days">00</div>
+                            <div class="text-sm uppercase">Days</div>
+                        </div>
+                        <div class="bg-gray-800 rounded-lg p-4 text-center">
+                            <div class="text-4xl font-bold text-red-600" id="countdown-hours">00</div>
+                            <div class="text-sm uppercase">Hours</div>
+                        </div>
+                        <div class="bg-gray-800 rounded-lg p-4 text-center">
+                            <div class="text-4xl font-bold text-red-600" id="countdown-minutes">00</div>
+                            <div class="text-sm uppercase">Minutes</div>
+                        </div>
+                        <div class="bg-gray-800 rounded-lg p-4 text-center">
+                            <div class="text-4xl font-bold text-red-600" id="countdown-seconds">00</div>
+                            <div class="text-sm uppercase">Seconds</div>
+                        </div>
+                    </div>
+                    
+                    <button class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition duration-300">
+                        VIEW RACE DETAILS
+                    </button>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <img src="https://www.formula1.com/content/dam/fom-website/manual/Misc/2023manual/2023Races/SaudiArabianGP/GettyImages-1473761202.jpg" 
+                         alt="Jeddah Corniche Circuit" 
+                         class="w-full rounded-lg shadow-xl transform transition duration-500 hover:scale-105">
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 px-6">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <img src="https://www.formula1.com/etc/designs/fom-website/images/f1_logo.svg" alt="F1 Logo" class="h-12 mb-4">
+                    <p class="text-gray-400">The official home of Formula 1® racing.</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4 text-white">FORMULA 1</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Latest News</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Video</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Schedule</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Standings</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Drivers</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4 text-white">GAMING</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Esports</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Fantasy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">F1 Play</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">F1 Mobile Racing</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4 text-white">LEGAL</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Terms & Conditions</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Cookie Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>© 2023 Formula One World Championship Limited</p>
+            </div>
+        </div>
+    </footer>

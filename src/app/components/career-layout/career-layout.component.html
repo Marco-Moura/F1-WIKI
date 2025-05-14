@@ -1,0 +1,956 @@
+<body class="bg-gray-900 text-gray-100 font-sans">
+    <!-- Header -->
+    <header class="bg-black py-4 px-6 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://www.formula1.com/etc/designs/fom-website/images/f1_logo.svg" alt="F1 Logo" class="h-12 mr-4">
+                <h1 class="text-2xl font-bold text-red-600">F1 CAREERS</h1>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToHome()">HOME</button>
+                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToTeams()">TEAMS</button>
+                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToDrivers()">DRIVERS</button>
+                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToHistory()">HISTORY</button>
+                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToRules()">RULES</button>
+                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToCareer()">CAREER</button>
+            </nav>
+            <button class="md:hidden text-white" id="mobileMenuBtn">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-gray-800 absolute left-0 right-0 top-full shadow-lg">
+            <div class="flex flex-col space-y-4 p-4">
+                <a href="#drivers" class="text-white hover:text-red-500 transition duration-300">DRIVERS</a>
+                <a href="#engineers" class="text-white hover:text-red-500 transition duration-300">ENGINEERS</a>
+                <a href="#mechanics" class="text-white hover:text-red-500 transition duration-300">MECHANICS</a>
+                <a href="#other-roles" class="text-white hover:text-red-500 transition duration-300">OTHER ROLES</a>
+                <a href="#faq" class="text-white hover:text-red-500 transition duration-300">FAQ</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-96 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-black to-transparent z-10"></div>
+        <img src="https://www.formula1.com/content/dam/fom-website/manual/Misc/2022manual/2022Races/SaudiArabia/Saturday/GettyImages-1385731191.jpg.transform/9col/image.jpg" 
+             alt="F1 Pit Crew" 
+             class="w-full h-full object-cover">
+        <div class="absolute inset-0 flex items-center justify-center z-20">
+            <div class="text-center px-4 max-w-4xl">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">HOW TO JOIN AN F1 TEAM</h1>
+                <p class="text-xl md:text-2xl mb-8">The complete guide to starting your Formula 1 career</p>
+                <a href="#drivers" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full inline-block transition duration-300">
+                    EXPLORE PATHWAYS
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pathways Navigation -->
+    <section class="py-8 bg-gray-800 sticky top-16 z-40 shadow-md">
+        <div class="container mx-auto px-6">
+            <div class="flex overflow-x-auto space-x-4 pb-2 scrollbar-hide">
+                <a href="#drivers" class="tab-button px-6 py-2 rounded-full bg-gray-700 text-white whitespace-nowrap transition duration-300">Drivers</a>
+                <a href="#engineers" class="tab-button px-6 py-2 rounded-full bg-gray-700 text-white whitespace-nowrap transition duration-300">Engineers</a>
+                <a href="#mechanics" class="tab-button px-6 py-2 rounded-full bg-gray-700 text-white whitespace-nowrap transition duration-300">Mechanics</a>
+                <a href="#other-roles" class="tab-button px-6 py-2 rounded-full bg-gray-700 text-white whitespace-nowrap transition duration-300">Other Roles</a>
+                <a href="#faq" class="tab-button px-6 py-2 rounded-full bg-gray-700 text-white whitespace-nowrap transition duration-300">FAQ</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12">
+        <!-- Introduction -->
+        <section class="mb-20 max-w-4xl mx-auto text-center fade-in">
+            <h2 class="text-3xl font-bold mb-6">YOUR FORMULA 1 CAREER STARTS HERE</h2>
+            <p class="text-lg text-gray-300 mb-8">
+                Formula 1 teams employ over 1,000 people across various disciplines. While becoming an F1 driver is the most visible path, 
+                it's just one of many ways to join the pinnacle of motorsport. This guide covers all official pathways based on FIA regulations 
+                and team recruitment practices.
+            </p>
+            <div class="bg-gray-800 p-6 rounded-lg border-l-4 border-red-600 text-left">
+                <h3 class="text-xl font-bold mb-4 flex items-center">
+                    <i class="fas fa-exclamation-triangle text-red-600 mr-3"></i>
+                    Important Note
+                </h3>
+                <p class="text-gray-300">
+                    All F1 personnel must pass FIA background checks and comply with the International Sporting Code. 
+                    Some roles require specific licenses or certifications as outlined in the FIA regulations.
+                </p>
+            </div>
+        </section>
+
+        <!-- Driver Pathway -->
+        <section id="drivers" class="regulation-section mb-20 fade-in">
+            <h2 class="text-3xl font-bold mb-8 border-b border-gray-700 pb-4 flex items-center">
+                <i class="fas fa-helmet-safety text-red-600 mr-4"></i>
+                BECOMING AN F1 DRIVER
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <!-- Super License Requirements -->
+                <div class="bg-gray-800 p-6 rounded-lg pathway-card transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-id-card text-red-600 text-2xl mr-3"></i>
+                        <h3 class="text-xl font-bold">FIA SUPER LICENSE REQUIREMENTS</h3>
+                    </div>
+                    <div class="space-y-4 text-gray-300">
+                        <div class="requirement-item">
+                            <strong>Minimum Age:</strong> 18 years old
+                        </div>
+                        <div class="requirement-item">
+                            <strong>Points Requirement:</strong> 40 points over 3 years from eligible series
+                        </div>
+                        <div class="requirement-item">
+                            <strong>Driving Test:</strong> Pass FIA driver ability test in current F1 car
+                        </div>
+                        <div class="requirement-item">
+                            <strong>Medical:</strong> Pass FIA medical examination
+                        </div>
+                        <div class="requirement-item">
+                            <strong>Ethics:</strong> Clean disciplinary record
+                        </div>
+                    </div>
+                    <div class="mt-6 bg-gray-700 p-4 rounded-lg">
+                        <h4 class="font-bold mb-2">License Cost:</h4>
+                        <p>€10,000 + €2,100 per point from previous season</p>
+                    </div>
+                </div>
+                
+                <!-- Junior Series -->
+                <div class="bg-gray-800 p-6 rounded-lg pathway-card transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-trophy text-red-600 text-2xl mr-3"></i>
+                        <h3 class="text-xl font-bold">JUNIOR SERIES POINTS</h3>
+                    </div>
+                    <div class="space-y-3 text-gray-300">
+                        <div class="flex justify-between">
+                            <span>Formula 2 Champion</span>
+                            <span class="font-bold">40 pts</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Formula 3 Champion</span>
+                            <span class="font-bold">30 pts</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>IndyCar Champion</span>
+                            <span class="font-bold">40 pts</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>W Series Champion</span>
+                            <span class="font-bold">15 pts</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Formula Regional (Top 4)</span>
+                            <span class="font-bold">18-25 pts</span>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-sm text-gray-400">
+                        <p>Complete points list available in FIA Appendix L</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Driver Development Path -->
+            <h3 class="text-2xl font-bold mb-6">TYPICAL DEVELOPMENT PATH</h3>
+            <div class="bg-gray-800 rounded-lg overflow-hidden mb-8">
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-0">
+                    <div class="p-4 bg-gray-700 border-r border-gray-600">
+                        <div class="text-red-600 mb-2"><i class="fas fa-karting fa-2x"></i></div>
+                        <h4 class="font-bold">Karting</h4>
+                        <p class="text-sm text-gray-300">Ages 8-12</p>
+                    </div>
+                    <div class="p-4 bg-gray-700 border-r border-gray-600">
+                        <div class="text-red-600 mb-2"><i class="fas fa-car fa-2x"></i></div>
+                        <h4 class="font-bold">Formula 4</h4>
+                        <p class="text-sm text-gray-300">Ages 14-16</p>
+                    </div>
+                    <div class="p-4 bg-gray-700 border-r border-gray-600">
+                        <div class="text-red-600 mb-2"><i class="fas fa-car-side fa-2x"></i></div>
+                        <h4 class="font-bold">Formula 3</h4>
+                        <p class="text-sm text-gray-300">Ages 17-19</p>
+                    </div>
+                    <div class="p-4 bg-gray-700 border-r border-gray-600">
+                        <div class="text-red-600 mb-2"><i class="fas fa-flag-checkered fa-2x"></i></div>
+                        <h4 class="font-bold">Formula 2</h4>
+                        <p class="text-sm text-gray-300">Ages 19-21</p>
+                    </div>
+                    <div class="p-4 bg-red-600">
+                        <div class="text-white mb-2"><i class="fas fa-car-crash fa-2x"></i></div>
+                        <h4 class="font-bold text-white">Formula 1</h4>
+                        <p class="text-sm text-white">Age 18+</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Getting Noticed -->
+            <div class="bg-gray-800 p-6 rounded-lg">
+                <h3 class="text-xl font-bold mb-4">HOW TO GET NOTICED BY F1 TEAMS</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-bold text-red-500 mb-2">1. Join a Junior Academy</h4>
+                        <p class="text-gray-300">
+                            Most F1 teams run junior driver programs that identify and develop talent:
+                        </p>
+                        <ul class="mt-2 space-y-1 text-gray-300">
+                            <li>- Red Bull Junior Team</li>
+                            <li>- Mercedes Junior Programme</li>
+                            <li>- Ferrari Driver Academy</li>
+                            <li>- Alpine Academy</li>
+                            <li>- McLaren Young Driver Programme</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-red-500 mb-2">2. Perform in Key Events</h4>
+                        <p class="text-gray-300">
+                            Scouts attend major junior events:
+                        </p>
+                        <ul class="mt-2 space-y-1 text-gray-300">
+                            <li>- Macau Grand Prix</li>
+                            <li>- Monaco F3/GP2 races</li>
+                            <li>- F2 Feature Races</li>
+                            <li>- Winter testing sessions</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-red-500 mb-2">3. Secure Sponsorship</h4>
+                        <p class="text-gray-300">
+                            Bringing financial backing can help:
+                        </p>
+                        <ul class="mt-2 space-y-1 text-gray-300">
+                            <li>- Personal sponsors</li>
+                            <li>- National motorsport programs</li>
+                            <li>- Commercial partnerships</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-red-500 mb-2">4. Test Roles</h4>
+                        <p class="text-gray-300">
+                            Many drivers start as:
+                        </p>
+                        <ul class="mt-2 space-y-1 text-gray-300">
+                            <li>- Simulator drivers</li>
+                            <li>- Reserve drivers</li>
+                            <li>- Friday practice drivers</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Engineers Pathway -->
+        <section id="engineers" class="regulation-section mb-20 fade-in">
+            <h2 class="text-3xl font-bold mb-8 border-b border-gray-700 pb-4 flex items-center">
+                <i class="fas fa-cogs text-red-600 mr-4"></i>
+                BECOMING AN F1 ENGINEER
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <!-- Race Engineer -->
+                <div class="bg-gray-800 p-6 rounded-lg pathway-card transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-headset text-red-600 text-2xl mr-3"></i>
+                        <h3 class="text-xl font-bold">RACE ENGINEER</h3>
+                    </div>
+                    <div class="space-y-4 text-gray-300">
+                        <div class="requirement-item">
+                            <strong>Education:</strong> Engineering degree (Masters preferred)
+                        </div>
+                        <div class="requirement-item">
+                            <strong>Experience:</strong> 5+ years in motorsport
+                        </div>
+                        <div class="requirement-item">
+                            <strong>Skills:</strong> Data analysis, communication, leadership
+                        </div>
+                        <div class="requirement-item">
+                            <strong>Pathway:</strong> Junior engineer → Performance engineer → Race engineer
+                        </div>
+                    </div>
+                    <div class="mt-6 bg-gray-700 p-4 rounded-lg">
+                        <h4 class="font-bold mb-2">Key Responsibilities:</h4>
+                        <ul class="text-sm space-y-1">
+                            <li>- Driver communication during sessions</li>
+                            <li>- Strategy decisions</li>
+                            <li>- Car setup direction</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Design Engineer -->
+                <div class="bg-gray-800 p-6 rounded-lg pathway-card transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-drafting-compass text-red-600 text-2xl mr-3"></i>
+                        <h3 class="text-xl font-bold">DESIGN ENGINEER</h3>
+                    </div>
+                    <div class="space-y-4 text-gray-300">
+                        <div class="requirement-item">
+                            <strong>Education:</strong> Mechanical/Aerospace engineering degree
+                        </div>
+                        <div class="requirement-item">
+                            <strong>Software:</strong> CAD (CATIA, NX), CFD, FEA
+                        </div>
+                        <div class="requirement-item">
+                            <strong>Experience:</strong> 3+ years in high-performance engineering
+                        </div>
+                        <div class="requirement-item">
+                            <strong>Pathway:</strong> CAD technician → Design engineer → Chief designer
+                        </div>
+                    </div>
+                    <div class="mt-6 bg-gray-700 p-4 rounded-lg">
+                        <h4 class="font-bold mb-2">Key Responsibilities:</h4>
+                        <ul class="text-sm space-y-1">
+                            <li>- Component design</li>
+                            <li>- Stress analysis</li>
+                            <li>- Innovation within regulations</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Performance Engineer -->
+                <div class="bg-gray-800 p-6 rounded-lg pathway-card transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-chart-line text-red-600 text-2xl mr-3"></i>
+                        <h3 class="text-xl font-bold">PERFORMANCE ENGINEER</h3>
+                    </div>
+                    <div class="space-y-4 text-gray-300">
+                        <div class="requirement-item">
+                            <strong>Education:</strong> Engineering/physics degree
+                        </div>
+                        <div class="requirement-item">
+                            <strong>Software:</strong> MATLAB, Python, ATLAS
+                        </div>
+                        <div class="requirement-item">
+                            <strong>Experience:</strong> 3+ years in data analysis
+                        </div>
+                        <div class="requirement-item">
+                            <strong>Pathway:</strong> Data analyst → Performance engineer → Chief engineer
+                        </div>
+                    </div>
+                    <div class="mt-6 bg-gray-700 p-4 rounded-lg">
+                        <h4 class="font-bold mb-2">Key Responsibilities:</h4>
+                        <ul class="text-sm space-y-1">
+                            <li>- Live data monitoring</li>
+                            <li>- Simulation correlation</li>
+                            <li>- Performance optimization</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Engineering Education -->
+            <div class="bg-gray-800 p-6 rounded-lg mb-8">
+                <h3 class="text-xl font-bold mb-4">RECOMMENDED EDUCATION PATH</h3>
+                <div class="space-y-6">
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <div class="md:w-1/3 bg-gray-700 p-4 rounded-lg">
+                            <h4 class="font-bold text-red-500 mb-2">Undergraduate Degree</h4>
+                            <ul class="text-gray-300 space-y-1">
+                                <li>- Mechanical Engineering</li>
+                                <li>- Aerospace Engineering</li>
+                                <li>- Motorsport Engineering</li>
+                                <li>- Electrical Engineering (for PU roles)</li>
+                            </ul>
+                        </div>
+                        <div class="md:w-1/3 bg-gray-700 p-4 rounded-lg">
+                            <h4 class="font-bold text-red-500 mb-2">Postgraduate Options</h4>
+                            <ul class="text-gray-300 space-y-1">
+                                <li>- MSc in Motorsport Engineering</li>
+                                <li>- Aerodynamics specialization</li>
+                                <li>- High-performance powertrains</li>
+                                <li>- Computational fluid dynamics</li>
+                            </ul>
+                        </div>
+                        <div class="md:w-1/3 bg-gray-700 p-4 rounded-lg">
+                            <h4 class="font-bold text-red-500 mb-2">Key Universities</h4>
+                            <ul class="text-gray-300 space-y-1">
+                                <li>- Oxford Brookes (UK)</li>
+                                <li>- Cranfield (UK)</li>
+                                <li>- Stuttgart (Germany)</li>
+                                <li>- Politecnico di Milano (Italy)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-red-900 bg-opacity-30 p-4 rounded-lg border-l-4 border-red-600">
+                        <h4 class="font-bold mb-2">Getting Your First Role</h4>
+                        <p class="text-gray-300">
+                            Most engineers start in junior series (F2, F3, FE) or as interns in F1 teams. Key entry points are:
+                        </p>
+                        <ul class="mt-2 text-gray-300 space-y-1">
+                            <li>- Industrial placements during degree</li>
+                            <li>- Graduate schemes (e.g., Mercedes AMG HPP)</li>
+                            <li>- Junior engineering roles in smaller teams</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Engineering Specializations -->
+            <h3 class="text-2xl font-bold mb-6">ENGINEERING SPECIALIZATIONS IN F1</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-gray-800 p-4 rounded-lg text-center">
+                    <div class="text-red-600 mb-2"><i class="fas fa-wind fa-2x"></i></div>
+                    <h4>Aerodynamics</h4>
+                </div>
+                <div class="bg-gray-800 p-4 rounded-lg text-center">
+                    <div class="text-red-600 mb-2"><i class="fas fa-bolt fa-2x"></i></div>
+                    <h4>Powertrain</h4>
+                </div>
+                <div class="bg-gray-800 p-4 rounded-lg text-center">
+                    <div class="text-red-600 mb-2"><i class="fas fa-car-burst fa-2x"></i></div>
+                    <h4>Vehicle Dynamics</h4>
+                </div>
+                <div class="bg-gray-800 p-4 rounded-lg text-center">
+                    <div class="text-red-600 mb-2"><i class="fas fa-microchip fa-2x"></i></div>
+                    <h4>Electronics</h4>
+                </div>
+                <div class="bg-gray-800 p-4 rounded-lg text-center">
+                    <div class="text-red-600 mb-2"><i class="fas fa-cubes fa-2x"></i></div>
+                    <h4>Composites</h4>
+                </div>
+                <div class="bg-gray-800 p-4 rounded-lg text-center">
+                    <div class="text-red-600 mb-2"><i class="fas fa-gears fa-2x"></i></div>
+                    <h4>Simulation</h4>
+                </div>
+                <div class="bg-gray-800 p-4 rounded-lg text-center">
+                    <div class="text-red-600 mb-2"><i class="fas fa-fire fa-2x"></i></div>
+                    <h4>Performance</h4>
+                </div>
+                <div class="bg-gray-800 p-4 rounded-lg text-center">
+                    <div class="text-red-600 mb-2"><i class="fas fa-satellite-dish fa-2x"></i></div>
+                    <h4>Strategy</h4>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mechanics Pathway -->
+        <section id="mechanics" class="regulation-section mb-20 fade-in">
+            <h2 class="text-3xl font-bold mb-8 border-b border-gray-700 pb-4 flex items-center">
+                <i class="fas fa-tools text-red-600 mr-4"></i>
+                BECOMING AN F1 MECHANIC
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <!-- Race Mechanic -->
+                <div class="bg-gray-800 p-6 rounded-lg pathway-card transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-car-burst text-red-600 text-2xl mr-3"></i>
+                        <h3 class="text-xl font-bold">RACE MECHANIC</h3>
+                    </div>
+                    <div class="space-y-4 text-gray-300">
+                        <div class="requirement-item">
+                            <strong>Education:</strong> Motorsport/Motor Vehicle qualification
+                        </div>
+                        <div class="requirement-item">
+                            <strong>Experience:</strong> 3+ years in professional motorsport
+                        </div>
+                        <div class="requirement-item">
+                            <strong>Skills:</strong> Precision work, speed, teamwork
+                        </div>
+                        <div class="requirement-item">
+                            <strong>Pathway:</strong> Workshop technician → Garage mechanic → Race mechanic
+                        </div>
+                    </div>
+                    <div class="mt-6 bg-gray-700 p-4 rounded-lg">
+                        <h4 class="font-bold mb-2">Key Responsibilities:</h4>
+                        <ul class="text-sm space-y-1">
+                            <li>- Car assembly/disassembly</li>
+                            <li>- Pit stop performance</li>
+                            <li>- Track-side repairs</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Composite Technician -->
+                <div class="bg-gray-800 p-6 rounded-lg pathway-card transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-layer-group text-red-600 text-2xl mr-3"></i>
+                        <h3 class="text-xl font-bold">COMPOSITE TECHNICIAN</h3>
+                    </div>
+                    <div class="space-y-4 text-gray-300">
+                        <div class="requirement-item">
+                            <strong>Education:</strong> Composites engineering qualification
+                        </div>
+                        <div class="requirement-item">
+                            <strong>Experience:</strong> 2+ years in composite fabrication
+                        </div>
+                        <div class="requirement-item">
+                            <strong>Skills:</strong> Layup techniques, autoclave operation
+                        </div>
+                        <div class="requirement-item">
+                            <strong>Pathway:</strong> Apprentice → Composite tech → Senior tech
+                        </div>
+                    </div>
+                    <div class="mt-6 bg-gray-700 p-4 rounded-lg">
+                        <h4 class="font-bold mb-2">Key Responsibilities:</h4>
+                        <ul class="text-sm space-y-1">
+                            <li>- Carbon fiber component manufacture</li>
+                            <li>- Repair work</li>
+                            <li>- Quality control</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mechanic Training -->
+            <div class="bg-gray-800 p-6 rounded-lg mb-8">
+                <h3 class="text-xl font-bold mb-4">TRAINING & CERTIFICATIONS</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-gray-700 p-4 rounded-lg">
+                        <h4 class="font-bold text-red-500 mb-2">Apprenticeships</h4>
+                        <p class="text-gray-300">
+                            Many F1 teams offer apprenticeship programs lasting 2-4 years:
+                        </p>
+                        <ul class="mt-2 text-gray-300 space-y-1">
+                            <li>- Mercedes-AMG Petronas</li>
+                            <li>- Red Bull Racing</li>
+                            <li>- McLaren Racing</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-700 p-4 rounded-lg">
+                        <h4 class="font-bold text-red-500 mb-2">Technical Colleges</h4>
+                        <p class="text-gray-300">
+                            Specialized motorsport programs:
+                        </p>
+                        <ul class="mt-2 text-gray-300 space-y-1">
+                            <li>- National Motorsport Academy (UK)</li>
+                            <li>- MIA Training Academy</li>
+                            <li>- ProMotique (France)</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-700 p-4 rounded-lg">
+                        <h4 class="font-bold text-red-500 mb-2">Certifications</h4>
+                        <p class="text-gray-300">
+                            Valuable qualifications:
+                        </p>
+                        <ul class="mt-2 text-gray-300 space-y-1">
+                            <li>- FIA Mechanic's License</li>
+                            <li>- Composite repair certifications</li>
+                            <li>- High-voltage safety training</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pit Crew -->
+            <div class="bg-gray-800 p-6 rounded-lg">
+                <h3 class="text-xl font-bold mb-4">PIT CREW ROLES</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-gray-300">
+                        <thead class="bg-gray-700">
+                            <tr>
+                                <th class="p-3">Role</th>
+                                <th class="p-3">Training Time</th>
+                                <th class="p-3">Key Skills</th>
+                                <th class="p-3">Typical Background</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-gray-700">
+                                <td class="p-3">Front Jack</td>
+                                <td class="p-3">6-12 months</td>
+                                <td class="p-3">Timing, strength</td>
+                                <td class="p-3">Mechanics, ex-athletes</td>
+                            </tr>
+                            <tr class="border-b border-gray-700">
+                                <td class="p-3">Rear Jack</td>
+                                <td class="p-3">6-12 months</td>
+                                <td class="p-3">Coordination, power</td>
+                                <td class="p-3">Mechanics, rugby players</td>
+                            </tr>
+                            <tr class="border-b border-gray-700">
+                                <td class="p-3">Wheel Gun</td>
+                                <td class="p-3">3-6 months</td>
+                                <td class="p-3">Precision, reaction time</td>
+                                <td class="p-3">Mechanics, technicians</td>
+                            </tr>
+                            <tr class="border-b border-gray-700">
+                                <td class="p-3">Wheel Off</td>
+                                <td class="p-3">3-6 months</td>
+                                <td class="p-3">Dexterity, grip strength</td>
+                                <td class="p-3">Mechanics, martial artists</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3">Wheel On</td>
+                                <td class="p-3">3-6 months</td>
+                                <td class="p-3">Hand-eye coordination</td>
+                                <td class="p-3">Mechanics, baseball players</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mt-4 text-sm text-gray-400">
+                    <p>Pit crew members typically train 4-5 times per week when not at races</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Other Roles -->
+        <section id="other-roles" class="regulation-section mb-20 fade-in">
+            <h2 class="text-3xl font-bold mb-8 border-b border-gray-700 pb-4 flex items-center">
+                <i class="fas fa-users text-red-600 mr-4"></i>
+                OTHER F1 TEAM ROLES
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <!-- Strategy -->
+                <div class="bg-gray-800 p-6 rounded-lg pathway-card transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-chess text-red-600 text-2xl mr-3"></i>
+                        <h3 class="text-xl font-bold">STRATEGIST</h3>
+                    </div>
+                    <div class="space-y-3 text-gray-300">
+                        <div class="requirement-item">
+                            <strong>Background:</strong> Mathematics, physics, or engineering
+                        </div>
+                        <div class="requirement-item">
+                            <strong>Skills:</strong> Statistical modeling, decision-making
+                        </div>
+                        <div class="requirement-item">
+                            <strong>Pathway:</strong> Data analyst → Junior strategist → Race strategist
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Media -->
+                <div class="bg-gray-800 p-6 rounded-lg pathway-card transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-video text-red-600 text-2xl mr-3"></i>
+                        <h3 class="text-xl font-bold">MEDIA & COMMS</h3>
+                    </div>
+                    <div class="space-y-3 text-gray-300">
+                        <div class="requirement-item">
+                            <strong>Background:</strong> Journalism, PR, or marketing
+                        </div>
+                        <div class="requirement-item">
+                            <strong>Skills:</strong> Writing, social media, video production
+                        </div>
+                        <div class="requirement-item">
+                            <strong>Pathway:</strong> Intern → Content creator → Team spokesperson
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Logistics -->
+                <div class="bg-gray-800 p-6 rounded-lg pathway-card transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-shipping-fast text-red-600 text-2xl mr-3"></i>
+                        <h3 class="text-xl font-bold">LOGISTICS</h3>
+                    </div>
+                    <div class="space-y-3 text-gray-300">
+                        <div class="requirement-item">
+                            <strong>Background:</strong> Supply chain management
+                        </div>
+                        <div class="requirement-item">
+                            <strong>Skills:</strong> Organization, problem-solving
+                        </div>
+                        <div class="requirement-item">
+                            <strong>Pathway:</strong> Coordinator → Logistics manager → Head of operations
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- IT -->
+                <div class="bg-gray-800 p-6 rounded-lg pathway-card transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-server text-red-600 text-2xl mr-3"></i>
+                        <h3 class="text-xl font-bold">IT SPECIALIST</h3>
+                    </div>
+                    <div class="space-y-3 text-gray-300">
+                        <div class="requirement-item">
+                            <strong>Background:</strong> Computer science, networks
+                        </div>
+                        <div class="requirement-item">
+                            <strong>Skills:</strong> Systems administration, cybersecurity
+                        </div>
+                        <div class="requirement-item">
+                            <strong>Pathway:</strong> IT support → Track IT → Systems architect
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hospitality -->
+                <div class="bg-gray-800 p-6 rounded-lg pathway-card transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-utensils text-red-600 text-2xl mr-3"></i>
+                        <h3 class="text-xl font-bold">HOSPITALITY</h3>
+                    </div>
+                    <div class="space-y-3 text-gray-300">
+                        <div class="requirement-item">
+                            <strong>Background:</strong> Catering, event management
+                        </div>
+                        <div class="requirement-item">
+                            <strong>Skills:</strong> Customer service, organization
+                        </div>
+                        <div class="requirement-item">
+                            <strong>Pathway:</strong> Catering staff → Hospitality manager
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Management -->
+                <div class="bg-gray-800 p-6 rounded-lg pathway-card transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-briefcase text-red-600 text-2xl mr-3"></i>
+                        <h3 class="text-xl font-bold">MANAGEMENT</h3>
+                    </div>
+                    <div class="space-y-3 text-gray-300">
+                        <div class="requirement-item">
+                            <strong>Background:</strong> Business, engineering, or law
+                        </div>
+                        <div class="requirement-item">
+                            <strong>Skills:</strong> Leadership, negotiation
+                        </div>
+                        <div class="requirement-item">
+                            <strong>Pathway:</strong> Department head → Technical director → Team principal
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Applying for Roles -->
+            <div class="bg-gray-800 p-6 rounded-lg">
+                <h3 class="text-xl font-bold mb-4">HOW TO APPLY FOR F1 TEAM ROLES</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-gray-700 p-4 rounded-lg">
+                        <h4 class="font-bold text-red-500 mb-2">1. Team Websites</h4>
+                        <p class="text-gray-300">
+                            All F1 teams have careers sections listing current vacancies:
+                        </p>
+                        <ul class="mt-2 text-gray-300 space-y-1">
+                            <li>- mercedesamgf1.com/careers</li>
+                            <li>- redbullracing.com/jobs</li>
+                            <li>- mclaren.com/racing/careers</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-700 p-4 rounded-lg">
+                        <h4 class="font-bold text-red-500 mb-2">2. Recruitment Events</h4>
+                        <p class="text-gray-300">
+                            Key events to network:
+                        </p>
+                        <ul class="mt-2 text-gray-300 space-y-1">
+                            <li>- Autosport International</li>
+                            <li>- F1 Careers Forum</li>
+                            <li>- University motorsport fairs</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-700 p-4 rounded-lg">
+                        <h4 class="font-bold text-red-500 mb-2">3. Internships</h4>
+                        <p class="text-gray-300">
+                            Most teams offer seasonal internships:
+                        </p>
+                        <ul class="mt-2 text-gray-300 space-y-1">
+                            <li>- Summer placements</li>
+                            <li>- Year in industry</li>
+                            <li>- Graduate schemes</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="mt-6 bg-red-900 bg-opacity-30 p-4 rounded-lg border-l-4 border-red-600">
+                    <h4 class="font-bold mb-2">Application Tips</h4>
+                    <ul class="text-gray-300 space-y-2">
+                        <li>- Tailor your CV to highlight relevant motorsport experience (even karting or club racing)</li>
+                        <li>- Demonstrate passion for F1 in your cover letter</li>
+                        <li>- Be prepared to start in junior roles and work your way up</li>
+                        <li>- Consider relocating to the UK/Italy/Switzerland where most teams are based</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="regulation-section mb-20 fade-in">
+            <h2 class="text-3xl font-bold mb-8 border-b border-gray-700 pb-4 flex items-center">
+                <i class="fas fa-question-circle text-red-600 mr-4"></i>
+                FREQUENTLY ASKED QUESTIONS
+            </h2>
+            
+            <div class="bg-gray-800 rounded-lg overflow-hidden">
+                <!-- FAQ Item -->
+                <div class="border-b border-gray-700">
+                    <button class="faq-question w-full text-left p-6 flex justify-between items-center">
+                        <span class="text-xl font-bold">What's the minimum age to work in F1?</span>
+                        <i class="fas fa-chevron-down text-red-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 hidden">
+                        <p class="text-gray-300">
+                            For most roles, the minimum age is 18 due to travel and insurance requirements. Junior driver programs may accept 
+                            younger candidates (typically 13+ for karting programs that feed into F1 academies).
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item -->
+                <div class="border-b border-gray-700">
+                    <button class="faq-question w-full text-left p-6 flex justify-between items-center">
+                        <span class="text-xl font-bold">Do I need to relocate to work in F1?</span>
+                        <i class="fas fa-chevron-down text-red-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 hidden">
+                        <p class="text-gray-300">
+                            Most F1 teams are based in the UK (70%), Italy (20%), or Switzerland (10%). Factory-based roles will require 
+                            relocation to these areas. Travel roles (e.g., race team) typically live near the factory but travel 50% of the year.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item -->
+                <div class="border-b border-gray-700">
+                    <button class="faq-question w-full text-left p-6 flex justify-between items-center">
+                        <span class="text-xl font-bold">How competitive are F1 jobs?</span>
+                        <i class="fas fa-chevron-down text-red-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 hidden">
+                        <p class="text-gray-300">
+                            Extremely competitive. Top teams receive 500+ applications per engineering role. Your best chance is to:
+                        </p>
+                        <ul class="mt-2 text-gray-300 space-y-1">
+                            <li>- Gain experience in junior formulas first</li>
+                            <li>- Complete relevant internships</li>
+                            <li>- Develop specialized skills (e.g., CFD, battery tech)</li>
+                            <li>- Network within the industry</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item -->
+                <div class="border-b border-gray-700">
+                    <button class="faq-question w-full text-left p-6 flex justify-between items-center">
+                        <span class="text-xl font-bold">What's the salary range in F1?</span>
+                        <i class="fas fa-chevron-down text-red-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 hidden">
+                        <p class="text-gray-300">
+                            Salaries vary widely by role and experience:
+                        </p>
+                        <ul class="mt-2 text-gray-300 space-y-1">
+                            <li>- Graduate engineers: £25,000-£35,000</li>
+                            <li>- Senior engineers: £50,000-£90,000</li>
+                            <li>- Chief engineers: £100,000+</li>
+                            <li>- Race mechanics: £30,000-£60,000</li>
+                            <li>- Drivers: £150,000 to £50M+</li>
+                        </ul>
+                        <p class="mt-2 text-gray-300">
+                            Note: Salaries are typically lower than equivalent automotive industry roles due to high demand to work in F1.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item -->
+                <div class="border-b border-gray-700">
+                    <button class="faq-question w-full text-left p-6 flex justify-between items-center">
+                        <span class="text-xl font-bold">Can I join F1 without a degree?</span>
+                        <i class="fas fa-chevron-down text-red-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 hidden">
+                        <p class="text-gray-300">
+                            For technical roles, a degree is typically required. However, for these positions you may not need one:
+                        </p>
+                        <ul class="mt-2 text-gray-300 space-y-1">
+                            <li>- Mechanics (apprenticeship path available)</li>
+                            <li>- Pit crew (athletic background can substitute)</li>
+                            <li>- Hospitality/logistics (experience valued over degrees)</li>
+                            <li>- Media roles (portfolio often more important)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item -->
+                <div>
+                    <button class="faq-question w-full text-left p-6 flex justify-between items-center">
+                        <span class="text-xl font-bold">How do I get FIA accreditation?</span>
+                        <i class="fas fa-chevron-down text-red-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 hidden">
+                        <p class="text-gray-300">
+                            FIA accreditation is required for all personnel working at races. Your F1 team will typically apply for this on your 
+                            behalf once hired. Requirements include:
+                        </p>
+                        <ul class="mt-2 text-gray-300 space-y-1">
+                            <li>- Clean criminal record</li>
+                            <li>- Medical clearance</li>
+                            <li>- Proof of employment with licensed team</li>
+                            <li>- Completion of FIA ethics training</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="bg-gradient-to-r from-red-900 to-red-700 p-12 rounded-lg text-center fade-in">
+            <h2 class="text-3xl font-bold mb-6">READY TO START YOUR F1 JOURNEY?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">
+                Browse current vacancies across all Formula 1 teams and take the first step toward your dream career.
+            </p>
+            <a href="#" class="bg-black hover:bg-gray-900 text-white font-bold py-4 px-12 rounded-full inline-block transition duration-300">
+                VIEW ALL F1 JOBS
+            </a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 px-6">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <img src="https://www.formula1.com/etc/designs/fom-website/images/f1_logo.svg" alt="F1 Logo" class="h-12 mb-4">
+                    <p class="text-gray-400">The official careers guide for Formula 1® teams.</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4 text-white">TEAM CAREERS</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Mercedes</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Red Bull</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Ferrari</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">McLaren</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Alpine</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4 text-white">RESOURCES</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">FIA Regulations</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Super License Info</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Motorsport Degrees</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Apprenticeships</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4 text-white">CONTACT</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Media Inquiries</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Partnerships</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Suggestions</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Report Issue</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>© 2023 Formula One World Championship Limited. This is an unofficial fan-made guide.</p>
+                <p class="mt-2 text-sm">For official team vacancies, please visit individual team websites.</p>
+            </div>
+        </div>
+    </footer>

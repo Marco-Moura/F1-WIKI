@@ -1,0 +1,469 @@
+
+<body class="bg-gray-900 text-white font-sans">
+    <!-- Header -->
+    <header class="bg-black py-4 px-6 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://www.formula1.com/etc/designs/fom-website/images/f1_logo.svg" alt="F1 Logo" class="h-12 mr-4">
+                <h1 class="text-2xl font-bold text-red-600">F1 EQUIPS</h1>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToHome()">HOME</button>
+                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToTeams()">TEAMS</button>
+                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToDrivers()">DRIVERS</button>
+                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToHistory()">HISTORY</button>
+                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToRules()">RULES</button>
+                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToCareer()">CAREER</button>
+            </nav>
+            <button class="md:hidden text-white" id="mobileMenuBtn">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-gray-800 absolute left-0 right-0 top-full shadow-lg">
+            <div class="flex flex-col space-y-4 p-4">
+                <a href="index.html" class="text-white hover:text-red-500 transition duration-300">HOME</a>
+                <a href="teams.html" class="text-red-500 hover:text-red-400 transition duration-300">TEAMS</a>
+                <a href="drivers.html" class="text-white hover:text-red-500 transition duration-300">DRIVERS</a>
+                <a href="history.html" class="text-white hover:text-red-500 transition duration-300">HISTORY</a>
+                <a href="rules.html" class="text-white hover:text-red-500 transition duration-300">RULES</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Teams Hero Banner -->
+    <section class="relative h-96 overflow-hidden">
+        <div class="absolute inset-0 bg-f1-pattern"></div>
+        <img src="https://www.formula1.com/content/dam/fom-website/manual/Misc/2023manual/2023Teams/RedBull/GettyImages-1473005431.jpg" 
+             alt="F1 Teams" 
+             class="w-full h-full object-cover">
+        <div class="absolute inset-0 team-banner flex items-center justify-center">
+            <div class="text-center px-4 max-w-4xl fade-in">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 slide-up">F1 TEAMS</h1>
+                <p class="text-xl md:text-2xl mb-8 slide-up">Discover the elite constructors competing in the 2023 Formula 1 World Championship</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teams Grid -->
+    <section class="py-16 px-6 bg-gray-900">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Red Bull Racing -->
+                <div class="team-card bg-gray-800 rounded-lg overflow-hidden shadow-lg transition duration-500 hover:shadow-xl">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://www.formula1.com/content/dam/fom-website/manual/Misc/2023manual/2023Teams/RedBull/GettyImages-1473005431.jpg" 
+                             alt="Red Bull Racing" 
+                             class="team-image w-full h-full object-cover transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+                        <div class="absolute top-4 right-4 bg-blue-900 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            #1
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-red-600">RED BULL RACING</h3>
+                                <p class="text-gray-400">Oracle Red Bull Racing</p>
+                            </div>
+                            <img src="https://www.formula1.com/etc/designs/fom-website/images/teamlogos/red-bull-racing.svg" 
+                                 alt="Red Bull Logo" 
+                                 class="team-logo h-12 transition duration-300">
+                        </div>
+                        <div class="grid grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <p class="text-gray-400 text-sm">Team Chief</p>
+                                <p class="font-semibold">Christian Horner</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-400 text-sm">Power Unit</p>
+                                <p class="font-semibold">Honda RBPT</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-400 text-sm">First Entry</p>
+                                <p class="font-semibold">2005</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-400 text-sm">World Championships</p>
+                                <p class="font-semibold">5</p>
+                            </div>
+                        </div>
+                        <button class="w-full bg-blue-900 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded transition duration-300">
+                            VIEW TEAM DETAILS
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Mercedes -->
+                <div class="team-card bg-gray-800 rounded-lg overflow-hidden shadow-lg transition duration-500 hover:shadow-xl">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://www.formula1.com/content/dam/fom-website/manual/Misc/2023manual/2023Teams/Mercedes/GettyImages-1473005431.jpg" 
+                             alt="Mercedes" 
+                             class="team-image w-full h-full object-cover transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+                        <div class="absolute top-4 right-4 bg-teal-800 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            #2
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-teal-400">MERCEDES</h3>
+                                <p class="text-gray-400">Mercedes-AMG Petronas F1 Team</p>
+                            </div>
+                            <img src="https://www.formula1.com/etc/designs/fom-website/images/teamlogos/mercedes.svg" 
+                                 alt="Mercedes Logo" 
+                                 class="team-logo h-12 transition duration-300">
+                        </div>
+                        <div class="grid grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <p class="text-gray-400 text-sm">Team Chief</p>
+                                <p class="font-semibold">Toto Wolff</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-400 text-sm">Power Unit</p>
+                                <p class="font-semibold">Mercedes</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-400 text-sm">First Entry</p>
+                                <p class="font-semibold">1970</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-400 text-sm">World Championships</p>
+                                <p class="font-semibold">8</p>
+                            </div>
+                        </div>
+                        <button class="w-full bg-teal-800 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded transition duration-300">
+                            VIEW TEAM DETAILS
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Ferrari -->
+                <div class="team-card bg-gray-800 rounded-lg overflow-hidden shadow-lg transition duration-500 hover:shadow-xl">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://www.formula1.com/content/dam/fom-website/manual/Misc/2023manual/2023Teams/Ferrari/GettyImages-1473005431.jpg" 
+                             alt="Ferrari" 
+                             class="team-image w-full h-full object-cover transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+                        <div class="absolute top-4 right-4 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            #3
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-red-500">FERRARI</h3>
+                                <p class="text-gray-400">Scuderia Ferrari</p>
+                            </div>
+                            <img src="https://www.formula1.com/etc/designs/fom-website/images/teamlogos/ferrari.svg" 
+                                 alt="Ferrari Logo" 
+                                 class="team-logo h-12 transition duration-300">
+                        </div>
+                        <div class="grid grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <p class="text-gray-400 text-sm">Team Chief</p>
+                                <p class="font-semibold">Frédéric Vasseur</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-400 text-sm">Power Unit</p>
+                                <p class="font-semibold">Ferrari</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-400 text-sm">First Entry</p>
+                                <p class="font-semibold">1950</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-400 text-sm">World Championships</p>
+                                <p class="font-semibold">16</p>
+                            </div>
+                        </div>
+                        <button class="w-full bg-red-600 hover:bg-red-500 text-white font-bold py-2 px-4 rounded transition duration-300">
+                            VIEW TEAM DETAILS
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- McLaren -->
+                <div class="team-card bg-gray-800 rounded-lg overflow-hidden shadow-lg transition duration-500 hover:shadow-xl">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://www.formula1.com/content/dam/fom-website/manual/Misc/2023manual/2023Teams/McLaren/GettyImages-1473005431.jpg" 
+                             alt="McLaren" 
+                             class="team-image w-full h-full object-cover transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+                        <div class="absolute top-4 right-4 bg-orange-600 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            #4
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-orange-400">MCLAREN</h3>
+                                <p class="text-gray-400">McLaren F1 Team</p>
+                            </div>
+                            <img src="https://www.formula1.com/etc/designs/fom-website/images/teamlogos/mclaren.svg" 
+                                 alt="McLaren Logo" 
+                                 class="team-logo h-12 transition duration-300">
+                        </div>
+                        <div class="grid grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <p class="text-gray-400 text-sm">Team Chief</p>
+                                <p class="font-semibold">Andrea Stella</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-400 text-sm">Power Unit</p>
+                                <p class="font-semibold">Mercedes</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-400 text-sm">First Entry</p>
+                                <p class="font-semibold">1966</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-400 text-sm">World Championships</p>
+                                <p class="font-semibold">8</p>
+                            </div>
+                        </div>
+                        <button class="w-full bg-orange-600 hover:bg-orange-500 text-white font-bold py-2 px-4 rounded transition duration-300">
+                            VIEW TEAM DETAILS
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Aston Martin -->
+                <div class="team-card bg-gray-800 rounded-lg overflow-hidden shadow-lg transition duration-500 hover:shadow-xl">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://www.formula1.com/content/dam/fom-website/manual/Misc/2023manual/2023Teams/AstonMartin/GettyImages-1473005431.jpg" 
+                             alt="Aston Martin" 
+                             class="team-image w-full h-full object-cover transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+                        <div class="absolute top-4 right-4 bg-green-800 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            #5
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-green-400">ASTON MARTIN</h3>
+                                <p class="text-gray-400">Aston Martin Aramco Cognizant F1 Team</p>
+                            </div>
+                            <img src="https://www.formula1.com/etc/designs/fom-website/images/teamlogos/aston-martin.svg" 
+                                 alt="Aston Martin Logo" 
+                                 class="team-logo h-12 transition duration-300">
+                        </div>
+                        <div class="grid grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <p class="text-gray-400 text-sm">Team Chief</p>
+                                <p class="font-semibold">Mike Krack</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-400 text-sm">Power Unit</p>
+                                <p class="font-semibold">Mercedes</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-400 text-sm">First Entry</p>
+                                <p class="font-semibold">1959</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-400 text-sm">World Championships</p>
+                                <p class="font-semibold">0</p>
+                            </div>
+                        </div>
+                        <button class="w-full bg-green-800 hover:bg-green-700 text-white font-bold py-2 px-4 rounded transition duration-300">
+                            VIEW TEAM DETAILS
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Alpine -->
+                <div class="team-card bg-gray-800 rounded-lg overflow-hidden shadow-lg transition duration-500 hover:shadow-xl">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://www.formula1.com/content/dam/fom-website/manual/Misc/2023manual/2023Teams/Alpine/GettyImages-1473005431.jpg" 
+                             alt="Alpine" 
+                             class="team-image w-full h-full object-cover transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+                        <div class="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            #6
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-blue-400">ALPINE</h3>
+                                <p class="text-gray-400">BWT Alpine F1 Team</p>
+                            </div>
+                            <img src="https://www.formula1.com/etc/designs/fom-website/images/teamlogos/alpine.svg" 
+                                 alt="Alpine Logo" 
+                                 class="team-logo h-12 transition duration-300">
+                        </div>
+                        <div class="grid grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <p class="text-gray-400 text-sm">Team Chief</p>
+                                <p class="font-semibold">Bruno Famin</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-400 text-sm">Power Unit</p>
+                                <p class="font-semibold">Renault</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-400 text-sm">First Entry</p>
+                                <p class="font-semibold">1981</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-400 text-sm">World Championships</p>
+                                <p class="font-semibold">0</p>
+                            </div>
+                        </div>
+                        <button class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded transition duration-300">
+                            VIEW TEAM DETAILS
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Standings -->
+    <section class="py-16 px-6 bg-gray-800">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold mb-8 text-center relative">
+                <span class="relative inline-block">
+                    CONSTRUCTORS' STANDINGS
+                    <span class="absolute bottom-0 left-0 w-full h-1 bg-red-600"></span>
+                </span>
+            </h2>
+            
+            <div class="overflow-x-auto">
+                <table class="w-full text-left rounded-lg overflow-hidden">
+                    <thead class="bg-gray-700 text-gray-300">
+                        <tr>
+                            <th class="p-4 font-semibold">POS</th>
+                            <th class="p-4 font-semibold">TEAM</th>
+                            <th class="p-4 font-semibold">PTS</th>
+                            <th class="p-4 font-semibold">WINS</th>
+                            <th class="p-4 font-semibold">PODIUMS</th>
+                            <th class="p-4 font-semibold">DNF</th>
+                        </tr>
+                    </thead>
+                    <tbody id="standingsTable">
+                        <!-- Standings will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Comparison -->
+    <section class="py-16 px-6 bg-gray-900">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold mb-8 text-center relative">
+                <span class="relative inline-block">
+                    TEAM COMPARISON
+                    <span class="absolute bottom-0 left-0 w-full h-1 bg-red-600"></span>
+                </span>
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <div>
+                    <label for="team1" class="block text-gray-400 mb-2">Select Team 1</label>
+                    <select id="team1" class="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-white focus:outline-none focus:ring-2 focus:ring-red-600">
+                        <option value="">-- Select Team --</option>
+                        <option value="redbull">Red Bull Racing</option>
+                        <option value="mercedes">Mercedes</option>
+                        <option value="ferrari">Ferrari</option>
+                        <option value="mclaren">McLaren</option>
+                        <option value="astonmartin">Aston Martin</option>
+                        <option value="alpine">Alpine</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="team2" class="block text-gray-400 mb-2">Select Team 2</label>
+                    <select id="team2" class="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-white focus:outline-none focus:ring-2 focus:ring-red-600">
+                        <option value="">-- Select Team --</option>
+                        <option value="redbull">Red Bull Racing</option>
+                        <option value="mercedes">Mercedes</option>
+                        <option value="ferrari">Ferrari</option>
+                        <option value="mclaren">McLaren</option>
+                        <option value="astonmartin">Aston Martin</option>
+                        <option value="alpine">Alpine</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div id="comparisonResult" class="bg-gray-800 rounded-lg p-6 hidden">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div id="team1Details" class="fade-in">
+                        <!-- Team 1 details will be populated here -->
+                    </div>
+                    <div id="team2Details" class="fade-in">
+                        <!-- Team 2 details will be populated here -->
+                    </div>
+                </div>
+                
+                <div id="comparisonChart" class="mt-8 h-64 fade-in">
+                    <!-- Chart will be rendered here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 px-6">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <img src="https://www.formula1.com/etc/designs/fom-website/images/f1_logo.svg" alt="F1 Logo" class="h-12 mb-4">
+                    <p class="text-gray-400">The official home of Formula 1® racing.</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4 text-white">FORMULA 1</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Latest News</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Video</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Schedule</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Standings</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Drivers</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4 text-white">GAMING</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Esports</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Fantasy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">F1 Play</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">F1 Mobile Racing</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4 text-white">LEGAL</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Terms & Conditions</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Cookie Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>© 2023 Formula One World Championship Limited</p>
+            </div>
+        </div>
+    </footer>

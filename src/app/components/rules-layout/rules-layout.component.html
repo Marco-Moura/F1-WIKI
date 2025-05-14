@@ -1,0 +1,888 @@
+<body class="bg-gray-900 text-gray-100 font-sans">
+    <!-- Header -->
+    <header class="bg-black py-4 px-6 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://www.formula1.com/etc/designs/fom-website/images/f1_logo.svg" alt="F1 Logo" class="h-12 mr-4">
+                <h1 class="text-2xl font-bold text-red-600">F1 REGULATIONS</h1>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToHome()">HOME</button>
+                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToTeams()">TEAMS</button>
+                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToDrivers()">DRIVERS</button>
+                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToHistory()">HISTORY</button>
+                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToRules()">RULES</button>
+                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToCareer()">CAREER</button>
+            </nav>
+            <button class="md:hidden text-white" id="mobileMenuBtn">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-gray-800 absolute left-0 right-0 top-full shadow-lg">
+            <div class="flex flex-col space-y-4 p-4">
+                <a href="#technical" class="text-white hover:text-red-500 transition duration-300">TECHNICAL</a>
+                <a href="#sporting" class="text-white hover:text-red-500 transition duration-300">SPORTING</a>
+                <a href="#financial" class="text-white hover:text-red-500 transition duration-300">FINANCIAL</a>
+                <a href="#penalties" class="text-white hover:text-red-500 transition duration-300">PENALTIES</a>
+                <a href="#safety" class="text-white hover:text-red-500 transition duration-300">SAFETY</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-96 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-black to-transparent z-10"></div>
+        <img src="https://www.formula1.com/content/dam/fom-website/manual/Misc/2023/03Australia/Saturday/GettyImages-1475770798.jpg.transform/9col/image.jpg" 
+             alt="F1 Cars" 
+             class="w-full h-full object-cover">
+        <div class="absolute inset-0 flex items-center justify-center z-20">
+            <div class="text-center px-4 max-w-4xl">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">FORMULA 1 REGULATIONS</h1>
+                <p class="text-xl md:text-2xl mb-8">Complete guide to the technical, sporting and financial rules</p>
+                <a href="#technical" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full inline-block transition duration-300 animate-underline">
+                    EXPLORE REGULATIONS
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Regulations Navigation -->
+    <section class="py-8 bg-gray-800 sticky top-16 z-40 shadow-md">
+        <div class="container mx-auto px-6">
+            <div class="flex overflow-x-auto space-x-4 pb-2 scrollbar-hide">
+                <a href="#technical" class="tab-button px-6 py-2 rounded-full bg-gray-700 text-white whitespace-nowrap transition duration-300">Technical</a>
+                <a href="#sporting" class="tab-button px-6 py-2 rounded-full bg-gray-700 text-white whitespace-nowrap transition duration-300">Sporting</a>
+                <a href="#financial" class="tab-button px-6 py-2 rounded-full bg-gray-700 text-white whitespace-nowrap transition duration-300">Financial</a>
+                <a href="#penalties" class="tab-button px-6 py-2 rounded-full bg-gray-700 text-white whitespace-nowrap transition duration-300">Penalties</a>
+                <a href="#safety" class="tab-button px-6 py-2 rounded-full bg-gray-700 text-white whitespace-nowrap transition duration-300">Safety</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12">
+        <!-- Technical Regulations -->
+        <section id="technical" class="regulation-section mb-20 fade-in">
+            <h2 class="text-3xl font-bold mb-8 border-b border-gray-700 pb-4 flex items-center">
+                <i class="fas fa-cogs text-red-600 mr-4"></i>
+                TECHNICAL REGULATIONS
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Chassis -->
+                <div class="bg-gray-800 p-6 rounded-lg regulation-card transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-car-side text-red-600 text-2xl mr-3"></i>
+                        <h3 class="text-xl font-bold">CHASSIS</h3>
+                    </div>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Minimum weight: 798kg (including driver)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Maximum width: 2000mm</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Front wing width: 2000mm (max), 3-5 elements</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Rear wing width: 1050mm (max), 2 elements</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Ground effect underbody with Venturi tunnels</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6 technical-diagram p-4 rounded-lg">
+                        <img src="https://www.formula1.com/content/dam/fom-website/manual/Technical/2022CarLaunch/Technical%20animation%20-%20Chassis.jpg.transform/6col/image.jpg" 
+                             alt="Chassis Diagram" 
+                             class="w-full h-auto rounded">
+                        <p class="text-sm text-gray-400 mt-2">2023 Chassis Technical Diagram</p>
+                    </div>
+                </div>
+                
+                <!-- Power Unit -->
+                <div class="bg-gray-800 p-6 rounded-lg regulation-card transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-bolt text-red-600 text-2xl mr-3"></i>
+                        <h3 class="text-xl font-bold">POWER UNIT</h3>
+                    </div>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>1.6L V6 turbocharged hybrid</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>15,000 rpm maximum</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>MGU-K: 120kW (161hp) output</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>MGU-H: Recovers energy from turbo</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Fuel flow limit: 100kg/hour (max)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>3 power units per driver per season</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6 technical-diagram p-4 rounded-lg">
+                        <img src="https://www.formula1.com/content/dam/fom-website/manual/Technical/2022CarLaunch/Technical%20animation%20-%20Power%20Unit.jpg.transform/6col/image.jpg" 
+                             alt="Power Unit Diagram" 
+                             class="w-full h-auto rounded">
+                        <p class="text-sm text-gray-400 mt-2">Power Unit Components</p>
+                    </div>
+                </div>
+                
+                <!-- Aerodynamics -->
+                <div class="bg-gray-800 p-6 rounded-lg regulation-card transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-wind text-red-600 text-2xl mr-3"></i>
+                        <h3 class="text-xl font-bold">AERODYNAMICS</h3>
+                    </div>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Simplified front wing with outwash prevention</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Simplified rear wing with no cascades</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>No bargeboards or complex turning vanes</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Wheel wake control devices (wheel covers)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Ground effect underbody with standardized diffuser</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6 technical-diagram p-4 rounded-lg">
+                        <img src="https://www.formula1.com/content/dam/fom-website/manual/Technical/2022CarLaunch/Technical%20animation%20-%20Aerodynamics.jpg.transform/6col/image.jpg" 
+                             alt="Aerodynamics Diagram" 
+                             class="w-full h-auto rounded">
+                        <p class="text-sm text-gray-400 mt-2">Aerodynamic Flow Visualization</p>
+                    </div>
+                </div>
+                
+                <!-- Tires -->
+                <div class="bg-gray-800 p-6 rounded-lg regulation-card transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-tire text-red-600 text-2xl mr-3"></i>
+                        <h3 class="text-xl font-bold">TYRES</h3>
+                    </div>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>18-inch diameter (was 13-inch until 2021)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>5 compounds: C1-C5 (hard to soft) + intermediates + wets</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Minimum starting pressures regulated</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Heating blankets limited to 70°C (front) and 50°C (rear)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>13 sets of dry tires allocated per weekend</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6 flex justify-between items-center">
+                        <div class="flex space-x-2">
+                            <div class="w-8 h-8 rounded-full bg-red-900 border border-red-700"></div>
+                            <div class="w-8 h-8 rounded-full bg-red-600 border border-red-400"></div>
+                            <div class="w-8 h-8 rounded-full bg-yellow-400 border border-yellow-300"></div>
+                            <div class="w-8 h-8 rounded-full bg-green-600 border border-green-400"></div>
+                            <div class="w-8 h-8 rounded-full bg-blue-600 border border-blue-400"></div>
+                        </div>
+                        <p class="text-sm text-gray-400">Pirelli Tire Compounds</p>
+                    </div>
+                </div>
+                
+                <!-- Safety Components -->
+                <div class="bg-gray-800 p-6 rounded-lg regulation-card transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-shield-alt text-red-600 text-2xl mr-3"></i>
+                        <h3 class="text-xl font-bold">SAFETY COMPONENTS</h3>
+                    </div>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Halo: 3rd generation titanium structure</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Front and rear impact structures</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Side impact protection panels</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Fuel cell with crash-resistant construction</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>6-point seat belts with quick release</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6 technical-diagram p-4 rounded-lg">
+                        <img src="https://www.formula1.com/content/dam/fom-website/manual/Technical/2022CarLaunch/Technical%20animation%20-%20Safety.jpg.transform/6col/image.jpg" 
+                             alt="Safety Components" 
+                             class="w-full h-auto rounded">
+                        <p class="text-sm text-gray-400 mt-2">Safety Features Diagram</p>
+                    </div>
+                </div>
+                
+                <!-- Other Technical -->
+                <div class="bg-gray-800 p-6 rounded-lg regulation-card transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-microchip text-red-600 text-2xl mr-3"></i>
+                        <h3 class="text-xl font-bold">OTHER TECHNICAL</h3>
+                    </div>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Standardized ECU (Electronic Control Unit)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Fuel: 10% sustainable ethanol blend</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>No traction control or ABS</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Limited telemetry data transmission</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Cost cap on certain development areas</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6">
+                        <div class="flex items-center text-sm text-gray-400">
+                            <i class="fas fa-info-circle mr-2"></i>
+                            <span>All components must pass FIA crash tests</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Sporting Regulations -->
+        <section id="sporting" class="regulation-section mb-20 fade-in">
+            <h2 class="text-3xl font-bold mb-8 border-b border-gray-700 pb-4 flex items-center">
+                <i class="fas fa-flag-checkered text-red-600 mr-4"></i>
+                SPORTING REGULATIONS
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Race Weekend Format -->
+                <div class="bg-gray-800 p-6 rounded-lg regulation-card transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-calendar-day text-red-600 text-2xl mr-3"></i>
+                        <h3 class="text-xl font-bold">RACE WEEKEND FORMAT</h3>
+                    </div>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span><strong>Friday:</strong> 2 practice sessions (FP1 & FP2)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span><strong>Saturday:</strong> FP3 + Qualifying (Q1, Q2, Q3)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span><strong>Sunday:</strong> Race (305km max distance, ~2hr time limit)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>6 Sprint weekends with different format (FP1, Qualifying, Sprint, Race)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Parc fermé rules after qualifying (limited setup changes)</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6 bg-gray-700 p-4 rounded-lg">
+                        <h4 class="font-bold mb-2">Qualifying Elimination:</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li><strong>Q1:</strong> 18 min, bottom 5 eliminated</li>
+                            <li><strong>Q2:</strong> 15 min, bottom 5 eliminated</li>
+                            <li><strong>Q3:</strong> 12 min, determines top 10</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Race Procedures -->
+                <div class="bg-gray-800 p-6 rounded-lg regulation-card transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-running text-red-600 text-2xl mr-3"></i>
+                        <h3 class="text-xl font-bold">RACE PROCEDURES</h3>
+                    </div>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span><strong>Formation lap:</strong> Determines starting order</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span><strong>Standing starts:</strong> From grid positions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span><strong>Pit stops:</strong> Minimum 2.5 sec stationary (with tire change)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span><strong>Safety Car:</strong> Neutralizes race, no overtaking</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span><strong>Virtual Safety Car:</strong> Maintain gaps, speed limited</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span><strong>Red Flag:</strong> Race stopped, may be restarted</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6 bg-gray-700 p-4 rounded-lg">
+                        <h4 class="font-bold mb-2">Points System:</h4>
+                        <div class="grid grid-cols-5 gap-2 text-center text-sm">
+                            <div class="bg-gray-600 p-2 rounded">1st: 25</div>
+                            <div class="bg-gray-600 p-2 rounded">2nd: 18</div>
+                            <div class="bg-gray-600 p-2 rounded">3rd: 15</div>
+                            <div class="bg-gray-600 p-2 rounded">4th: 12</div>
+                            <div class="bg-gray-600 p-2 rounded">5th: 10</div>
+                            <div class="bg-gray-600 p-2 rounded">6th: 8</div>
+                            <div class="bg-gray-600 p-2 rounded">7th: 6</div>
+                            <div class="bg-gray-600 p-2 rounded">8th: 4</div>
+                            <div class="bg-gray-600 p-2 rounded">9th: 2</div>
+                            <div class="bg-gray-600 p-2 rounded">10th: 1</div>
+                        </div>
+                        <p class="text-xs mt-2 text-gray-400">+1 point for fastest lap (if in top 10)</p>
+                    </div>
+                </div>
+                
+                <!-- Driver Requirements -->
+                <div class="bg-gray-800 p-6 rounded-lg regulation-card transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-user-shield text-red-600 text-2xl mr-3"></i>
+                        <h3 class="text-xl font-bold">DRIVER REQUIREMENTS</h3>
+                    </div>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Super License required (40 points from junior series)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Minimum age: 18 years</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Mandatory FIA medical checks</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Helmet designs must be approved</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Driver weight minimum: 80kg (including seat)</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6 bg-gray-700 p-4 rounded-lg">
+                        <h4 class="font-bold mb-2">Super License Points Example:</h4>
+                        <ul class="space-y-1 text-sm">
+                            <li>1st in F2: 40 pts</li>
+                            <li>1st in F3: 30 pts</li>
+                            <li>1st in W Series: 15 pts</li>
+                            <li>1st in IndyCar: 40 pts</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Team Requirements -->
+                <div class="bg-gray-800 p-6 rounded-lg regulation-card transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-users text-red-600 text-2xl mr-3"></i>
+                        <h3 class="text-xl font-bold">TEAM REQUIREMENTS</h3>
+                    </div>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Maximum 2 cars per team</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Minimum 2 race drivers per season</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>1 reserve driver must be nominated</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Limited testing (3 pre-season + 2 in-season days)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Wind tunnel and CFD restrictions</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6 bg-gray-700 p-4 rounded-lg">
+                        <h4 class="font-bold mb-2">Team Personnel:</h4>
+                        <ul class="space-y-1 text-sm">
+                            <li>Maximum 60 team personnel at track</li>
+                            <li>Only 4 mechanics allowed per car during pit stops</li>
+                            <li>Team principal must be registered</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Financial Regulations -->
+        <section id="financial" class="regulation-section mb-20 fade-in">
+            <h2 class="text-3xl font-bold mb-8 border-b border-gray-700 pb-4 flex items-center">
+                <i class="fas fa-money-bill-wave text-red-600 mr-4"></i>
+                FINANCIAL REGULATIONS
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Cost Cap -->
+                <div class="bg-gray-800 p-6 rounded-lg regulation-card transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-lock text-red-600 text-2xl mr-3"></i>
+                        <h3 class="text-xl font-bold">COST CAP</h3>
+                    </div>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span><strong>2023 cap:</strong> $135 million (21-race season)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Applies to performance-related spending</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Excludes: Driver salaries, top 3 personnel salaries, marketing, travel</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Inflation adjustment mechanism</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Audits conducted by FIA</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6 bg-gray-700 p-4 rounded-lg">
+                        <h4 class="font-bold mb-2">Penalties for Breach:</h4>
+                        <ul class="space-y-1 text-sm">
+                            <li>Minor overspend: Financial penalty + reduction in testing</li>
+                            <li>Major overspend: Points deduction, possible exclusion</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Other Financial -->
+                <div class="bg-gray-800 p-6 rounded-lg regulation-card transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-chart-line text-red-600 text-2xl mr-3"></i>
+                        <h3 class="text-xl font-bold">OTHER FINANCIAL RULES</h3>
+                    </div>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Prize money distribution based on championship position</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Long-standing teams receive heritage payments</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>New teams must pay $200m anti-dilution fee</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Limited sponsorship from tobacco companies</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Restrictions on manufacturer payments to customer teams</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6 bg-gray-700 p-4 rounded-lg">
+                        <h4 class="font-bold mb-2">Development Restrictions:</h4>
+                        <ul class="space-y-1 text-sm">
+                            <li>Wind tunnel time based on championship position</li>
+                            <li>CFD simulation limits</li>
+                            <li>Restricted number of upgrades per season</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Penalties -->
+        <section id="penalties" class="regulation-section mb-20 fade-in">
+            <h2 class="text-3xl font-bold mb-8 border-b border-gray-700 pb-4 flex items-center">
+                <i class="fas fa-gavel text-red-600 mr-4"></i>
+                PENALTIES
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- On-Track Penalties -->
+                <div class="bg-gray-800 p-6 rounded-lg regulation-card transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-car-crash text-red-600 text-2xl mr-3"></i>
+                        <h3 class="text-xl font-bold">ON-TRACK INFRACTIONS</h3>
+                    </div>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fas fa-exclamation-triangle text-yellow-500 mt-1 mr-2"></i>
+                            <span><strong>False start:</strong> 5 or 10 sec stop/go</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-exclamation-triangle text-yellow-500 mt-1 mr-2"></i>
+                            <span><strong>Speeding in pit lane:</strong> Fine or time penalty</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-exclamation-triangle text-yellow-500 mt-1 mr-2"></i>
+                            <span><strong>Unsafe release:</strong> 5 or 10 sec stop/go</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-exclamation-triangle text-yellow-500 mt-1 mr-2"></i>
+                            <span><strong>Causing a collision:</strong> 5-10 sec or grid drop</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-exclamation-triangle text-yellow-500 mt-1 mr-2"></i>
+                            <span><strong>Ignoring blue flags:</strong> 5 sec or drive-through</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-exclamation-triangle text-yellow-500 mt-1 mr-2"></i>
+                            <span><strong>Track limits violations:</strong> Lap times deleted</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6 bg-gray-700 p-4 rounded-lg">
+                        <h4 class="font-bold mb-2">Penalty Points System:</h4>
+                        <ul class="space-y-1 text-sm">
+                            <li>Points stay on license for 12 months</li>
+                            <li>12 points = automatic race ban</li>
+                            <li>Typical infraction: 1-3 points</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Technical Infractions -->
+                <div class="bg-gray-800 p-6 rounded-lg regulation-card transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-tools text-red-600 text-2xl mr-3"></i>
+                        <h3 class="text-xl font-bold">TECHNICAL INFRACTIONS</h3>
+                    </div>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fas fa-ban text-red-500 mt-1 mr-2"></i>
+                            <span><strong>Illegal car parts:</strong> Disqualification</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-ban text-red-500 mt-1 mr-2"></i>
+                            <span><strong>Underweight car:</strong> Disqualification</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-ban text-red-500 mt-1 mr-2"></i>
+                            <span><strong>Fuel flow violations:</strong> Disqualification</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-exclamation-triangle text-yellow-500 mt-1 mr-2"></i>
+                            <span><strong>Minor technical breaches:</strong> Grid penalties</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-exclamation-triangle text-yellow-500 mt-1 mr-2"></i>
+                            <span><strong>Power unit component changes:</strong> Grid drops</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6 bg-gray-700 p-4 rounded-lg">
+                        <h4 class="font-bold mb-2">Power Unit Penalties:</h4>
+                        <ul class="space-y-1 text-sm">
+                            <li>ICE: 10 places</li>
+                            <li>MGU-K: 5 places</li>
+                            <li>Turbo: 5 places</li>
+                            <li>Exceeding allocation: Back of grid</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Safety Regulations -->
+        <section id="safety" class="regulation-section mb-20 fade-in">
+            <h2 class="text-3xl font-bold mb-8 border-b border-gray-700 pb-4 flex items-center">
+                <i class="fas fa-medal text-red-600 mr-4"></i>
+                SAFETY REGULATIONS
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Car Safety -->
+                <div class="bg-gray-800 p-6 rounded-lg regulation-card transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-car-side text-red-600 text-2xl mr-3"></i>
+                        <h3 class="text-xl font-bold">CAR SAFETY</h3>
+                    </div>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span><strong>Halo:</strong> Mandatory titanium structure</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span><strong>Headrest:</strong> High-impact foam padding</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span><strong>Fuel cell:</strong> Crash-resistant construction</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span><strong>Extinguishers:</strong> Automatic and manual systems</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span><strong>Wheel tethers:</strong> Keep wheels attached in crashes</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6 bg-gray-700 p-4 rounded-lg">
+                        <h4 class="font-bold mb-2">Crash Test Requirements:</h4>
+                        <ul class="space-y-1 text-sm">
+                            <li>Frontal impact at 15m/s</li>
+                            <li>Rear impact at 11m/s</li>
+                            <li>Side impact at 10m/s</li>
+                            <li>Roll structure must withstand 60kN</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Driver Safety -->
+                <div class="bg-gray-800 p-6 rounded-lg regulation-card transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-user-astronaut text-red-600 text-2xl mr-3"></i>
+                        <h3 class="text-xl font-bold">DRIVER SAFETY</h3>
+                    </div>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span><strong>Helmet:</strong> FIA 8860-2018 standard</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span><strong>HANS device:</strong> Head and neck support</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span><strong>Race suit:</strong> Multi-layer fireproof material</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span><strong>Gloves & shoes:</strong> Fireproof materials</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span><strong>Medical car:</strong> Follows field for immediate response</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6 bg-gray-700 p-4 rounded-lg">
+                        <h4 class="font-bold mb-2">Helmet Standards:</h4>
+                        <ul class="space-y-1 text-sm">
+                            <li>Withstands 800°C for 45 seconds</li>
+                            <li>Impact absorption up to 300G</li>
+                            <li>Visor penetration resistance</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Track Safety -->
+                <div class="bg-gray-800 p-6 rounded-lg regulation-card transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-road text-red-600 text-2xl mr-3"></i>
+                        <h3 class="text-xl font-bold">TRACK SAFETY</h3>
+                    </div>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span><strong>Run-off areas:</strong> Minimum gravel trap/Tarmac</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span><strong>Barriers:</strong> SAFER/Tecpro/Tire walls</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span><strong>Marshals:</strong> Trained personnel at key points</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span><strong>Medical center:</strong> Fully equipped on-site</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span><strong>Lighting:</strong> Flags and LED panels</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6 bg-gray-700 p-4 rounded-lg">
+                        <h4 class="font-bold mb-2">Flag Meanings:</h4>
+                        <div class="grid grid-cols-2 gap-2 text-sm">
+                            <div class="flex items-center">
+                                <div class="w-4 h-4 bg-yellow-500 mr-2"></div>
+                                <span>Yellow: Danger</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-4 h-4 bg-red-500 mr-2"></div>
+                                <span>Red: Session stopped</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-4 h-4 bg-green-500 mr-2"></div>
+                                <span>Green: Track clear</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-4 h-4 bg-blue-500 mr-2"></div>
+                                <span>Blue: Faster car</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Procedural Safety -->
+                <div class="bg-gray-800 p-6 rounded-lg regulation-card transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-clipboard-list text-red-600 text-2xl mr-3"></i>
+                        <h3 class="text-xl font-bold">PROCEDURAL SAFETY</h3>
+                    </div>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span><strong>Virtual Safety Car:</strong> Speed limited to prevent accidents</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span><strong>Safety Car:</strong> Neutralizes race for incident clearance</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span><strong>Red Flag:</strong> Stops session for major incidents</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span><strong>Medical checks:</strong> Mandatory after big impacts</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span><strong>Extraction practice:</strong> Regular drills for marshals</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6 bg-gray-700 p-4 rounded-lg">
+                        <h4 class="font-bold mb-2">Safety Innovations:</h4>
+                        <ul class="space-y-1 text-sm">
+                            <li>Halo introduced in 2018</li>
+                            <li>Headrest improvements after 2016</li>
+                            <li>Stronger wheel tethers after 2020</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 px-6">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <img src="https://www.formula1.com/etc/designs/fom-website/images/f1_logo.svg" alt="F1 Logo" class="h-12 mb-4">
+                    <p class="text-gray-400">The official regulations guide for Formula 1®.</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4 text-white">REGULATIONS</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#technical" class="text-gray-400 hover:text-white transition duration-300">Technical</a></li>
+                        <li><a href="#sporting" class="text-gray-400 hover:text-white transition duration-300">Sporting</a></li>
+                        <li><a href="#financial" class="text-gray-400 hover:text-white transition duration-300">Financial</a></li>
+                        <li><a href="#penalties" class="text-gray-400 hover:text-white transition duration-300">Penalties</a></li>
+                        <li><a href="#safety" class="text-gray-400 hover:text-white transition duration-300">Safety</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4 text-white">OFFICIAL</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">FIA Website</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Official Documents</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Rule Changes</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Appeals Process</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4 text-white">CONTACT</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Media Inquiries</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Partnerships</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Accessibility</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>© 2023 Formula One World Championship Limited. This is an unofficial fan-made guide.</p>
+                <p class="mt-2 text-sm">For official regulations, please consult the FIA website.</p>
+            </div>
+        </div>
+    </footer>

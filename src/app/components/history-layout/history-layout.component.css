@@ -1,0 +1,74 @@
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .slide-up {
+            animation: slideUp 0.8s ease-out;
+        }
+        
+        .timeline-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+        }
+        
+        .bg-f1-pattern {
+            background-image: url('https://www.formula1.com/etc/designs/fom-website/images/patterns/plus_x2.png');
+            background-size: 10px;
+            opacity: 0.1;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #e10600;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .history-banner {
+            background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
+        }
+        
+        .decade-tab {
+            transition: all 0.3s ease;
+        }
+        
+        .decade-tab:hover {
+            transform: scale(1.05);
+        }
+        
+        .decade-tab.active {
+            background-color: #e10600;
+            color: white;
+        }
+        
+        .champion-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .stats-bar {
+            height: 4px;
+            transition: width 1s ease-in-out;
+        }

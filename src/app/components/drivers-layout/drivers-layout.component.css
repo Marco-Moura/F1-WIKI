@@ -1,0 +1,99 @@
+ @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .slide-up {
+            animation: slideUp 0.8s ease-out;
+        }
+        
+        .driver-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .driver-card:hover .driver-image {
+            transform: scale(1.05);
+        }
+        
+        .driver-card:hover .driver-number {
+            transform: scale(1.2);
+        }
+        
+        .bg-f1-pattern {
+            background-image: url('https://www.formula1.com/etc/designs/fom-website/images/patterns/plus_x2.png');
+            background-size: 10px;
+            opacity: 0.1;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #e10600;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .driver-banner {
+            background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
+        }
+        
+        .team-color-redbull {
+            background-color: #1e5bc6;
+        }
+        
+        .team-color-mercedes {
+            background-color: #6cd3bf;
+        }
+        
+        .team-color-ferrari {
+            background-color: #f91536;
+        }
+        
+        .team-color-mclaren {
+            background-color: #f58020;
+        }
+        
+        .team-color-astonmartin {
+            background-color: #358c75;
+        }
+        
+        .team-color-alpine {
+            background-color: #2293d1;
+        }
+        
+        .team-color-williams {
+            background-color: #37bedd;
+        }
+        
+        .team-color-alphatauri {
+            background-color: #4e7c94;
+        }
+        
+        .team-color-haas {
+            background-color: #b6babd;
+        }
+        
+        .team-color-sauber {
+            background-color: #c92d4b;
+        }
