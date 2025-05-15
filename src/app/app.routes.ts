@@ -5,6 +5,9 @@ import { DriversComponent } from './pages/drivers/drivers.component';
 import { HistoryComponent } from './pages/history/history.component';
 import { RulesComponent } from './pages/rules/rules.component';
 import { CareerComponent } from './pages/career/career.component';
+import { SignupLayoutComponent } from './components/signup-layout/signup-layout.component';
+import { LoginLayoutComponent } from './components/login-layout/login-layout.component';
+
 
 export const routes: Routes = [
     {
@@ -35,5 +38,13 @@ export const routes: Routes = [
     {
         path: 'career',
         component: CareerComponent
+    },
+    {
+        path: 'login',
+        component: LoginLayoutComponent
+    },
+    {
+        path: 'signup',
+        component: SignupLayoutComponent
     }
 ];

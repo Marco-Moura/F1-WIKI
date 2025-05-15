@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "João Silva",
+      "email": "joao@example.com",
+      "password": "123456"
+    },
+    {
+      "id": 2,
+      "name": "Maria Souza",
+      "email": "maria@example.com",
+      "password": "senha123"
+    },
+    {
+      "id": "ed39",
+      "fullname": "João Silva",
+      "username": "João Silva",
+      "email": "joao@example.com",
+      "password": "123456",
+      "confirmPassword": "123456",
+      "terms": true
+    }
+  ]
+}
