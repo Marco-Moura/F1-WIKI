@@ -119,5 +119,8 @@ navigateToCareer() {
   this.router.navigate(['/career'])
 }
 
+navigateToLogin(){
+  this.router.navigate(['/login']);
+}
 }
 

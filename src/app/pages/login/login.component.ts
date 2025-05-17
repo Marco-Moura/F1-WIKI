@@ -1,57 +1,58 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { FormsModule } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  imports: [CommonModule, ReactiveFormsModule, FormsModule],
-  styleUrls: ['./login.component.css'] // ajuste se usar outro arquivo de estilo
+  styleUrls: ['./login.component.css'],
+  imports: [CommonModule, ReactiveFormsModule, FormsModule]
 })
-export class LoginComponent implements OnInit {
-loginForm!: FormGroup;
-  loading = false;
-  passwordVisible = false;
+export class LoginComponent {
+  username: string = '';
+  password: string = '';
+  loading: boolean = false;
+  errorMessage: string = '';
 
-  constructor(private fb: FormBuilder, private authService: AuthService) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
-  ngOnInit(): void {
-    this.loginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required]
-    });
-  }
-
-  togglePasswordVisibility(): void {
-    this.passwordVisible = !this.passwordVisible;
-  }
-
-  onLogin(): void {
-    if (this.loginForm.invalid) {
-      this.loginForm.markAllAsTouched();
-      return;
-    }
+  onSubmit(): void {
+    if (!this.username || !this.password) return;
 
     this.loading = true;
-    const { email, password } = this.loginForm.value;
+    this.errorMessage = '';
 
-    this.authService.login(email, password).subscribe({
-      next: (res) => {
-        this.loading = false;
-        if (res.error) {
-          alert('Erro: ' + res.error);
+    this.authService.login(this.username, this.password).subscribe({
+      next: (response) => {
+        if (response.error) {
+          this.errorMessage = response.error;
+          this.loading = false;
         } else {
-          alert('Bem-vindo ' + (res.fullname || 'Usuário') + '!');
-          // Aqui você pode redirecionar, salvar token, etc
+          // Armazene os dados se necessário (ex: token, nome)
+          localStorage.setItem('user', JSON.stringify({
+            fullname: response.fullname,
+            email: response.email
+          }));
+
+          // Redirecionar para o dashboard ou homepage
+          this.router.navigate(['/home']);
         }
       },
       error: (err) => {
+        this.errorMessage = err?.error?.error || 'Login failed. Try again.';
         this.loading = false;
-        alert('Erro na requisição: ' + err.message);
       }
     });
+  }
+
+  navigateToSignup(): void {
+    this.router.navigate(['/signup']);
+  }
+
+  navigateToHome(){
+    this.router.navigate(['/home']);
   }
 }

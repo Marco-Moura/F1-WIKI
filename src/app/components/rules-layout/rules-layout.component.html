@@ -8,11 +8,12 @@
             </div>
             <nav class="hidden md:flex space-x-8">
                 <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToHome()">HOME</button>
-                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToTeams()">TEAMS</button>
-                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToDrivers()">DRIVERS</button>
-                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToHistory()">HISTORY</button>
-                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToRules()">RULES</button>
-                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToCareer()">CAREER</button>
+                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToTeams()">EQUIPES</button>
+                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToDrivers()">CORREDORES</button>
+                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToHistory()">HISTORIA</button>
+                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToRules()">REGRAS</button>
+                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToCareer()">CARREIRA</button>
+                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToLogin()">LOGIN</button>
             </nav>
             <button class="md:hidden text-white" id="mobileMenuBtn">
                 <i class="fas fa-bars text-2xl"></i>
@@ -22,11 +23,11 @@
         <!-- Mobile Menu -->
         <div id="mobileMenu" class="hidden md:hidden bg-gray-800 absolute left-0 right-0 top-full shadow-lg">
             <div class="flex flex-col space-y-4 p-4">
-                <a href="#technical" class="text-white hover:text-red-500 transition duration-300">TECHNICAL</a>
-                <a href="#sporting" class="text-white hover:text-red-500 transition duration-300">SPORTING</a>
-                <a href="#financial" class="text-white hover:text-red-500 transition duration-300">FINANCIAL</a>
-                <a href="#penalties" class="text-white hover:text-red-500 transition duration-300">PENALTIES</a>
-                <a href="#safety" class="text-white hover:text-red-500 transition duration-300">SAFETY</a>
+                <a href="#technical" class="text-white hover:text-red-500 transition duration-300">TECNICO</a>
+                <a href="#sporting" class="text-white hover:text-red-500 transition duration-300">ESPORTIVO</a>
+                <a href="#financial" class="text-white hover:text-red-500 transition duration-300">FINANCEIRO</a>
+                <a href="#penalties" class="text-white hover:text-red-500 transition duration-300">PENALIDADES</a>
+                <a href="#safety" class="text-white hover:text-red-500 transition duration-300">SEGURANÇA</a>
             </div>
         </div>
     </header>
@@ -36,10 +37,10 @@
         <div class="absolute inset-0 bg-gradient-to-r from-black to-transparent z-10"></div>
         <div class="absolute inset-0 flex items-center justify-center z-20">
             <div class="text-center px-4 max-w-4xl">
-                <h1 class="text-4xl md:text-6xl font-bold mb-4">FORMULA 1 REGULATIONS</h1>
-                <p class="text-xl md:text-2xl mb-8">Complete guide to the technical, sporting and financial rules</p>
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">REGULAMENTO DA FÓRMULA 1</h1>
+                <p class="text-xl md:text-2xl mb-8">Guia completo das regras técnicas, desportivas e financeiras</p>
                 <a href="#technical" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full inline-block transition duration-300 animate-underline">
-                    EXPLORE REGULATIONS
+                    EXPLORE OS REGULAMENTOS
                 </a>
             </div>
         </div>
@@ -49,11 +50,11 @@
     <section class="py-8 bg-gray-800 sticky top-16 z-40 shadow-md">
         <div class="container mx-auto px-6">
             <div class="flex overflow-x-auto space-x-4 pb-2 scrollbar-hide">
-                <a href="#technical" class="tab-button px-6 py-2 rounded-full bg-gray-700 text-white whitespace-nowrap transition duration-300">Technical</a>
-                <a href="#sporting" class="tab-button px-6 py-2 rounded-full bg-gray-700 text-white whitespace-nowrap transition duration-300">Sporting</a>
-                <a href="#financial" class="tab-button px-6 py-2 rounded-full bg-gray-700 text-white whitespace-nowrap transition duration-300">Financial</a>
-                <a href="#penalties" class="tab-button px-6 py-2 rounded-full bg-gray-700 text-white whitespace-nowrap transition duration-300">Penalties</a>
-                <a href="#safety" class="tab-button px-6 py-2 rounded-full bg-gray-700 text-white whitespace-nowrap transition duration-300">Safety</a>
+                <a href="#technical" class="tab-button px-6 py-2 rounded-full bg-gray-700 text-white whitespace-nowrap transition duration-300">Tecnico</a>
+                <a href="#sporting" class="tab-button px-6 py-2 rounded-full bg-gray-700 text-white whitespace-nowrap transition duration-300">Esportivo</a>
+                <a href="#financial" class="tab-button px-6 py-2 rounded-full bg-gray-700 text-white whitespace-nowrap transition duration-300">Financeiro</a>
+                <a href="#penalties" class="tab-button px-6 py-2 rounded-full bg-gray-700 text-white whitespace-nowrap transition duration-300">Penalidades</a>
+                <a href="#safety" class="tab-button px-6 py-2 rounded-full bg-gray-700 text-white whitespace-nowrap transition duration-300">Segurança</a>
             </div>
         </div>
     </section>
@@ -64,7 +65,7 @@
         <section id="technical" class="regulation-section mb-20 fade-in">
             <h2 class="text-3xl font-bold mb-8 border-b border-gray-700 pb-4 flex items-center">
                 <i class="fas fa-cogs text-red-600 mr-4"></i>
-                TECHNICAL REGULATIONS
+                REGULAMENTO TÉCNICO
             </h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -81,26 +82,26 @@
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>Maximum width: 2000mm</span>
+                            <span>Largura máxima: 2000mm</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>Front wing width: 2000mm (max), 3-5 elements</span>
+                            <span>Largura da asa dianteira: 2000mm (max), 3-5 elementos</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>Rear wing width: 1050mm (max), 2 elements</span>
+                            <span>Largura da asa traseira: 1050mm (max), 2 elementos</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>Ground effect underbody with Venturi tunnels</span>
+                            <span>Efeito solo na parte inferior da carroceria com túneis Venturi</span>
                         </li>
                     </ul>
                     <div class="mt-6 technical-diagram p-4 rounded-lg">
-                        <img src="https://www.formula1.com/content/dam/fom-website/manual/Technical/2022CarLaunch/Technical%20animation%20-%20Chassis.jpg.transform/6col/image.jpg" 
+                        <img src="https://www.the-race.com/content/images/2024/05/43-24-F1-2026-CAR-DIMENSION-COMPARISON.jpg" 
                              alt="Chassis Diagram" 
                              class="w-full h-auto rounded">
-                        <p class="text-sm text-gray-400 mt-2">2023 Chassis Technical Diagram</p>
+                        <p class="text-sm text-gray-400 mt-2">Diagrama técnico do chassi 2025</p>
                     </div>
                 </div>
                 
@@ -108,39 +109,39 @@
                 <div class="bg-gray-800 p-6 rounded-lg regulation-card transition duration-300">
                     <div class="flex items-center mb-4">
                         <i class="fas fa-bolt text-red-600 text-2xl mr-3"></i>
-                        <h3 class="text-xl font-bold">POWER UNIT</h3>
+                        <h3 class="text-xl font-bold">UNIDADE DE ENERGIA</h3>
                     </div>
                     <ul class="space-y-3 text-gray-300">
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>1.6L V6 turbocharged hybrid</span>
+                            <span>1.6L V6 turboalimentado híbrido</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>15,000 rpm maximum</span>
+                            <span>15.000 rpm máximo</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>MGU-K: 120kW (161hp) output</span>
+                            <span>MGU-K: potência de 120 kW (161 cv)</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>MGU-H: Recovers energy from turbo</span>
+                            <span>MGU-H: Recupera energia do turbo</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>Fuel flow limit: 100kg/hour (max)</span>
+                            <span>Limite de fluxo de combustível: 100 kg/hora (máx.)</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>3 power units per driver per season</span>
+                            <span>3 unidades de potência por piloto por temporada</span>
                         </li>
                     </ul>
                     <div class="mt-6 technical-diagram p-4 rounded-lg">
-                        <img src="https://www.formula1.com/content/dam/fom-website/manual/Technical/2022CarLaunch/Technical%20animation%20-%20Power%20Unit.jpg.transform/6col/image.jpg" 
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRckEczL1ttQSSTJjwo7rA_OuY6VppM4Aiccw&s" 
                              alt="Power Unit Diagram" 
                              class="w-full h-auto rounded">
-                        <p class="text-sm text-gray-400 mt-2">Power Unit Components</p>
+                        <p class="text-sm text-gray-400 mt-2">Componentes da unidade de energia</p>
                     </div>
                 </div>
                 
@@ -148,35 +149,35 @@
                 <div class="bg-gray-800 p-6 rounded-lg regulation-card transition duration-300">
                     <div class="flex items-center mb-4">
                         <i class="fas fa-wind text-red-600 text-2xl mr-3"></i>
-                        <h3 class="text-xl font-bold">AERODYNAMICS</h3>
+                        <h3 class="text-xl font-bold">AERODINÂMICA</h3>
                     </div>
                     <ul class="space-y-3 text-gray-300">
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>Simplified front wing with outwash prevention</span>
+                            <span>Asa dianteira simplificada com prevenção de escoamento</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>Simplified rear wing with no cascades</span>
+                            <span>Asa traseira simplificada sem cascatas</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>No bargeboards or complex turning vanes</span>
+                            <span>Sem pranchas de contenção ou palhetas giratórias complexas</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>Wheel wake control devices (wheel covers)</span>
+                            <span>Dispositivos de controle de esteira de rodas (capas de rodas)</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>Ground effect underbody with standardized diffuser</span>
+                            <span>Parte inferior da carroceria com efeito solo e difusor padronizado</span>
                         </li>
                     </ul>
                     <div class="mt-6 technical-diagram p-4 rounded-lg">
-                        <img src="https://www.formula1.com/content/dam/fom-website/manual/Technical/2022CarLaunch/Technical%20animation%20-%20Aerodynamics.jpg.transform/6col/image.jpg" 
+                        <img src="https://miro.medium.com/v2/resize:fit:1400/0*Ynpa8RztyvnjVgcg" 
                              alt="Aerodynamics Diagram" 
                              class="w-full h-auto rounded">
-                        <p class="text-sm text-gray-400 mt-2">Aerodynamic Flow Visualization</p>
+                        <p class="text-sm text-gray-400 mt-2">Visualização de Fluxo Aerodinâmico</p>
                     </div>
                 </div>
                 
@@ -184,28 +185,28 @@
                 <div class="bg-gray-800 p-6 rounded-lg regulation-card transition duration-300">
                     <div class="flex items-center mb-4">
                         <i class="fas fa-tire text-red-600 text-2xl mr-3"></i>
-                        <h3 class="text-xl font-bold">TYRES</h3>
+                        <h3 class="text-xl font-bold">PNEUS</h3>
                     </div>
                     <ul class="space-y-3 text-gray-300">
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>18-inch diameter (was 13-inch until 2021)</span>
+                            <span>18 polegadas de diâmetro (era 13 polegadas até 2021)</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>5 compounds: C1-C5 (hard to soft) + intermediates + wets</span>
+                            <span>5 compostos: C1-C5 (duro a macio) + intermediários + úmidos</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>Minimum starting pressures regulated</span>
+                            <span>Pressões mínimas de partida reguladas</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>Heating blankets limited to 70°C (front) and 50°C (rear)</span>
+                            <span>Mantas de aquecimento limitadas a 70°C (dianteira) e 50°C (traseira)</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>13 sets of dry tires allocated per weekend</span>
+                            <span>13 jogos de pneus secos alocados por fim de semana</span>
                         </li>
                     </ul>
                     <div class="mt-6 flex justify-between items-center">
@@ -216,7 +217,7 @@
                             <div class="w-8 h-8 rounded-full bg-green-600 border border-green-400"></div>
                             <div class="w-8 h-8 rounded-full bg-blue-600 border border-blue-400"></div>
                         </div>
-                        <p class="text-sm text-gray-400">Pirelli Tire Compounds</p>
+                        <p class="text-sm text-gray-400">Compostos para pneus Pirelli</p>
                     </div>
                 </div>
                 
@@ -224,12 +225,12 @@
                 <div class="bg-gray-800 p-6 rounded-lg regulation-card transition duration-300">
                     <div class="flex items-center mb-4">
                         <i class="fas fa-shield-alt text-red-600 text-2xl mr-3"></i>
-                        <h3 class="text-xl font-bold">SAFETY COMPONENTS</h3>
+                        <h3 class="text-xl font-bold">COMPONENTES DE SEGURANÇA</h3>
                     </div>
                     <ul class="space-y-3 text-gray-300">
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>Halo: 3rd generation titanium structure</span>
+                            <span>Halo: estrutura de titânio de 3ª geração</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
@@ -237,57 +238,51 @@
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>Side impact protection panels</span>
+                            <span>Painéis de proteção contra impactos laterais</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>Fuel cell with crash-resistant construction</span>
+                            <span>Célula de combustível com construção resistente a colisões</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>6-point seat belts with quick release</span>
+                            <span>Cintos de segurança de 6 pontos com liberação rápida</span>
                         </li>
                     </ul>
-                    <div class="mt-6 technical-diagram p-4 rounded-lg">
-                        <img src="https://www.formula1.com/content/dam/fom-website/manual/Technical/2022CarLaunch/Technical%20animation%20-%20Safety.jpg.transform/6col/image.jpg" 
-                             alt="Safety Components" 
-                             class="w-full h-auto rounded">
-                        <p class="text-sm text-gray-400 mt-2">Safety Features Diagram</p>
-                    </div>
                 </div>
                 
                 <!-- Other Technical -->
                 <div class="bg-gray-800 p-6 rounded-lg regulation-card transition duration-300">
                     <div class="flex items-center mb-4">
                         <i class="fas fa-microchip text-red-600 text-2xl mr-3"></i>
-                        <h3 class="text-xl font-bold">OTHER TECHNICAL</h3>
+                        <h3 class="text-xl font-bold">OUTROS TÉCNICOS</h3>
                     </div>
                     <ul class="space-y-3 text-gray-300">
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>Standardized ECU (Electronic Control Unit)</span>
+                            <span>ECU padronizada (Unidade de Controle Eletrônico)</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>Fuel: 10% sustainable ethanol blend</span>
+                            <span>Combustível: mistura de 10% de etanol sustentável</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>No traction control or ABS</span>
+                            <span>Sem controle de tração ou ABS</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>Limited telemetry data transmission</span>
+                            <span>Transmissão limitada de dados de telemetria</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>Cost cap on certain development areas</span>
+                            <span>Limite de custo em certas áreas de desenvolvimento</span>
                         </li>
                     </ul>
                     <div class="mt-6">
                         <div class="flex items-center text-sm text-gray-400">
                             <i class="fas fa-info-circle mr-2"></i>
-                            <span>All components must pass FIA crash tests</span>
+                            <span>Todos os componentes devem passar nos testes de colisão da FIA</span>
                         </div>
                     </div>
                 </div>
@@ -298,7 +293,7 @@
         <section id="sporting" class="regulation-section mb-20 fade-in">
             <h2 class="text-3xl font-bold mb-8 border-b border-gray-700 pb-4 flex items-center">
                 <i class="fas fa-flag-checkered text-red-600 mr-4"></i>
-                SPORTING REGULATIONS
+                REGULAMENTOS ESPORTIVOS
             </h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -306,36 +301,36 @@
                 <div class="bg-gray-800 p-6 rounded-lg regulation-card transition duration-300">
                     <div class="flex items-center mb-4">
                         <i class="fas fa-calendar-day text-red-600 text-2xl mr-3"></i>
-                        <h3 class="text-xl font-bold">RACE WEEKEND FORMAT</h3>
+                        <h3 class="text-xl font-bold">FORMATO DE FIM DE SEMANA DE CORRIDA</h3>
                     </div>
                     <ul class="space-y-3 text-gray-300">
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span><strong>Friday:</strong> 2 practice sessions (FP1 & FP2)</span>
+                            <span><strong>Sexta:</strong> 2 sessões de treino (FP1 e FP2)</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span><strong>Saturday:</strong> FP3 + Qualifying (Q1, Q2, Q3)</span>
+                            <span><strong>Sabado:</strong> FP3 + Qualificação (Q1, Q2, Q3)</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span><strong>Sunday:</strong> Race (305km max distance, ~2hr time limit)</span>
+                            <span><strong>Domingo:</strong> Corrida (distância máxima de 305 km, limite de tempo de ~2 horas)</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>6 Sprint weekends with different format (FP1, Qualifying, Sprint, Race)</span>
+                            <span>6 fins de semana de Sprint com formatos diferentes (FP1, Qualificação, Sprint, Corrida)</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>Parc fermé rules after qualifying (limited setup changes)</span>
+                            <span>Regras do parque fechado após a qualificação (mudanças limitadas na configuração)</span>
                         </li>
                     </ul>
                     <div class="mt-6 bg-gray-700 p-4 rounded-lg">
-                        <h4 class="font-bold mb-2">Qualifying Elimination:</h4>
+                        <h4 class="font-bold mb-2">Eliminação de qualificação:</h4>
                         <ul class="space-y-2 text-sm">
-                            <li><strong>Q1:</strong> 18 min, bottom 5 eliminated</li>
-                            <li><strong>Q2:</strong> 15 min, bottom 5 eliminated</li>
-                            <li><strong>Q3:</strong> 12 min, determines top 10</li>
+                            <li><strong>Q1:</strong> 18 min, os 5 últimos eliminados</li>
+                            <li><strong>Q2:</strong> 15 min, os 5 últimos eliminados</li>
+                            <li><strong>Q3:</strong> 12 min, determina os 10 melhores</li>
                         </ul>
                     </div>
                 </div>
@@ -344,36 +339,36 @@
                 <div class="bg-gray-800 p-6 rounded-lg regulation-card transition duration-300">
                     <div class="flex items-center mb-4">
                         <i class="fas fa-running text-red-600 text-2xl mr-3"></i>
-                        <h3 class="text-xl font-bold">RACE PROCEDURES</h3>
+                        <h3 class="text-xl font-bold">PROCEDIMENTOS DE CORRIDA</h3>
                     </div>
                     <ul class="space-y-3 text-gray-300">
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span><strong>Formation lap:</strong> Determines starting order</span>
+                            <span><strong>Volta de formação:</strong> Determina a ordem de início</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span><strong>Standing starts:</strong> From grid positions</span>
+                            <span><strong>Começa em pé:</strong> Das posições da grade</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span><strong>Pit stops:</strong> Minimum 2.5 sec stationary (with tire change)</span>
+                            <span><strong>Pit stops:</strong>Mínimo de 2,5 segundos parado (com troca de pneu)</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span><strong>Safety Car:</strong> Neutralizes race, no overtaking</span>
+                            <span><strong> Carro de segurança:</strong> Neutraliza a corrida, sem ultrapassagens</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span><strong>Virtual Safety Car:</strong> Maintain gaps, speed limited</span>
+                            <span><strong>Carro de segurança virtual:</strong> Mantenha as lacunas, velocidade limitada</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span><strong>Red Flag:</strong> Race stopped, may be restarted</span>
+                            <span><strong>Bandeira vermelha:</strong> Corrida interrompida, pode ser reiniciada</span>
                         </li>
                     </ul>
                     <div class="mt-6 bg-gray-700 p-4 rounded-lg">
-                        <h4 class="font-bold mb-2">Points System:</h4>
+                        <h4 class="font-bold mb-2">Sistema de Pontos:</h4>
                         <div class="grid grid-cols-5 gap-2 text-center text-sm">
                             <div class="bg-gray-600 p-2 rounded">1st: 25</div>
                             <div class="bg-gray-600 p-2 rounded">2nd: 18</div>
@@ -386,7 +381,7 @@
                             <div class="bg-gray-600 p-2 rounded">9th: 2</div>
                             <div class="bg-gray-600 p-2 rounded">10th: 1</div>
                         </div>
-                        <p class="text-xs mt-2 text-gray-400">+1 point for fastest lap (if in top 10)</p>
+                        <p class="text-xs mt-2 text-gray-400">+1 ponto para a volta mais rápida (se estiver entre os 10 primeiros)</p>
                     </div>
                 </div>
                 
@@ -394,7 +389,7 @@
                 <div class="bg-gray-800 p-6 rounded-lg regulation-card transition duration-300">
                     <div class="flex items-center mb-4">
                         <i class="fas fa-user-shield text-red-600 text-2xl mr-3"></i>
-                        <h3 class="text-xl font-bold">DRIVER REQUIREMENTS</h3>
+                        <h3 class="text-xl font-bold">REQUISITOS DO MOTORISTA</h3>
                     </div>
                     <ul class="space-y-3 text-gray-300">
                         <li class="flex items-start">
@@ -403,28 +398,28 @@
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>Minimum age: 18 years</span>
+                            <span>Idade mínima: 18 anos</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>Mandatory FIA medical checks</span>
+                            <span>Verificações médicas obrigatórias da FIA</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>Helmet designs must be approved</span>
+                            <span>Os projetos de capacetes devem ser aprovados</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>Driver weight minimum: 80kg (including seat)</span>
+                            <span>Peso mínimo do motorista: 80 kg (incluindo assento)</span>
                         </li>
                     </ul>
                     <div class="mt-6 bg-gray-700 p-4 rounded-lg">
-                        <h4 class="font-bold mb-2">Super License Points Example:</h4>
+                        <h4 class="font-bold mb-2">Exemplo de pontos de superlicença:</h4>
                         <ul class="space-y-1 text-sm">
-                            <li>1st in F2: 40 pts</li>
-                            <li>1st in F3: 30 pts</li>
-                            <li>1st in W Series: 15 pts</li>
-                            <li>1st in IndyCar: 40 pts</li>
+                            <li>1st na F2: 40 pts</li>
+                            <li>1st na F3: 30 pts</li>
+                            <li>1º na Série W: 15 pts</li>
+                            <li>1º na IndyCar: 40 pontos</li>
                         </ul>
                     </div>
                 </div>
@@ -433,36 +428,36 @@
                 <div class="bg-gray-800 p-6 rounded-lg regulation-card transition duration-300">
                     <div class="flex items-center mb-4">
                         <i class="fas fa-users text-red-600 text-2xl mr-3"></i>
-                        <h3 class="text-xl font-bold">TEAM REQUIREMENTS</h3>
+                        <h3 class="text-xl font-bold">REQUISITOS DA EQUIPE</h3>
                     </div>
                     <ul class="space-y-3 text-gray-300">
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>Maximum 2 cars per team</span>
+                            <span>Máximo de 2 carros por equipe</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>Minimum 2 race drivers per season</span>
+                            <span>Mínimo de 2 pilotos de corrida por temporada</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>1 reserve driver must be nominated</span>
+                            <span>1 motorista reserva deve ser nomeado</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>Limited testing (3 pre-season + 2 in-season days)</span>
+                            <span>Testes limitados (3 dias de pré-temporada + 2 dias de temporada)</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>Wind tunnel and CFD restrictions</span>
+                            <span>Restrições de túnel de vento e CFD</span>
                         </li>
                     </ul>
                     <div class="mt-6 bg-gray-700 p-4 rounded-lg">
-                        <h4 class="font-bold mb-2">Team Personnel:</h4>
+                        <h4 class="font-bold mb-2">Pessoal da equipe:</h4>
                         <ul class="space-y-1 text-sm">
-                            <li>Maximum 60 team personnel at track</li>
-                            <li>Only 4 mechanics allowed per car during pit stops</li>
-                            <li>Team principal must be registered</li>
+                            <li>Máximo de 60 pessoas na equipe na pista</li>
+                            <li>Apenas 4 mecânicos são permitidos por carro durante os pit stops</li>
+                            <li>O chefe da equipe deve ser registrado</li>
                         </ul>
                     </div>
                 </div>
@@ -473,7 +468,7 @@
         <section id="financial" class="regulation-section mb-20 fade-in">
             <h2 class="text-3xl font-bold mb-8 border-b border-gray-700 pb-4 flex items-center">
                 <i class="fas fa-money-bill-wave text-red-600 mr-4"></i>
-                FINANCIAL REGULATIONS
+                REGULAMENTOS FINANCEIROS
             </h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -481,35 +476,35 @@
                 <div class="bg-gray-800 p-6 rounded-lg regulation-card transition duration-300">
                     <div class="flex items-center mb-4">
                         <i class="fas fa-lock text-red-600 text-2xl mr-3"></i>
-                        <h3 class="text-xl font-bold">COST CAP</h3>
+                        <h3 class="text-xl font-bold">LIMITE DE CUSTO</h3>
                     </div>
                     <ul class="space-y-3 text-gray-300">
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span><strong>2023 cap:</strong> $135 million (21-race season)</span>
+                            <span><strong>Limite de 2025:</strong> US$ 135 milhões (temporada de 21 corridas)</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>Applies to performance-related spending</span>
+                            <span>Aplica-se a gastos relacionados ao desempenho</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>Excludes: Driver salaries, top 3 personnel salaries, marketing, travel</span>
+                            <span>Exclui: salários de motoristas, salários dos 3 principais funcionários, marketing, viagens</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>Inflation adjustment mechanism</span>
+                            <span>Mecanismo de ajuste de inflação</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>Audits conducted by FIA</span>
+                            <span>Auditorias realizadas pela FIA</span>
                         </li>
                     </ul>
                     <div class="mt-6 bg-gray-700 p-4 rounded-lg">
-                        <h4 class="font-bold mb-2">Penalties for Breach:</h4>
+                        <h4 class="font-bold mb-2">Penalidades por violação:</h4>
                         <ul class="space-y-1 text-sm">
-                            <li>Minor overspend: Financial penalty + reduction in testing</li>
-                            <li>Major overspend: Points deduction, possible exclusion</li>
+                            <li>Pequenos gastos excessivos: penalidade financeira + redução nos testes</li>
+                            <li>Grandes gastos excessivos: dedução de pontos, possível exclusão</li>
                         </ul>
                     </div>
                 </div>
@@ -518,36 +513,36 @@
                 <div class="bg-gray-800 p-6 rounded-lg regulation-card transition duration-300">
                     <div class="flex items-center mb-4">
                         <i class="fas fa-chart-line text-red-600 text-2xl mr-3"></i>
-                        <h3 class="text-xl font-bold">OTHER FINANCIAL RULES</h3>
+                        <h3 class="text-xl font-bold">OUTRAS REGRAS FINANCEIRAS</h3>
                     </div>
                     <ul class="space-y-3 text-gray-300">
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>Prize money distribution based on championship position</span>
+                            <span>Distribuição de prêmios em dinheiro com base na posição no campeonato</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>Long-standing teams receive heritage payments</span>
+                            <span>Equipes de longa data recebem pagamentos de patrimônio</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>New teams must pay $200m anti-dilution fee</span>
+                            <span>Novas equipes devem pagar taxa antidiluição de US$ 200 milhões</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>Limited sponsorship from tobacco companies</span>
+                            <span>Patrocínio limitado de empresas de tabaco</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>Restrictions on manufacturer payments to customer teams</span>
+                            <span>Restrições aos pagamentos do fabricante às equipes do cliente</span>
                         </li>
                     </ul>
                     <div class="mt-6 bg-gray-700 p-4 rounded-lg">
-                        <h4 class="font-bold mb-2">Development Restrictions:</h4>
+                        <h4 class="font-bold mb-2">Restrições de Desenvolvimento:</h4>
                         <ul class="space-y-1 text-sm">
-                            <li>Wind tunnel time based on championship position</li>
-                            <li>CFD simulation limits</li>
-                            <li>Restricted number of upgrades per season</li>
+                            <li>Tempo no túnel de vento com base na posição do campeonato</li>
+                            <li>Limites de simulação de CFD</li>
+                            <li>Número restrito de atualizações por temporada</li>
                         </ul>
                     </div>
                 </div>
@@ -558,7 +553,7 @@
         <section id="penalties" class="regulation-section mb-20 fade-in">
             <h2 class="text-3xl font-bold mb-8 border-b border-gray-700 pb-4 flex items-center">
                 <i class="fas fa-gavel text-red-600 mr-4"></i>
-                PENALTIES
+                PENALIDADES
             </h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -566,40 +561,40 @@
                 <div class="bg-gray-800 p-6 rounded-lg regulation-card transition duration-300">
                     <div class="flex items-center mb-4">
                         <i class="fas fa-car-crash text-red-600 text-2xl mr-3"></i>
-                        <h3 class="text-xl font-bold">ON-TRACK INFRACTIONS</h3>
+                        <h3 class="text-xl font-bold">INFRAÇÕES NA PISTA</h3>
                     </div>
                     <ul class="space-y-3 text-gray-300">
                         <li class="flex items-start">
                             <i class="fas fa-exclamation-triangle text-yellow-500 mt-1 mr-2"></i>
-                            <span><strong>False start:</strong> 5 or 10 sec stop/go</span>
+                            <span><strong>Início falso:</strong> Parar/andar por 5 ou 10 segundos</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-exclamation-triangle text-yellow-500 mt-1 mr-2"></i>
-                            <span><strong>Speeding in pit lane:</strong> Fine or time penalty</span>
+                            <span><strong>Excesso de velocidade no pit lane:</strong>Multa ou penalidade de tempo</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-exclamation-triangle text-yellow-500 mt-1 mr-2"></i>
-                            <span><strong>Unsafe release:</strong> 5 or 10 sec stop/go</span>
+                            <span><strong>Liberação insegura:</strong> Parar/andar por 5 ou 10 segundos</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-exclamation-triangle text-yellow-500 mt-1 mr-2"></i>
-                            <span><strong>Causing a collision:</strong> 5-10 sec or grid drop</span>
+                            <span><strong>Causando uma colisão:</strong> 5-10 segundos ou queda da grade</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-exclamation-triangle text-yellow-500 mt-1 mr-2"></i>
-                            <span><strong>Ignoring blue flags:</strong> 5 sec or drive-through</span>
+                            <span><strong>Ignorando bandeiras azuis:</strong> 5 segundos ou drive-through</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-exclamation-triangle text-yellow-500 mt-1 mr-2"></i>
-                            <span><strong>Track limits violations:</strong> Lap times deleted</span>
+                            <span><strong>Rastrear violações de limites:</strong> Tempos de volta excluídos</span>
                         </li>
                     </ul>
                     <div class="mt-6 bg-gray-700 p-4 rounded-lg">
-                        <h4 class="font-bold mb-2">Penalty Points System:</h4>
+                        <h4 class="font-bold mb-2">Sistema de pontos de penalidade:</h4>
                         <ul class="space-y-1 text-sm">
-                            <li>Points stay on license for 12 months</li>
-                            <li>12 points = automatic race ban</li>
-                            <li>Typical infraction: 1-3 points</li>
+                            <li>Os pontos permanecem na licença por 12 meses</li>
+                            <li>12 pontos = banimento automático da corrida</li>
+                            <li>Infração típica: 1-3 pontos</li>
                         </ul>
                     </div>
                 </div>
@@ -608,37 +603,37 @@
                 <div class="bg-gray-800 p-6 rounded-lg regulation-card transition duration-300">
                     <div class="flex items-center mb-4">
                         <i class="fas fa-tools text-red-600 text-2xl mr-3"></i>
-                        <h3 class="text-xl font-bold">TECHNICAL INFRACTIONS</h3>
+                        <h3 class="text-xl font-bold">INFRAÇÕES TÉCNICAS</h3>
                     </div>
                     <ul class="space-y-3 text-gray-300">
                         <li class="flex items-start">
                             <i class="fas fa-ban text-red-500 mt-1 mr-2"></i>
-                            <span><strong>Illegal car parts:</strong> Disqualification</span>
+                            <span><strong>Peças de carros ilegais:</strong> Desqualificação</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-ban text-red-500 mt-1 mr-2"></i>
-                            <span><strong>Underweight car:</strong> Disqualification</span>
+                            <span><strong>Carro abaixo do peso:</strong> Desqualificação</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-ban text-red-500 mt-1 mr-2"></i>
-                            <span><strong>Fuel flow violations:</strong> Disqualification</span>
+                            <span><strong>Violações de fluxo de combustível:</strong> Desqualificação</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-exclamation-triangle text-yellow-500 mt-1 mr-2"></i>
-                            <span><strong>Minor technical breaches:</strong> Grid penalties</span>
+                            <span><strong>Pequenas violações técnicas:</strong> Penalidades de grade</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-exclamation-triangle text-yellow-500 mt-1 mr-2"></i>
-                            <span><strong>Power unit component changes:</strong> Grid drops</span>
+                            <span><strong>Mudanças nos componentes da unidade de potência:</strong> Quedas de grade</span>
                         </li>
                     </ul>
                     <div class="mt-6 bg-gray-700 p-4 rounded-lg">
-                        <h4 class="font-bold mb-2">Power Unit Penalties:</h4>
+                        <h4 class="font-bold mb-2">Penalidades da unidade de potência:</h4>
                         <ul class="space-y-1 text-sm">
-                            <li>ICE: 10 places</li>
-                            <li>MGU-K: 5 places</li>
-                            <li>Turbo: 5 places</li>
-                            <li>Exceeding allocation: Back of grid</li>
+                            <li>ICE: 10 lugares</li>
+                            <li>MGU-K: 5 vagas</li>
+                            <li>Turbo: 5 lugares</li>
+                            <li>Excedendo alocação: Fim da grade</li>
                         </ul>
                     </div>
                 </div>
@@ -649,7 +644,7 @@
         <section id="safety" class="regulation-section mb-20 fade-in">
             <h2 class="text-3xl font-bold mb-8 border-b border-gray-700 pb-4 flex items-center">
                 <i class="fas fa-medal text-red-600 mr-4"></i>
-                SAFETY REGULATIONS
+                REGULAMENTOS DE SEGURANÇA
             </h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -657,37 +652,37 @@
                 <div class="bg-gray-800 p-6 rounded-lg regulation-card transition duration-300">
                     <div class="flex items-center mb-4">
                         <i class="fas fa-car-side text-red-600 text-2xl mr-3"></i>
-                        <h3 class="text-xl font-bold">CAR SAFETY</h3>
+                        <h3 class="text-xl font-bold">SEGURANÇA DO CARRO</h3>
                     </div>
                     <ul class="space-y-3 text-gray-300">
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span><strong>Halo:</strong> Mandatory titanium structure</span>
+                            <span><strong>Halo:</strong> Estrutura obrigatória de titânio</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span><strong>Headrest:</strong> High-impact foam padding</span>
+                            <span><strong>Encosto de cabeça:</strong> Estofamento de espuma de alto impacto</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span><strong>Fuel cell:</strong> Crash-resistant construction</span>
+                            <span><strong>Célula de combustível:</strong> Construção resistente a colisões</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span><strong>Extinguishers:</strong> Automatic and manual systems</span>
+                            <span><strong>Extintores:</strong> Sistemas automáticos e manuais</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span><strong>Wheel tethers:</strong> Keep wheels attached in crashes</span>
+                            <span><strong>Amarras de roda:</strong> Mantenha as rodas presas em caso de acidentes</span>
                         </li>
                     </ul>
                     <div class="mt-6 bg-gray-700 p-4 rounded-lg">
-                        <h4 class="font-bold mb-2">Crash Test Requirements:</h4>
+                        <h4 class="font-bold mb-2">Requisitos de teste de colisão:</h4>
                         <ul class="space-y-1 text-sm">
-                            <li>Frontal impact at 15m/s</li>
-                            <li>Rear impact at 11m/s</li>
-                            <li>Side impact at 10m/s</li>
-                            <li>Roll structure must withstand 60kN</li>
+                            <li>Impacto frontal a 15m/s</li>
+                            <li>Impacto traseiro a 11m/s</li>
+                            <li>Impacto lateral a 10m/s</li>
+                            <li>A estrutura do rolo deve suportar 60 kN</li>
                         </ul>
                     </div>
                 </div>
@@ -696,36 +691,36 @@
                 <div class="bg-gray-800 p-6 rounded-lg regulation-card transition duration-300">
                     <div class="flex items-center mb-4">
                         <i class="fas fa-user-astronaut text-red-600 text-2xl mr-3"></i>
-                        <h3 class="text-xl font-bold">DRIVER SAFETY</h3>
+                        <h3 class="text-xl font-bold">SEGURANÇA DO MOTORISTA</h3>
                     </div>
                     <ul class="space-y-3 text-gray-300">
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span><strong>Helmet:</strong> FIA 8860-2018 standard</span>
+                            <span><strong>Capacete:</strong> Norma FIA 8860-2018</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span><strong>HANS device:</strong> Head and neck support</span>
+                            <span><strong>Dispositivo HANS:</strong>Apoio de cabeça e pescoço</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span><strong>Race suit:</strong> Multi-layer fireproof material</span>
+                            <span><strong>Traje De Corrida:</strong> Material multicamadas à prova de fogo</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span><strong>Gloves & shoes:</strong> Fireproof materials</span>
+                            <span><strong>Luvas e sapatos:</strong> Materiais à prova de fogo</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span><strong>Medical car:</strong> Follows field for immediate response</span>
+                            <span><strong>Carro médico:</strong> Segue campo para resposta imediata</span>
                         </li>
                     </ul>
                     <div class="mt-6 bg-gray-700 p-4 rounded-lg">
-                        <h4 class="font-bold mb-2">Helmet Standards:</h4>
+                        <h4 class="font-bold mb-2">Padrões de capacete:</h4>
                         <ul class="space-y-1 text-sm">
-                            <li>Withstands 800°C for 45 seconds</li>
-                            <li>Impact absorption up to 300G</li>
-                            <li>Visor penetration resistance</li>
+                            <li>Suporta 800°C por 45 segundos</li>
+                            <li>Absorção de impacto até 300G</li>
+                            <li>Resistência à penetração da viseira</li>
                         </ul>
                     </div>
                 </div>
@@ -734,48 +729,48 @@
                 <div class="bg-gray-800 p-6 rounded-lg regulation-card transition duration-300">
                     <div class="flex items-center mb-4">
                         <i class="fas fa-road text-red-600 text-2xl mr-3"></i>
-                        <h3 class="text-xl font-bold">TRACK SAFETY</h3>
+                        <h3 class="text-xl font-bold">SEGURANÇA NA PISTA</h3>
                     </div>
                     <ul class="space-y-3 text-gray-300">
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span><strong>Run-off areas:</strong> Minimum gravel trap/Tarmac</span>
+                            <span><strong>Áreas de escoamento:</strong> Armadilha de cascalho mínima/Asfalto</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span><strong>Barriers:</strong> SAFER/Tecpro/Tire walls</span>
+                            <span><strong>Barreiras:</strong> SAFER/Tecpro/Paredes de pneus</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span><strong>Marshals:</strong> Trained personnel at key points</span>
+                            <span><strong>Marshalls:</strong> Pessoal treinado em pontos-chave</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span><strong>Medical center:</strong> Fully equipped on-site</span>
+                            <span><strong>Centro médico:</strong> Totalmente equipado no local</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span><strong>Lighting:</strong> Flags and LED panels</span>
+                            <span><strong>Iluminação:</strong> Bandeiras e painéis de LED</span>
                         </li>
                     </ul>
                     <div class="mt-6 bg-gray-700 p-4 rounded-lg">
-                        <h4 class="font-bold mb-2">Flag Meanings:</h4>
+                        <h4 class="font-bold mb-2">Significados da bandeira:</h4>
                         <div class="grid grid-cols-2 gap-2 text-sm">
                             <div class="flex items-center">
                                 <div class="w-4 h-4 bg-yellow-500 mr-2"></div>
-                                <span>Yellow: Danger</span>
+                                <span>Amarelo: Perigo</span>
                             </div>
                             <div class="flex items-center">
                                 <div class="w-4 h-4 bg-red-500 mr-2"></div>
-                                <span>Red: Session stopped</span>
+                                <span>Vermelho: Sessão interrompida</span>
                             </div>
                             <div class="flex items-center">
                                 <div class="w-4 h-4 bg-green-500 mr-2"></div>
-                                <span>Green: Track clear</span>
+                                <span>Verde: trilha livre</span>
                             </div>
                             <div class="flex items-center">
                                 <div class="w-4 h-4 bg-blue-500 mr-2"></div>
-                                <span>Blue: Faster car</span>
+                                <span>Azul: Carro mais rápido</span>
                             </div>
                         </div>
                     </div>
@@ -785,36 +780,36 @@
                 <div class="bg-gray-800 p-6 rounded-lg regulation-card transition duration-300">
                     <div class="flex items-center mb-4">
                         <i class="fas fa-clipboard-list text-red-600 text-2xl mr-3"></i>
-                        <h3 class="text-xl font-bold">PROCEDURAL SAFETY</h3>
+                        <h3 class="text-xl font-bold">SEGURANÇA PROCESSUAL</h3>
                     </div>
                     <ul class="space-y-3 text-gray-300">
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span><strong>Virtual Safety Car:</strong> Speed limited to prevent accidents</span>
+                            <span><strong>Carro de segurança virtual:</strong> Velocidade limitada para evitar acidentes</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span><strong>Safety Car:</strong> Neutralizes race for incident clearance</span>
+                            <span><strong>Carro de segurança:</strong> Neutraliza a corrida pela resolução do incidente</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span><strong>Red Flag:</strong> Stops session for major incidents</span>
+                            <span><strong>Bandeira vermelha:</strong>Interrompe a sessão em caso de incidentes graves</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span><strong>Medical checks:</strong> Mandatory after big impacts</span>
+                            <span><strong>Exames médicos:</strong> Obrigatório após grandes impactos</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span><strong>Extraction practice:</strong> Regular drills for marshals</span>
+                            <span><strong>Prática de extração:</strong> Regular drills for marshals</span>
                         </li>
                     </ul>
                     <div class="mt-6 bg-gray-700 p-4 rounded-lg">
-                        <h4 class="font-bold mb-2">Safety Innovations:</h4>
+                        <h4 class="font-bold mb-2">Inovações de segurança:</h4>
                         <ul class="space-y-1 text-sm">
-                            <li>Halo introduced in 2018</li>
-                            <li>Headrest improvements after 2016</li>
-                            <li>Stronger wheel tethers after 2020</li>
+                            <li>Halo lançado em 2018</li>
+                            <li>Melhorias no encosto de cabeça após 2016</li>
+                            <li>Amarras de roda mais fortes após 2020</li>
                         </ul>
                     </div>
                 </div>
@@ -828,7 +823,7 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                 <div>
                     <img src="/assets/FORMLA_WIKI_LOGO_RODAPÉ-removebg-preview.png" alt="F1 Logo" class="h-15 mb-4">
-                    <p class="text-gray-400">The official regulations guide for Formula 1®.</p>
+                    <p class="text-gray-400">O guia oficial de regulamentos da Fórmula 1®.</p>
                     <div class="flex space-x-4 mt-4">
                         <a href="#" class="text-gray-400 hover:text-white transition duration-300">
                             <i class="fab fa-facebook-f"></i>
@@ -846,7 +841,7 @@
                 </div>
                 
                 <div>
-                    <h3 class="text-lg font-bold mb-4 text-white">REGULATIONS</h3>
+                    <h3 class="text-lg font-bold mb-4 text-white">REGULAMENTOS</h3>
                     <ul class="space-y-2">
                         <li><a href="#technical" class="text-gray-400 hover:text-white transition duration-300">Technical</a></li>
                         <li><a href="#sporting" class="text-gray-400 hover:text-white transition duration-300">Sporting</a></li>
@@ -857,7 +852,7 @@
                 </div>
                 
                 <div>
-                    <h3 class="text-lg font-bold mb-4 text-white">OFFICIAL</h3>
+                    <h3 class="text-lg font-bold mb-4 text-white">OFICIAL</h3>
                     <ul class="space-y-2">
                         <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">FIA Website</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Official Documents</a></li>

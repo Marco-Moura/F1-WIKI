@@ -11,7 +11,7 @@ interface LoginResponse {
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  private baseUrl = 'http://localhost:3000'; // Ajuste a URL conforme a API
+  private baseUrl = 'http://localhost:8080';
 
   constructor(private http: HttpClient) {}
 
@@ -19,7 +19,11 @@ export class AuthService {
     return this.http.post<LoginResponse>(`${this.baseUrl}/login`, { email, password });
   }
 
-  signup(fullname: string, email: string, password: string): Observable<any> {
-    return this.http.post(`${this.baseUrl}/signup`, { fullname, email, password });
+  signup(fullname: string, email: string, password: string) {
+    return this.http.post(`${this.baseUrl}/signup`, {
+      fullname,
+      email,
+      password
+    });
   }
 }

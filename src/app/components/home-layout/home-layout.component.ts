@@ -38,13 +38,13 @@ export class HomeLayoutComponent implements AfterViewInit {
     nextBtn.addEventListener('click', () => {
       clearInterval(this.interval);
       this.nextSlide(carousel, indicators);
-      this.interval = setInterval(() => this.nextSlide(carousel, indicators), 5000);
+      this.interval = setInterval(() => this.nextSlide(carousel, indicators), 10000);
     });
 
     prevBtn.addEventListener('click', () => {
       clearInterval(this.interval);
       this.prevSlide(carousel, indicators);
-      this.interval = setInterval(() => this.nextSlide(carousel, indicators), 5000);
+      this.interval = setInterval(() => this.nextSlide(carousel, indicators), 10000);
     });
 
     indicators.forEach(indicator => {
@@ -52,7 +52,7 @@ export class HomeLayoutComponent implements AfterViewInit {
         clearInterval(this.interval);
         this.currentIndex = parseInt(indicator.getAttribute('data-index') || '0', 10);
         this.updateCarousel(carousel, indicators);
-        this.interval = setInterval(() => this.nextSlide(carousel, indicators), 5000);
+        this.interval = setInterval(() => this.nextSlide(carousel, indicators), 10000);
       });
     });
   }
@@ -126,5 +126,9 @@ navigateToRules() {
 }
 navigateToCareer() {
   this.router.navigate(['/career'])
+}
+
+navigateToLogin(){
+  this.router.navigate(['/login']);
 }
 }

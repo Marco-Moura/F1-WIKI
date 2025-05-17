@@ -10,11 +10,12 @@
             </div>
             <nav class="hidden md:flex space-x-8">
                 <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToHome()">HOME</button>
-                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToTeams()">TEAMS</button>
-                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToDrivers()">DRIVERS</button>
-                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToHistory()">HISTORY</button>
-                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToRules()">RULES</button>
-                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToCareer()">CAREER</button>
+                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToTeams()">EQUIPES</button>
+                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToDrivers()">CORREDORES</button>
+                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToHistory()">HISTORIA</button>
+                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToRules()">REGRAS</button>
+                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToCareer()">CARREIRA</button>
+                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToLogin()">LOGIN</button>
             </nav>
             <button class="md:hidden text-white">
                 <i class="fas fa-bars text-2xl"></i>
@@ -30,11 +31,20 @@
                 <!-- Slide 1 -->
                 <div class="carousel-slide w-full h-full flex-shrink-0 relative">
                     <div class="absolute inset-0 bg-black opacity-50"></div>
+                        <iframe width="100%" height="100%" 
+    src="https://www.youtube.com/embed/o4QXiKLv9yo?autoplay=1&mute=1&controls=0&loop=1&playlist=o4QXiKLv9yo&modestbranding=1&rel=0&cc_load_policy=0&iv_load_policy=3&disablekb=1"
+    title="YouTube video player" 
+    frameborder="0" 
+    allow="autoplay; encrypted-media" 
+    allowfullscreen>
+</iframe>
+
+
 
                     <div class="absolute inset-0 flex items-center justify-center">
                         <div class="text-center px-4 max-w-4xl fade-in">
-                            <h2 class="text-4xl md:text-6xl font-bold mb-4 text-red-600 slide-in-left">THE PINNACLE OF MOTORSPORT</h2>
-                            <p class="text-xl md:text-2xl mb-8 slide-in-right">Experience the ultimate racing competition with cutting-edge technology and world-class drivers.</p>
+                            <h2 class="text-4xl md:text-6xl font-bold mb-4 text-red-600 slide-in-left">O PINÁCULO DO AUTOMOBILISMO</h2>  
+
                             <button class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
                                 EXPLORE NOW
                             </button>
@@ -45,10 +55,17 @@
                 <!-- Slide 2 -->
                 <div class="carousel-slide w-full h-full flex-shrink-0 relative">
                     <div class="absolute inset-0 bg-black opacity-50"></div>
+                    <iframe width="100%" height="100%"
+    src="https://www.youtube.com/embed/2GgSP59gLG0?autoplay=1&mute=1&controls=0&loop=1&playlist=2GgSP59gLG0&modestbranding=1&rel=0&cc_load_policy=0"
+    title="YouTube video player"
+    frameborder="0"
+    allow="autoplay; encrypted-media"
+    allowfullscreen>
+</iframe>
+
                     <div class="absolute inset-0 flex items-center justify-center">
                         <div class="text-center px-4 max-w-4xl fade-in">
-                            <h2 class="text-4xl md:text-6xl font-bold mb-4 text-red-600">2023 SEASON</h2>
-                            <p class="text-xl md:text-2xl mb-8">Follow the most exciting championship battle with 23 races around the world.</p>
+                            <h2 class="text-4xl md:text-6xl font-bold mb-4 text-red-600">TEMPORADA 2025</h2>
                             <button class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
                                 VIEW CALENDAR
                             </button>
@@ -59,10 +76,16 @@
                 <!-- Slide 3 -->
                 <div class="carousel-slide w-full h-full flex-shrink-0 relative">
                     <div class="absolute inset-0 bg-black opacity-50"></div>
+                    <iframe width="100%" height="100%"
+    src="https://www.youtube.com/embed/ueedmcB7Cds?autoplay=1&mute=1&controls=0&loop=1&playlist=ueedmcB7Cds&modestbranding=1&rel=0&cc_load_policy=0"
+    title="YouTube video player"
+    frameborder="0"
+    allow="autoplay; encrypted-media"
+    allowfullscreen>
+</iframe>
                     <div class="absolute inset-0 flex items-center justify-center">
                         <div class="text-center px-4 max-w-4xl fade-in">
-                            <h2 class="text-4xl md:text-6xl font-bold mb-4 text-red-600">LEGENDARY CIRCUITS</h2>
-                            <p class="text-xl md:text-2xl mb-8">From Monaco to Silverstone, experience racing on the most iconic tracks.</p>
+                            <h2 class="text-4xl md:text-6xl font-bold mb-4 text-red-600">CIRCUITOS LENDÁRIOS</h2>
                             <button class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
                                 EXPLORE TRACKS
                             </button>
@@ -72,10 +95,10 @@
             </div>
             
             <!-- Carousel Controls -->
-            <button id="prevBtn" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-70 transition duration-300">
+            <button id="prevBtn" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-70 transition duration-300"><<<
                 <i class="fas fa-chevron-left text-xl"></i>
             </button>
-            <button id="nextBtn" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-70 transition duration-300">
+            <button id="nextBtn" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-70 transition duration-300">>>>
                 <i class="fas fa-chevron-right text-xl"></i>
             </button>
             
@@ -93,7 +116,7 @@
         <div class="container mx-auto">
             <h2 class="text-3xl font-bold mb-12 text-center relative">
                 <span class="relative inline-block">
-                    LATEST NEWS
+                    ÚLTIMAS NOTÍCIAS
                     <span class="absolute bottom-0 left-0 w-full h-1 bg-red-600"></span>
                 </span>
             </h2>
@@ -105,12 +128,12 @@
                          alt="News Image" 
                          class="w-full h-48 object-cover">
                     <div class="p-6">
-                        <span class="text-red-600 text-sm font-semibold">RACE REPORT</span>
+                        <span class="text-red-600 text-sm font-semibold">RELATÓRIO DE CORRIDA</span>
                         <h3 class="text-xl font-bold mt-2 mb-3">🟠 
-McLaren dominates with technological innovation</h3>
-                        <p class="text-gray-400 mb-4">McLaren has won five of the first six races in 2025, driven by an innovative solution: the use of phase change materials (PCMs) in the brakes. This technology helps maintain the optimum temperature of the tyres for longer, giving them a significant advantage over their competitors.</p>
+McLaren domina com inovação tecnológica</h3>
+                        <p class="text-gray-400 mb-4">McLaren venceu cinco das seis primeiras corridas em 2025, impulsionada por uma solução inovadora: o uso de materiais de mudança de fase (PCMs) nos freios. Essa tecnologia ajuda a manter a temperatura ideal dos pneus por mais tempo, dando uma vantagem significativa sobre os concorrentes.</p>
                         <a href="#" class="text-red-600 font-semibold hover:text-red-400 transition duration-300 flex items-center">
-                            Read More <i class="fas fa-arrow-right ml-2"></i>
+                            Leia Mais <i class="fas fa-arrow-right ml-2"></i>
                         </a>
                     </div>
                 </div>
@@ -121,11 +144,11 @@ McLaren dominates with technological innovation</h3>
                          alt="News Image" 
                          class="w-full h-48 object-cover">
                     <div class="p-6">
-                        <span class="text-red-600 text-sm font-semibold">TEAM NEWS</span>
-                        <h3 class="text-xl font-bold mt-2 mb-3">Ferrari disappoints and is the target of criticism</h3>
-                        <p class="text-gray-400 mb-4">Despite high expectations, Ferrari have been considered the most disappointing team of the season, scoring just 94 points from the first six races and sitting fourth in the constructors' championship.</p>
+                        <span class="text-red-600 text-sm font-semibold">NOTÍCIAS DA EQUIPE</span>
+                        <h3 class="text-xl font-bold mt-2 mb-3">Ferrari decepciona e é alvo de críticas</h3>
+                        <p class="text-gray-400 mb-4">Apesar das grandes expectativas, a Ferrari tem sido considerada a equipe mais decepcionante da temporada, com apenas 94 pontos nas seis primeiras corridas e ocupando a quarta posição no campeonato de construtores.</p>
                         <a href="#" class="text-red-600 font-semibold hover:text-red-400 transition duration-300 flex items-center">
-                            Read More <i class="fas fa-arrow-right ml-2"></i>
+                            Leia Mais <i class="fas fa-arrow-right ml-2"></i>
                         </a>
                     </div>
                 </div>
@@ -136,11 +159,11 @@ McLaren dominates with technological innovation</h3>
                          alt="News Image" 
                          class="w-full h-48 object-cover">
                     <div class="p-6">
-                        <span class="text-red-600 text-sm font-semibold">DRIVER MARKET</span>
-                        <h3 class="text-xl font-bold mt-2 mb-3">🇨🇦 Canadian GP at risk</h3>
-                        <p class="text-gray-400 mb-4">The Canadian Grand Prix, a traditional event since 1961, is under threat of being removed from the calendar following logistical problems and a lack of government support for the 2024 edition. The 2025 race will be decisive in determining its future.</p>
+                        <span class="text-red-600 text-sm font-semibold">ALERTAS</span>
+                        <h3 class="text-xl font-bold mt-2 mb-3">🇨🇦 GP do Canadá em risco</h3>
+                        <p class="text-gray-400 mb-4">O Grande Prêmio do Canadá, evento tradicional desde 1961, corre risco de sair do calendário devido a problemas logísticos e falta de apoio governamental para a edição de 2024. A corrida de 2025 será decisiva para determinar seu futuro.</p>
                         <a href="#" class="text-red-600 font-semibold hover:text-red-400 transition duration-300 flex items-center">
-                            Read More <i class="fas fa-arrow-right ml-2"></i>
+                            Leia Mais <i class="fas fa-arrow-right ml-2"></i>
                         </a>
                     </div>
                 </div>
@@ -148,7 +171,7 @@ McLaren dominates with technological innovation</h3>
             
             <div class="text-center mt-12">
                 <button class="border-2 border-red-600 text-red-600 hover:bg-red-600 hover:text-white font-bold py-3 px-8 rounded-full transition duration-300">
-                    VIEW ALL NEWS
+                    VER TODAS AS NOTÍCIAS
                 </button>
             </div>
         </div>
@@ -159,30 +182,30 @@ McLaren dominates with technological innovation</h3>
         <div class="container mx-auto">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
-                    <h2 class="text-3xl font-bold mb-4">NEXT RACE: Enzo and Dino Ferrari Race Track</h2>
-                    <p class="text-xl mb-6">The broadcast will be made by Band (open TV), Bandsports (pay TV) and by the streaming service F1TV Pro. Band will also make live coverage available on its website and app.</p>
+                    <h2 class="text-3xl font-bold mb-4">PRÓXIMA CORRIDA: Autódromo Enzo e Dino Ferrari</h2>
+                    <p class="text-xl mb-6">A transmissão será feita pela Band (TV aberta), Bandsports (TV paga) e pelo serviço de streaming F1TV Pro. A Band também disponibilizará cobertura ao vivo em seu site e app.</p>
                     
                     <div class="grid grid-cols-4 gap-4 mb-8">
                         <div class="bg-gray-800 rounded-lg p-4 text-center">
                             <div class="text-4xl font-bold text-red-600" id="countdown-days">00</div>
-                            <div class="text-sm uppercase">Days</div>
+                            <div class="text-sm uppercase">Dias</div>
                         </div>
                         <div class="bg-gray-800 rounded-lg p-4 text-center">
                             <div class="text-4xl font-bold text-red-600" id="countdown-hours">00</div>
-                            <div class="text-sm uppercase">Hours</div>
+                            <div class="text-sm uppercase">Horas</div>
                         </div>
                         <div class="bg-gray-800 rounded-lg p-4 text-center">
                             <div class="text-4xl font-bold text-red-600" id="countdown-minutes">00</div>
-                            <div class="text-sm uppercase">Minutes</div>
+                            <div class="text-sm uppercase">Minutos</div>
                         </div>
                         <div class="bg-gray-800 rounded-lg p-4 text-center">
                             <div class="text-4xl font-bold text-red-600" id="countdown-seconds">00</div>
-                            <div class="text-sm uppercase">Seconds</div>
+                            <div class="text-sm uppercase">Segundos</div>
                         </div>
                     </div>
                     
                     <button class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition duration-300">
-                        VIEW RACE DETAILS
+                         VER DETALHES DA CORRIDA
                     </button>
                 </div>
                 
@@ -202,7 +225,7 @@ McLaren dominates with technological innovation</h3>
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                 <div>
                     <img src="/assets/FORMLA_WIKI_LOGO_RODAPÉ-removebg-preview.png" alt="F1 Logo" class="h-15 mb-4">
-                    <p class="text-gray-400">The official home of Formula 1® racing.</p>
+                    <p class="text-gray-400">O lar oficial das corridas de Fórmula 1®.</p>
                     <div class="flex space-x-4 mt-4">
                         <a href="#" class="text-gray-400 hover:text-white transition duration-300">
                             <i class="fab fa-facebook-f"></i>
@@ -252,7 +275,7 @@ McLaren dominates with technological innovation</h3>
             </div>
             
             <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
-                <p>© 2023 Formula One World Championship Limited</p>
+                <p>© 2025 Formula One World Championship Limited</p>
             </div>
         </div>
     </footer>

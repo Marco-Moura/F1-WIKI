@@ -8,11 +8,12 @@
             </div>
             <nav class="hidden md:flex space-x-8">
                 <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToHome()">HOME</button>
-                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToTeams()">TEAMS</button>
-                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToDrivers()">DRIVERS</button>
-                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToHistory()">HISTORY</button>
-                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToRules()">RULES</button>
-                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToCareer()">CAREER</button>
+                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToTeams()">EQUIPES</button>
+                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToDrivers()">CORREDORES</button>
+                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToHistory()">HISTORIA</button>
+                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToRules()">REGRAS</button>
+                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToCareer()">CARREIRA</button>
+                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToLogin()">LOGIN</button>
             </nav>
             <button class="md:hidden text-white" id="mobileMenuBtn">
                 <i class="fas fa-bars text-2xl"></i>
@@ -66,7 +67,7 @@
                 <div class="decade-content" data-decade="1950">
                     <h2 class="text-3xl font-bold mb-8 relative">
                         <span class="relative inline-block">
-                            THE 1950s: FORMULA 1 BEGINS
+                            DÉCADA DE 1950: A FÓRMULA 1 COMEÇA
                             <span class="absolute bottom-0 left-0 w-full h-1 bg-red-600"></span>
                         </span>
                     </h2>
@@ -75,62 +76,54 @@
                         <div class="bg-gray-800 p-6 rounded-lg timeline-item transition duration-300">
                             <div class="flex items-center mb-4">
                                 <span class="text-red-500 font-bold text-2xl mr-4">1950</span>
-                                <h3 class="text-xl font-bold">First World Championship Season</h3>
+                                <h3 class="text-xl font-bold">Primeira temporada do Campeonato Mundial</h3>
                             </div>
                             <p class="text-gray-300 mb-4">
-                                The Formula 1 World Championship officially began with the 1950 British Grand Prix at Silverstone. 
-                                Giuseppe Farina won the race and went on to become the first World Champion driving for Alfa Romeo.
+                               O Campeonato Mundial de Fórmula 1 começou oficialmente com o Grande Prêmio da Grã-Bretanha de 1950, em Silverstone.
+                            Giuseppe Farina venceu a corrida e se tornou o primeiro campeão mundial a pilotar pela Alfa Romeo.
                             </p>
-                            <img src="https://www.formula1.com/content/dam/fom-website/manual/Misc/History/Legends/Farina/Farina%201950%20Silverstone.jpg.transform/6col/image.jpg" 
-                                 alt="1950 British GP" 
-                                 class="w-full h-48 object-cover rounded-lg">
+
                         </div>
                         
                         <div class="bg-gray-800 p-6 rounded-lg timeline-item transition duration-300">
                             <div class="flex items-center mb-4">
                                 <span class="text-red-500 font-bold text-2xl mr-4">1951</span>
-                                <h3 class="text-xl font-bold">Juan Manuel Fangio's First Title</h3>
+                                <h3 class="text-xl font-bold">Primeiro título de Juan Manuel Fangio</h3>
                             </div>
                             <p class="text-gray-300 mb-4">
-                                Argentine legend Juan Manuel Fangio won his first of five World Championships. 
-                                His dominance in the 1950s earned him the nickname "El Maestro" and established him as one of the greatest drivers in history.
+                                A lenda argentina Juan Manuel Fangio conquistou o primeiro de seus cinco Campeonatos Mundiais.
+                                Seu domínio na década de 1950 lhe rendeu o apelido de "El Maestro" e o consolidou como um dos maiores pilotos da história.
                             </p>
-                            <img src="https://www.formula1.com/content/dam/fom-website/manual/Misc/History/Legends/Fangio/Fangio%201951%20France.jpg.transform/6col/image.jpg" 
-                                 alt="Fangio 1951" 
-                                 class="w-full h-48 object-cover rounded-lg">
+
                         </div>
                         
                         <div class="bg-gray-800 p-6 rounded-lg timeline-item transition duration-300">
                             <div class="flex items-center mb-4">
                                 <span class="text-red-500 font-bold text-2xl mr-4">1955</span>
-                                <h3 class="text-xl font-bold">Mercedes Dominance</h3>
+                                <h3 class="text-xl font-bold">Domínio Mercedes</h3>
                             </div>
                             <p class="text-gray-300 mb-4">
-                                Mercedes-Benz entered F1 with the revolutionary W196, featuring streamlined bodywork and fuel injection. 
-                                Fangio won 4 of the 6 races he entered that season before Mercedes withdrew after the Le Mans disaster.
+                                A Mercedes-Benz entrou na F1 com o revolucionário W196, com carroceria aerodinâmica e injeção de combustível.
+                                Fangio venceu 4 das 6 corridas em que participou naquela temporada, antes da Mercedes desistir após o desastre de Le Mans.
                             </p>
-                            <img src="https://www.formula1.com/content/dam/fom-website/manual/Misc/History/Legends/Fangio/Fangio%201955%20Silverstone.jpg.transform/6col/image.jpg" 
-                                 alt="Mercedes W196" 
-                                 class="w-full h-48 object-cover rounded-lg">
+
                         </div>
                         
                         <div class="bg-gray-800 p-6 rounded-lg timeline-item transition duration-300">
                             <div class="flex items-center mb-4">
                                 <span class="text-red-500 font-bold text-2xl mr-4">1958</span>
-                                <h3 class="text-xl font-bold">Constructors' Championship Introduced</h3>
+                                <h3 class="text-xl font-bold">Campeonato de Construtores Introduzido</h3>
                             </div>
                             <p class="text-gray-300 mb-4">
-                                The Constructors' Championship was introduced, with Vanwall becoming the first winners. 
-                                Mike Hawthorn became Britain's first World Champion, but tragically died in a road accident just months after winning the title.
+                                O Campeonato de Construtores foi criado, com a Vanwall se tornando a primeira vencedora.
+                                Mike Hawthorn se tornou o primeiro campeão mundial da Grã-Bretanha, mas morreu tragicamente em um acidente de trânsito poucos meses após conquistar o título.
                             </p>
-                            <img src="https://www.formula1.com/content/dam/fom-website/manual/Misc/History/Legends/Hawthorn/Hawthorn%201958%20Morocco.jpg.transform/6col/image.jpg" 
-                                 alt="Mike Hawthorn 1958" 
-                                 class="w-full h-48 object-cover rounded-lg">
+
                         </div>
                     </div>
                     
                     <div class="bg-gray-800 p-6 rounded-lg mb-12">
-                        <h3 class="text-2xl font-bold mb-4 text-red-500">1950s World Champions</h3>
+                        <h3 class="text-2xl font-bold mb-4 text-red-500">Campeões mundiais da década de 1950</h3>
                         <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
                             <div class="bg-gray-700 p-4 rounded-lg text-center">
                                 <p class="font-bold">1950</p>
@@ -165,7 +158,7 @@
                 <div class="decade-content hidden" data-decade="1960">
                     <h2 class="text-3xl font-bold mb-8 relative">
                         <span class="relative inline-block">
-                            THE 1960s: BRITISH DOMINANCE
+                            A DÉCADA DE 1960: DOMÍNIO BRITÂNICO
                             <span class="absolute bottom-0 left-0 w-full h-1 bg-red-600"></span>
                         </span>
                     </h2>
@@ -174,62 +167,54 @@
                         <div class="bg-gray-800 p-6 rounded-lg timeline-item transition duration-300">
                             <div class="flex items-center mb-4">
                                 <span class="text-red-500 font-bold text-2xl mr-4">1961</span>
-                                <h3 class="text-xl font-bold">Ferrari's Dominant 156</h3>
+                                <h3 class="text-xl font-bold">O 156 dominante da Ferrari</h3>
                             </div>
                             <p class="text-gray-300 mb-4">
-                                Ferrari introduced the revolutionary 156 "Sharknose" with a 120° V6 engine. 
-                                American Phil Hill won the championship, but the season was marred by teammate Wolfgang von Trips' fatal accident at Monza.
+                                A Ferrari apresentou o revolucionário 156 "Sharknose" com motor V6 de 120°.
+                                O americano Phil Hill venceu o campeonato, mas a temporada foi marcada pelo acidente fatal do companheiro de equipe Wolfgang von Trips em Monza.
                             </p>
-                            <img src="https://www.formula1.com/content/dam/fom-website/manual/Misc/History/Legends/Hill/Ferrari%20156%201961.jpg.transform/6col/image.jpg" 
-                                 alt="Ferrari 156" 
-                                 class="w-full h-48 object-cover rounded-lg">
+
                         </div>
                         
                         <div class="bg-gray-800 p-6 rounded-lg timeline-item transition duration-300">
                             <div class="flex items-center mb-4">
                                 <span class="text-red-500 font-bold text-2xl mr-4">1962</span>
-                                <h3 class="text-xl font-bold">Lotus 25 - Monocoque Chassis</h3>
+                                <h3 class="text-xl font-bold">Lotus 25 - Chassi Monocoque</h3>
                             </div>
                             <p class="text-gray-300 mb-4">
-                                Colin Chapman's Lotus team introduced the 25 with a revolutionary monocoque chassis, replacing traditional spaceframe designs. 
-                                This innovation would become standard in F1 car design.
+                                A equipe Lotus de Colin Chapman apresentou o 25 com um chassi monobloco revolucionário, substituindo os designs tradicionais de chassi espacial.
+                                Essa inovação se tornaria padrão no design de carros de F1.
                             </p>
-                            <img src="https://www.formula1.com/content/dam/fom-website/manual/Misc/History/Legends/Clark/Lotus%2025%201962.jpg.transform/6col/image.jpg" 
-                                 alt="Lotus 25" 
-                                 class="w-full h-48 object-cover rounded-lg">
+
                         </div>
                         
                         <div class="bg-gray-800 p-6 rounded-lg timeline-item transition duration-300">
                             <div class="flex items-center mb-4">
                                 <span class="text-red-500 font-bold text-2xl mr-4">1966</span>
-                                <h3 class="text-xl font-bold">3.0L Engine Formula</h3>
+                                <h3 class="text-xl font-bold">Fórmula do motor 3.0L</h3>
                             </div>
                             <p class="text-gray-300 mb-4">
-                                New regulations introduced 3.0L engines, replacing the 1.5L formula. 
-                                Jack Brabham won the championship in his own car, the only driver to do so in F1 history.
+                                Novos regulamentos introduziram motores de 3,0 L, substituindo a fórmula de 1,5 L.
+                                Jack Brabham venceu o campeonato em seu próprio carro, o único piloto a fazê-lo na história da F1.
                             </p>
-                            <img src="https://www.formula1.com/content/dam/fom-website/manual/Misc/History/Legends/Brabham/Brabham%201966%20France.jpg.transform/6col/image.jpg" 
-                                 alt="Brabham 1966" 
-                                 class="w-full h-48 object-cover rounded-lg">
+
                         </div>
                         
                         <div class="bg-gray-800 p-6 rounded-lg timeline-item transition duration-300">
                             <div class="flex items-center mb-4">
                                 <span class="text-red-500 font-bold text-2xl mr-4">1968</span>
-                                <h3 class="text-xl font-bold">Aerodynamic Wings & Sponsorship</h3>
+                                <h3 class="text-xl font-bold">Asas Aerodinâmicas e Patrocínio</h3>
                             </div>
                             <p class="text-gray-300 mb-4">
-                                Lotus introduced aerodynamic wings and the first major sponsorship (Gold Leaf), changing F1's financial model forever. 
-                                Tragically, Jim Clark died in a Formula 2 race, shocking the motorsport world.
+                                A Lotus introduziu asas aerodinâmicas e o primeiro grande patrocínio (Gold Leaf), mudando o modelo financeiro da F1 para sempre.
+                                Tragicamente, Jim Clark morreu em uma corrida de Fórmula 2, chocando o mundo do automobilismo.
                             </p>
-                            <img src="https://www.formula1.com/content/dam/fom-website/manual/Misc/History/Legends/Clark/Lotus%2049%201968.jpg.transform/6col/image.jpg" 
-                                 alt="Lotus 49" 
-                                 class="w-full h-48 object-cover rounded-lg">
+
                         </div>
                     </div>
                     
                     <div class="bg-gray-800 p-6 rounded-lg mb-12">
-                        <h3 class="text-2xl font-bold mb-4 text-red-500">1960s World Champions</h3>
+                        <h3 class="text-2xl font-bold mb-4 text-red-500">Campeões mundiais da década de 1960</h3>
                         <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
                             <div class="bg-gray-700 p-4 rounded-lg text-center">
                                 <p class="font-bold">1960</p>
@@ -260,16 +245,242 @@
                     </div>
                 </div>
                 
-                <!-- More decades would follow the same pattern -->
-                <!-- For brevity, I've included only 1950s and 1960s content -->
-                <!-- In a full implementation, all decades would be included -->
+                <!-- 1970s Content -->
+<div class="decade-content hidden" data-decade="1970">
+    <h2 class="text-3xl font-bold mb-8 relative">
+        <span class="relative inline-block">
+            A DÉCADA DE 1970: A ERA DA TECNOLOGIA E DO TALENTO
+            <span class="absolute bottom-0 left-0 w-full h-1 bg-red-600"></span>
+        </span>
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <div class="bg-gray-800 p-6 rounded-lg timeline-item transition duration-300">
+            <div class="flex items-center mb-4">
+                <span class="text-red-500 font-bold text-2xl mr-4">1970</span>
+                <h3 class="text-xl font-bold">Título póstumo de Jochen Rindt</h3>
+            </div>
+            <p class="text-gray-300 mb-4">
+                O piloto austríaco Jochen Rindt venceu o campeonato postumamente após morrer em um acidente em Monza.
+                A Lotus foi pioneira na aerodinâmica por efeito solo nos últimos anos da década.
+            </p>
+
+        </div>
+        <div class="bg-gray-800 p-6 rounded-lg timeline-item transition duration-300">
+            <div class="flex items-center mb-4">
+                <span class="text-red-500 font-bold text-2xl mr-4">1976</span>
+                <h3 class="text-xl font-bold">Rivalidade entre James Hunt e Niki Lauda</h3>
+            </div>
+            <p class="text-gray-300 mb-4">
+                A rivalidade acirrada entre Hunt e Lauda definiu a década, com a recuperação milagrosa de Lauda de um acidente violento sendo um destaque.
+            </p>
+
+        </div>
+    </div>
+    <div class="bg-gray-800 p-6 rounded-lg mb-12">
+        <h3 class="text-2xl font-bold mb-4 text-red-500">Campeões mundiais da década de 1970</h3>
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+            <div class="bg-gray-700 p-4 rounded-lg text-center">
+                <p class="font-bold">1970</p>
+                <p>Jochen Rindt</p>
+                <p class="text-sm text-gray-400">Lotus</p>
+            </div>
+            <div class="bg-gray-700 p-4 rounded-lg text-center">
+                <p class="font-bold">1972</p>
+                <p>Emerson Fittipaldi</p>
+                <p class="text-sm text-gray-400">Lotus</p>
+            </div>
+            <div class="bg-gray-700 p-4 rounded-lg text-center">
+                <p class="font-bold">1976</p>
+                <p>James Hunt</p>
+                <p class="text-sm text-gray-400">McLaren</p>
+            </div>
+            <div class="bg-gray-700 p-4 rounded-lg text-center">
+                <p class="font-bold">1977-79</p>
+                <p>Niki Lauda</p>
+                <p class="text-sm text-gray-400">Ferrari</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 1980s Content -->
+<div class="decade-content hidden" data-decade="1980">
+    <h2 class="text-3xl font-bold mb-8 relative">
+        <span class="relative inline-block">
+            A DÉCADA DE 1980: ERA TURBO E TECNOLOGIA
+            <span class="absolute bottom-0 left-0 w-full h-1 bg-red-600"></span>
+        </span>
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <div class="bg-gray-800 p-6 rounded-lg timeline-item transition duration-300">
+            <div class="flex items-center mb-4">
+                <span class="text-red-500 font-bold text-2xl mr-4">1984</span>
+                <h3 class="text-xl font-bold">Terceiro título de Niki Lauda</h3>
+            </div>
+            <p class="text-gray-300 mb-4">
+                Lauda venceu o campeonato por pouco, pilotando pela McLaren, em uma temporada dominada por motores turboalimentados.
+            </p>
+
+        </div>
+        <div class="bg-gray-800 p-6 rounded-lg timeline-item transition duration-300">
+            <div class="flex items-center mb-4">
+                <span class="text-red-500 font-bold text-2xl mr-4">1988</span>
+                <h3 class="text-xl font-bold">O primeiro campeonato de Ayrton Senna</h3>
+            </div>
+            <p class="text-gray-300 mb-4">
+                Senna conquistou seu primeiro título mundial em um carro dominante da McLaren-Honda, iniciando uma carreira lendária.
+            </p>
+
+        </div>
+    </div>
+    <div class="bg-gray-800 p-6 rounded-lg mb-12">
+        <h3 class="text-2xl font-bold mb-4 text-red-500">Campeões mundiais da década de 1980</h3>
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+            <div class="bg-gray-700 p-4 rounded-lg text-center">
+                <p class="font-bold">1980</p>
+                <p>Alan Jones</p>
+                <p class="text-sm text-gray-400">Williams</p>
+            </div>
+            <div class="bg-gray-700 p-4 rounded-lg text-center">
+                <p class="font-bold">1982</p>
+                <p>Keke Rosberg</p>
+                <p class="text-sm text-gray-400">Williams</p>
+            </div>
+            <div class="bg-gray-700 p-4 rounded-lg text-center">
+                <p class="font-bold">1984-85</p>
+                <p>Niki Lauda</p>
+                <p class="text-sm text-gray-400">McLaren</p>
+            </div>
+            <div class="bg-gray-700 p-4 rounded-lg text-center">
+                <p class="font-bold">1986-87</p>
+                <p>Alain Prost</p>
+                <p class="text-sm text-gray-400">McLaren</p>
+            </div>
+            <div class="bg-gray-700 p-4 rounded-lg text-center">
+                <p class="font-bold">1988-90</p>
+                <p>Ayrton Senna</p>
+                <p class="text-sm text-gray-400">McLaren</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bg-gray-800 p-6 rounded-lg mb-12">
+  <h3 class="text-2xl font-bold mb-4 text-red-500">Campeões mundiais da década de 1990</h3>
+  <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+    <div class="bg-gray-700 p-4 rounded-lg text-center">
+      <p class="font-bold">1990-91</p>
+      <p>Ayrton Senna</p>
+      <p class="text-sm text-gray-400">McLaren</p>
+    </div>
+    <div class="bg-gray-700 p-4 rounded-lg text-center">
+      <p class="font-bold">1992</p>
+      <p>Nigel Mansell</p>
+      <p class="text-sm text-gray-400">Williams</p>
+    </div>
+    <div class="bg-gray-700 p-4 rounded-lg text-center">
+      <p class="font-bold">1993</p>
+      <p>Alain Prost</p>
+      <p class="text-sm text-gray-400">Williams</p>
+    </div>
+    <div class="bg-gray-700 p-4 rounded-lg text-center">
+      <p class="font-bold">1994-95</p>
+      <p>Michael Schumacher</p>
+      <p class="text-sm text-gray-400">Benetton</p>
+    </div>
+    <div class="bg-gray-700 p-4 rounded-lg text-center">
+      <p class="font-bold">1996-97</p>
+      <p>Damon Hill / Jacques Villeneuve</p>
+      <p class="text-sm text-gray-400">Williams</p>
+    </div>
+    <div class="bg-gray-700 p-4 rounded-lg text-center">
+      <p class="font-bold">1998-99</p>
+      <p>Mika Häkkinen</p>
+      <p class="text-sm text-gray-400">McLaren</p>
+    </div>
+  </div>
+</div>
+
+<div class="bg-gray-800 p-6 rounded-lg mb-12">
+  <h3 class="text-2xl font-bold mb-4 text-red-500">Campeões mundiais da década de 2000</h3>
+  <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+    <div class="bg-gray-700 p-4 rounded-lg text-center">
+      <p class="font-bold">2000-2004</p>
+      <p>Michael Schumacher</p>
+      <p class="text-sm text-gray-400">Ferrari</p>
+    </div>
+    <div class="bg-gray-700 p-4 rounded-lg text-center">
+      <p class="font-bold">2005-06</p>
+      <p>Fernando Alonso</p>
+      <p class="text-sm text-gray-400">Renault</p>
+    </div>
+    <div class="bg-gray-700 p-4 rounded-lg text-center">
+      <p class="font-bold">2007</p>
+      <p>Kimi Räikkönen</p>
+      <p class="text-sm text-gray-400">Ferrari</p>
+    </div>
+    <div class="bg-gray-700 p-4 rounded-lg text-center">
+      <p class="font-bold">2008</p>
+      <p>Lewis Hamilton</p>
+      <p class="text-sm text-gray-400">McLaren</p>
+    </div>
+    <div class="bg-gray-700 p-4 rounded-lg text-center">
+      <p class="font-bold">2009</p>
+      <p>Jenson Button</p>
+      <p class="text-sm text-gray-400">Brawn GP</p>
+    </div>
+  </div>
+
+  <div class="bg-gray-800 p-6 rounded-lg mb-12">
+  <h3 class="text-2xl font-bold mb-4 text-red-500">Campeões mundiais da década de 2010</h3>
+  <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+    <div class="bg-gray-700 p-4 rounded-lg text-center">
+      <p class="font-bold">2010-13</p>
+      <p>Sebastian Vettel</p>
+      <p class="text-sm text-gray-400">Red Bull</p>
+    </div>
+    <div class="bg-gray-700 p-4 rounded-lg text-center">
+      <p class="font-bold">2014-15</p>
+      <p>Lewis Hamilton</p>
+      <p class="text-sm text-gray-400">Mercedes</p>
+    </div>
+    <div class="bg-gray-700 p-4 rounded-lg text-center">
+      <p class="font-bold">2016</p>
+      <p>Nico Rosberg</p>
+      <p class="text-sm text-gray-400">Mercedes</p>
+    </div>
+    <div class="bg-gray-700 p-4 rounded-lg text-center">
+      <p class="font-bold">2017-19</p>
+      <p>Lewis Hamilton</p>
+      <p class="text-sm text-gray-400">Mercedes</p>
+    </div>
+  </div>
+</div>
+
+<div class="bg-gray-800 p-6 rounded-lg mb-12">
+  <h3 class="text-2xl font-bold mb-4 text-red-500">Campeões mundiais da década de 2020</h3>
+  <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+    <div class="bg-gray-700 p-4 rounded-lg text-center">
+      <p class="font-bold">2020</p>
+      <p>Lewis Hamilton</p>
+      <p class="text-sm text-gray-400">Mercedes</p>
+    </div>
+    <div class="bg-gray-700 p-4 rounded-lg text-center">
+      <p class="font-bold">2021-23</p>
+      <p>Max Verstappen</p>
+      <p class="text-sm text-gray-400">Red Bull</p>
+    </div>
+  </div>
+</div>
+
+                
             </div>
             
             <!-- Legendary Champions Section -->
             <div class="mt-16">
                 <h2 class="text-3xl font-bold mb-8 relative">
                     <span class="relative inline-block">
-                        LEGENDARY CHAMPIONS
+                        CAMPEÕES LENDÁRIOS
                         <span class="absolute bottom-0 left-0 w-full h-1 bg-red-600"></span>
                     </span>
                 </h2>
@@ -277,92 +488,92 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     <div class="bg-gray-800 rounded-lg overflow-hidden champion-card transition duration-300">
                         <div class="relative h-48 overflow-hidden">
-                            <img src="https://www.formula1.com/content/dam/fom-website/manual/Misc/History/Legends/Fangio/Fangio%201953%20Monza.jpg.transform/8col/image.jpg" 
+                            <img src="https://backup.tribunadonorte.com.br/fotos/134669.jpg" 
                                  alt="Juan Manuel Fangio" 
                                  class="w-full h-full object-cover">
                             <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
                             <div class="absolute bottom-4 left-4">
                                 <h3 class="text-xl font-bold">JUAN MANUEL FANGIO</h3>
-                                <p class="text-sm text-gray-300">5 World Championships</p>
+                                <p class="text-sm text-gray-300">5 Campeonatos Mundiais</p>
                             </div>
                         </div>
                         <div class="p-4">
                             <p class="text-gray-300 mb-4">
-                                The "Maestro" dominated F1's early years with his incredible car control and tactical brilliance. 
-                                Won championships with four different teams (Alfa Romeo, Ferrari, Mercedes, Maserati).
+                                O "Maestro" dominou os primeiros anos da F1 com seu incrível controle do carro e brilhantismo tático.
+Conquistou campeonatos com quatro equipes diferentes (Alfa Romeo, Ferrari, Mercedes, Maserati).
                             </p>
                             <div class="flex justify-between text-sm">
-                                <span class="text-gray-400">Years: 1950-1958</span>
-                                <span class="text-red-500">24 Wins</span>
+                                <span class="text-gray-400">Anos: 1950-1958</span>
+                                <span class="text-red-500">24 Vitorias</span>
                             </div>
                         </div>
                     </div>
                     
                     <div class="bg-gray-800 rounded-lg overflow-hidden champion-card transition duration-300">
                         <div class="relative h-48 overflow-hidden">
-                            <img src="https://www.formula1.com/content/dam/fom-website/manual/Misc/History/Legends/Clark/Clark%201965%20Spa.jpg.transform/8col/image.jpg" 
+                            <img src="https://s2-ge.glbimg.com/QzHpyWrZPdbNZmO6tEepKATSEDg=/0x0:5354x3557/1008x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2023/E/y/9yZARWT0SGR1Otp3q1iw/gettyimages-808330560.jpg" 
                                  alt="Jim Clark" 
                                  class="w-full h-full object-cover">
                             <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
                             <div class="absolute bottom-4 left-4">
                                 <h3 class="text-xl font-bold">JIM CLARK</h3>
-                                <p class="text-sm text-gray-300">2 World Championships</p>
+                                <p class="text-sm text-gray-300">2 Campeonatos Mundiais</p>
                             </div>
                         </div>
                         <div class="p-4">
                             <p class="text-gray-300 mb-4">
-                                Considered by many as the most naturally talented driver in F1 history. 
-                                Dominated the 1960s with Lotus before his tragic death in 1968. Won 25 of 72 races entered.
+                                Considerado por muitos como o piloto mais talentoso da história da F1.
+Dominou a década de 1960 com a Lotus antes de sua trágica morte em 1968. Venceu 25 das 72 corridas disputadas.
                             </p>
                             <div class="flex justify-between text-sm">
-                                <span class="text-gray-400">Years: 1960-1968</span>
-                                <span class="text-red-500">25 Wins</span>
+                                <span class="text-gray-400">Anos: 1960-1968</span>
+                                <span class="text-red-500">25 Vitorias</span>
                             </div>
                         </div>
                     </div>
                     
                     <div class="bg-gray-800 rounded-lg overflow-hidden champion-card transition duration-300">
                         <div class="relative h-48 overflow-hidden">
-                            <img src="https://www.formula1.com/content/dam/fom-website/manual/Misc/History/Legends/Senna/Senna%201993%20Donington.jpg.transform/8col/image.jpg" 
+                            <img src="https://olimpic.com.br/wp-content/uploads/2024/11/blog-senna-olimpic-2-1024x684.webp" 
                                  alt="Ayrton Senna" 
                                  class="w-full h-full object-cover">
                             <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
                             <div class="absolute bottom-4 left-4">
                                 <h3 class="text-xl font-bold">AYRTON SENNA</h3>
-                                <p class="text-sm text-gray-300">3 World Championships</p>
+                                <p class="text-sm text-gray-300">3 Campeonatos Mundiais</p>
                             </div>
                         </div>
                         <div class="p-4">
                             <p class="text-gray-300 mb-4">
-                                The Brazilian icon combined raw speed with relentless determination. 
-                                His rivalry with Alain Prost defined late 1980s F1. Died tragically at Imola in 1994.
+                                O ícone brasileiro combinava velocidade bruta com determinação implacável.
+Sua rivalidade com Alain Prost marcou a F1 no final dos anos 1980. Morreu tragicamente em Ímola em 1994.
                             </p>
                             <div class="flex justify-between text-sm">
-                                <span class="text-gray-400">Years: 1984-1994</span>
-                                <span class="text-red-500">41 Wins</span>
+                                <span class="text-gray-400">Anos: 1984-1994</span>
+                                <span class="text-red-500">41 Vitorias</span>
                             </div>
                         </div>
                     </div>
                     
                     <div class="bg-gray-800 rounded-lg overflow-hidden champion-card transition duration-300">
                         <div class="relative h-48 overflow-hidden">
-                            <img src="https://www.formula1.com/content/dam/fom-website/manual/Misc/History/Legends/Schumacher/Schumacher%202000%20Japan.jpg.transform/8col/image.jpg" 
+                            <img src="https://correiodobrasil.com.br/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPWGRzY1dkdGVIUnZkbWxuWTJKaGFHODVkWGgwZW5WcE5YWmlNUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CcGJHOTBieTVxY0dWbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZHdhV3h2ZEc4dWFuQmxad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjEyNC0wMS0wM1QxNjo1MzowNS40MDFaIiwicHVyIjoiYmxvYl9rZXkifX0=--a59f8bcc017f04b289e6d1a0ea03d92f3ee25091/piloto.jpeg" 
                                  alt="Michael Schumacher" 
                                  class="w-full h-full object-cover">
                             <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
                             <div class="absolute bottom-4 left-4">
                                 <h3 class="text-xl font-bold">MICHAEL SCHUMACHER</h3>
-                                <p class="text-sm text-gray-300">7 World Championships</p>
+                                <p class="text-sm text-gray-300">7 Campeonatos Mundiais</p>
                             </div>
                         </div>
                         <div class="p-4">
                             <p class="text-gray-300 mb-4">
-                                Redefined F1 excellence with his work ethic and technical feedback. 
-                                Dominated with Benetton and Ferrari, setting records that stood for over a decade.
+                                Redefiniu a excelência da F1 com sua ética de trabalho e feedback técnico.
+Dominou com a Benetton e a Ferrari, estabelecendo recordes que duraram mais de uma década.
                             </p>
                             <div class="flex justify-between text-sm">
-                                <span class="text-gray-400">Years: 1991-2012</span>
-                                <span class="text-red-500">91 Wins</span>
+                                <span class="text-gray-400">Anos: 1991-2012</span>
+                                <span class="text-red-500">91 Vitorias</span>
                             </div>
                         </div>
                     </div>
@@ -373,14 +584,14 @@
             <div class="mt-16">
                 <h2 class="text-3xl font-bold mb-8 relative">
                     <span class="relative inline-block">
-                        HISTORICAL STATISTICS
+                        ESTATÍSTICAS HISTÓRICAS
                         <span class="absolute bottom-0 left-0 w-full h-1 bg-red-600"></span>
                     </span>
                 </h2>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div class="bg-gray-800 p-6 rounded-lg">
-                        <h3 class="text-xl font-bold mb-4">Most World Championships</h3>
+                        <h3 class="text-xl font-bold mb-4">A maioria dos campeonatos mundiais</h3>
                         <div class="space-y-4">
                             <div>
                                 <div class="flex justify-between mb-1">
@@ -431,7 +642,7 @@
                     </div>
                     
                     <div class="bg-gray-800 p-6 rounded-lg">
-                        <h3 class="text-xl font-bold mb-4">Most Grand Prix Wins</h3>
+                        <h3 class="text-xl font-bold mb-4">Mais vitórias no Grande Prêmio</h3>
                         <div class="space-y-4">
                             <div>
                                 <div class="flex justify-between mb-1">
@@ -483,7 +694,7 @@
                 </div>
             </div>
         </div>
-    </section>
+
 
     <!-- Footer -->
     <footer class="bg-black py-12 px-6">
@@ -491,7 +702,7 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                 <div>
                     <img src="/assets/FORMLA_WIKI_LOGO_RODAPÉ-removebg-preview.png" alt="F1 Logo" class="h-15 mb-4">
-                    <p class="text-gray-400">The official home of Formula 1® racing.</p>
+                    <p class="text-gray-400">O lar oficial das corridas de Fórmula 1®.</p>
                     <div class="flex space-x-4 mt-4">
                         <a href="#" class="text-gray-400 hover:text-white transition duration-300">
                             <i class="fab fa-facebook-f"></i>
@@ -541,7 +752,7 @@
             </div>
             
             <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
-                <p>© 2023 Formula One World Championship Limited</p>
+                <p>© 2025 Formula One World Championship Limited</p>
             </div>
         </div>
     </footer>

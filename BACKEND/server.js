@@ -3,7 +3,6 @@ const app = express();
 import http from "node:http";
 const createServer = http.createServer(app);
 import dotenv from "dotenv";
-import { error } from "node:console";
 dotenv.config();
 import bcrypt from "bcrypt";
 import mongoose from 'mongoose';
@@ -16,33 +15,6 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.disable("x-powered-by")
 
-app.post("/signup", async (req, res)=>{
-    const {email, password} = req.body
-
-    if(!email || !password){
-        return res.status(403).json({error:"Preencha todos os campos obrigatorios."})
-    }
-
-    try{
-
-        const usuarioEmail = await userModel.findOne({email});
-        if(usuarioEmail){
-            return res.status(403).json({error: "Esse email já foi cadastrado!"});
-        }
-
-        const hash = await bcrypt.hash(password,10);
-        await userModel.create({
-            email,
-            password:hash
-        });
-
-        res.status(201).json({msg:`Usuario criado com sucesso!`});
-
-    } catch (error) {
-        res.status(500).json({error:`Não foi possivel receber os dados necessários. ${error.message}`})
-    }
-
-});
 
 app.post("/signup", async (req, res) => {
   const { fullname, email, password } = req.body;

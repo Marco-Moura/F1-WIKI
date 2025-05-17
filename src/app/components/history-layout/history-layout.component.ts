@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./history-layout.component.css'] // Corrigido de styleUrl para styleUrls
 })
 export class HistoryLayoutComponent implements AfterViewInit {
+  
 
   constructor(private router: Router) {}
 
@@ -115,6 +116,10 @@ navigateToRules() {
 }
 navigateToCareer() {
   this.router.navigate(['/career'])
+}
+
+navigateToLogin(){
+  this.router.navigate(['/login']);
 }
 }
 
