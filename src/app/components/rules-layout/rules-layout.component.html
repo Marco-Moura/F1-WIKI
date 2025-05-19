@@ -4,7 +4,7 @@
         <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center">
                 <img src="/assets/FORMULA_WIKI_LOGO-removebg-preview.png" alt="F1 Logo" class="h-12 mr-4">
-                <h1 class="text-2xl font-bold text-red-600">F1 REGULATIONS</h1>
+                <h1 class="text-2xl font-bold text-red-600">FORMULA WIKI</h1>
             </div>
             <nav class="hidden md:flex space-x-8">
                 <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToHome()">HOME</button>
@@ -19,15 +19,15 @@
                 <i class="fas fa-bars text-2xl"></i>
             </button>
         </div>
-        
-        <!-- Mobile Menu -->
-        <div id="mobileMenu" class="hidden md:hidden bg-gray-800 absolute left-0 right-0 top-full shadow-lg">
+        <div *ngIf="mobileMenuVisible" class="md:hidden bg-gray-800 absolute left-0 right-0 top-full shadow-lg">
             <div class="flex flex-col space-y-4 p-4">
-                <a href="#technical" class="text-white hover:text-red-500 transition duration-300">TECNICO</a>
-                <a href="#sporting" class="text-white hover:text-red-500 transition duration-300">ESPORTIVO</a>
-                <a href="#financial" class="text-white hover:text-red-500 transition duration-300">FINANCEIRO</a>
-                <a href="#penalties" class="text-white hover:text-red-500 transition duration-300">PENALIDADES</a>
-                <a href="#safety" class="text-white hover:text-red-500 transition duration-300">SEGURANÇA</a>
+                <button (click)="navigateToHome()" class="text-white hover:text-red-500 transition duration-300">HOME</button>
+                <button (click)="navigateToTeams()" class="text-white hover:text-red-500 transition duration-300" >EQUIPES</button>
+                <button (click)="navigateToDrivers()" class="text-white hover:text-red-500 transition duration-300">CORREDORES</button>
+                <button (click)="navigateToHistory()" class="text-white hover:text-red-500 transition duration-300">HISTORIA</button>
+                <button (click)="navigateToRules()" class="text-red-500 hover:text-red-400 transition duration-300">REGRAS</button>
+                <button (click)="navigateToCareer()" class="text-white hover:text-red-500 transition duration-300">CARREIRA</button>
+                <button (click)="navigateToLogin()" class="text-white hover:text-red-500 transition duration-300">LOGIN</button>
             </div>
         </div>
     </header>
@@ -39,25 +39,11 @@
             <div class="text-center px-4 max-w-4xl">
                 <h1 class="text-4xl md:text-6xl font-bold mb-4">REGULAMENTO DA FÓRMULA 1</h1>
                 <p class="text-xl md:text-2xl mb-8">Guia completo das regras técnicas, desportivas e financeiras</p>
-                <a href="#technical" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full inline-block transition duration-300 animate-underline">
-                    EXPLORE OS REGULAMENTOS
-                </a>
+
             </div>
         </div>
     </section>
 
-    <!-- Regulations Navigation -->
-    <section class="py-8 bg-gray-800 sticky top-16 z-40 shadow-md">
-        <div class="container mx-auto px-6">
-            <div class="flex overflow-x-auto space-x-4 pb-2 scrollbar-hide">
-                <a href="#technical" class="tab-button px-6 py-2 rounded-full bg-gray-700 text-white whitespace-nowrap transition duration-300">Tecnico</a>
-                <a href="#sporting" class="tab-button px-6 py-2 rounded-full bg-gray-700 text-white whitespace-nowrap transition duration-300">Esportivo</a>
-                <a href="#financial" class="tab-button px-6 py-2 rounded-full bg-gray-700 text-white whitespace-nowrap transition duration-300">Financeiro</a>
-                <a href="#penalties" class="tab-button px-6 py-2 rounded-full bg-gray-700 text-white whitespace-nowrap transition duration-300">Penalidades</a>
-                <a href="#safety" class="tab-button px-6 py-2 rounded-full bg-gray-700 text-white whitespace-nowrap transition duration-300">Segurança</a>
-            </div>
-        </div>
-    </section>
 
     <!-- Main Content -->
     <main class="container mx-auto px-6 py-12">

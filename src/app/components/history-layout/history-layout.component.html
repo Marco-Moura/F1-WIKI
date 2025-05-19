@@ -4,7 +4,7 @@
         <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center">
                 <img src="/assets/FORMULA_WIKI_LOGO-removebg-preview.png" alt="F1 Logo" class="h-12 mr-4">
-                <h1 class="text-2xl font-bold text-red-600">F1 HISTORY</h1>
+                <h1 class="text-2xl font-bold text-red-600">FORMULA WIKI</h1>
             </div>
             <nav class="hidden md:flex space-x-8">
                 <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToHome()">HOME</button>
@@ -15,19 +15,21 @@
                 <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToCareer()">CARREIRA</button>
                 <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToLogin()">LOGIN</button>
             </nav>
-            <button class="md:hidden text-white" id="mobileMenuBtn">
+            <button class="md:hidden text-white" (click)="toggleMobileMenu()">
                 <i class="fas fa-bars text-2xl"></i>
             </button>
         </div>
         
         <!-- Mobile Menu -->
-        <div id="mobileMenu" class="hidden md:hidden bg-gray-800 absolute left-0 right-0 top-full shadow-lg">
+        <div *ngIf="mobileMenuVisible" class="md:hidden bg-gray-800 absolute left-0 right-0 top-full shadow-lg">
             <div class="flex flex-col space-y-4 p-4">
-                <a href="index.html" class="text-white hover:text-red-500 transition duration-300">HOME</a>
-                <a href="teams.html" class="text-white hover:text-red-500 transition duration-300">TEAMS</a>
-                <a href="drivers.html" class="text-white hover:text-red-500 transition duration-300">DRIVERS</a>
-                <a href="history.html" class="text-red-500 hover:text-red-400 transition duration-300">HISTORY</a>
-                <a href="rules.html" class="text-white hover:text-red-500 transition duration-300">RULES</a>
+                <button (click)="navigateToHome()" class="text-white hover:text-red-500 transition duration-300">HOME</button>
+                <button (click)="navigateToTeams()" class="text-white hover:text-red-500 transition duration-300">EQUIPES</button>
+                <button (click)="navigateToDrivers()" class="text-white hover:text-red-500 transition duration-300">CORREDORES</button>
+                <button (click)="navigateToHistory()" class="text-red-500 hover:text-red-400 transition duration-300">HISTORIA</button>
+                <button (click)="navigateToRules()" class="text-white hover:text-red-500 transition duration-300">REGRAS</button>
+                <button (click)="navigateToCareer()" class="text-white hover:text-red-500 transition duration-300">CARREIRA</button>
+                <button (click)="navigateToLogin()" class="text-white hover:text-red-500 transition duration-300">LOGIN</button>
             </div>
         </div>
     </header>
@@ -37,8 +39,8 @@
         <div class="absolute inset-0 bg-f1-pattern"></div>
         <div class="absolute inset-0 history-banner flex items-center justify-center">
             <div class="text-center px-4 max-w-4xl fade-in">
-                <h1 class="text-4xl md:text-6xl font-bold mb-4 slide-up">F1 HISTORY</h1>
-                <p class="text-xl md:text-2xl mb-8 slide-up">Explore over 70 years of Formula 1 racing heritage</p>
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 slide-up">F1 HISTORIA</h1>
+                <p class="text-xl md:text-2xl mb-8 slide-up">Explore mais de 70 anos de herança das corridas de Fórmula 1</p>
             </div>
         </div>
     </section>

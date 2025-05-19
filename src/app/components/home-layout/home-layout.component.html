@@ -17,9 +17,20 @@
                 <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToCareer()">CARREIRA</button>
                 <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToLogin()">LOGIN</button>
             </nav>
-            <button class="md:hidden text-white">
+            <button class="md:hidden text-white" (click)="toggleMobileMenu()">
                 <i class="fas fa-bars text-2xl"></i>
             </button>
+        </div>
+        <div *ngIf="mobileMenuVisible" class="md:hidden bg-gray-800 absolute left-0 right-0 top-full shadow-lg">
+            <div class="flex flex-col space-y-4 p-4">
+                <button (click)="navigateToHome()" class="text-red-500 hover:text-red-400 transition duration-300">HOME</button>
+                <button (click)="navigateToTeams()" class="text-white hover:text-red-500 transition duration-300">EQUIPES</button>
+                <button (click)="navigateToDrivers()" class="text-white hover:text-red-500 transition duration-300">CORREDORES</button>
+                <button (click)="navigateToHistory()" class="text-white hover:text-red-500 transition duration-300">HISTORIA</button>
+                <button (click)="navigateToRules()" class="text-white hover:text-red-500 transition duration-300">REGRAS</button>
+                <button (click)="navigateToCareer()" class="text-white hover:text-red-500 transition duration-300">CARREIRA</button>
+                <button (click)="navigateToLogin()" class="text-white hover:text-red-500 transition duration-300">LOGIN</button>
+            </div>
         </div>
     </header>
 
@@ -46,7 +57,7 @@
                             <h2 class="text-4xl md:text-6xl font-bold mb-4 text-red-600 slide-in-left">O PINÁCULO DO AUTOMOBILISMO</h2>  
 
                             <button class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
-                                EXPLORE NOW
+                                EEXPLORE AGORA
                             </button>
                         </div>
                     </div>
@@ -67,7 +78,7 @@
                         <div class="text-center px-4 max-w-4xl fade-in">
                             <h2 class="text-4xl md:text-6xl font-bold mb-4 text-red-600">TEMPORADA 2025</h2>
                             <button class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
-                                VIEW CALENDAR
+                                VEJA O CALENDARIO
                             </button>
                         </div>
                     </div>
@@ -87,7 +98,7 @@
                         <div class="text-center px-4 max-w-4xl fade-in">
                             <h2 class="text-4xl md:text-6xl font-bold mb-4 text-red-600">CIRCUITOS LENDÁRIOS</h2>
                             <button class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
-                                EXPLORE TRACKS
+                                EXPLRE AS CORRIDAS
                             </button>
                         </div>
                     </div>

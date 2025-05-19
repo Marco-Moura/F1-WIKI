@@ -6,15 +6,19 @@ import {
   ViewChild
 } from '@angular/core';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-career-layout',
   templateUrl: './career-layout.component.html',
-  styleUrls: ['./career-layout.component.css']
+  styleUrls: ['./career-layout.component.css'],
+  imports: [CommonModule]
 })
 export class CareerLayoutComponent implements AfterViewInit {
   @ViewChild('mobileMenuBtn') mobileMenuBtn!: ElementRef;
   @ViewChild('mobileMenu') mobileMenu!: ElementRef;
+    mobileMenuVisible: boolean = true;
+
 
   constructor(private router: Router, private renderer: Renderer2, private el: ElementRef) {}
 
@@ -116,4 +120,8 @@ export class CareerLayoutComponent implements AfterViewInit {
   navigateToLogin(){
   this.router.navigate(['/login']);
 }
+
+toggleMobileMenu(): void {
+    this.mobileMenuVisible = !this.mobileMenuVisible;
+  }
 }

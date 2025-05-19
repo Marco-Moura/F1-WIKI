@@ -1,13 +1,16 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-history-layout',
   templateUrl: './history-layout.component.html',
-  styleUrls: ['./history-layout.component.css'] // Corrigido de styleUrl para styleUrls
+  styleUrls: ['./history-layout.component.css'],
+  imports: [CommonModule]
 })
 export class HistoryLayoutComponent implements AfterViewInit {
-  
+     isMobileMenuOpen: boolean = true;
+
 
   constructor(private router: Router) {}
 
@@ -121,5 +124,11 @@ navigateToCareer() {
 navigateToLogin(){
   this.router.navigate(['/login']);
 }
-}
+toggleMobileMenu() {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
 
+  mobileMenuVisible(): boolean {
+  return this.isMobileMenuOpen;
+}
+}

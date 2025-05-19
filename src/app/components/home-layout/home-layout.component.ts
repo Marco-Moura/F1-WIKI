@@ -1,18 +1,22 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home-layout',
   templateUrl: './home-layout.component.html',
-  styleUrls: ['./home-layout.component.css']
+  styleUrls: ['./home-layout.component.css'],
+  imports: [CommonModule]
 })
-export class HomeLayoutComponent implements AfterViewInit {
-
+export class HomeLayoutComponent implements AfterViewInit, OnInit {
+  mobileMenuVisible: boolean = true;
   private currentIndex: number = 0;
   private totalSlides: number = 0;
   private interval: any;
 
   constructor(private router: Router) {}
+
+  ngOnInit(): void{}
 
   ngAfterViewInit() {
     // Verifica se o objeto document está disponível
@@ -131,4 +135,8 @@ navigateToCareer() {
 navigateToLogin(){
   this.router.navigate(['/login']);
 }
+
+toggleMobileMenu(): void {
+    this.mobileMenuVisible = !this.mobileMenuVisible;
+  }
 }

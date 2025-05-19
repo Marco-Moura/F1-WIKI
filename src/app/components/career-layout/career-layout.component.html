@@ -4,7 +4,7 @@
         <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center">
                 <img src="/assets/FORMULA_WIKI_LOGO-removebg-preview.png" alt="F1 Logo" class="h-12 mr-4">
-                <h1 class="text-2xl font-bold text-red-600">F1 CARREIRAS</h1>
+                <h1 class="text-2xl font-bold text-red-600">FORMULA WIKI</h1>
             </div>
             <nav class="hidden md:flex space-x-8">
                 <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToHome()">HOME</button>
@@ -18,6 +18,17 @@
             <button class="md:hidden text-white" id="mobileMenuBtn">
                 <i class="fas fa-bars text-2xl"></i>
             </button>
+        </div>
+        <div *ngIf="mobileMenuVisible" class="md:hidden bg-gray-800 absolute left-0 right-0 top-full shadow-lg">
+            <div class="flex flex-col space-y-4 p-4">
+                <button (click)="navigateToHome()" class="text-white hover:text-red-500 transition duration-300">HOME</button>
+                <button (click)="navigateToTeams()" class="text-white hover:text-red-500 transition duration-300" >EQUIPES</button>
+                <button (click)="navigateToDrivers()" class="text-white hover:text-red-500 transition duration-300">CORREDORES</button>
+                <button (click)="navigateToHistory()" class="text-white hover:text-red-500 transition duration-300">HISTORIA</button>
+                <button (click)="navigateToRules()" class="text-white hover:text-red-500 transition duration-300">REGRAS</button>
+                <button (click)="navigateToCareer()" class="text-red-500 hover:text-red-400 transition duration-300">CARREIRA</button>
+                <button (click)="navigateToLogin()" class="text-white hover:text-red-500 transition duration-300">LOGIN</button>
+            </div>
         </div>
     </header>
 

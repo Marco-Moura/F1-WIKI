@@ -22,7 +22,7 @@ interface Team {
 export class TeamsLayoutComponent implements OnInit {
 
   constructor (private router: Router) {}
-  isMobileMenuOpen: boolean = false;
+  isMobileMenuOpen: boolean = true;
   teams: Team[] = [];
   selectedTeam1: string = '';
   selectedTeam2: string = '';

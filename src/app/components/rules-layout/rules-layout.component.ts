@@ -1,12 +1,15 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-rules-layout',
   templateUrl: './rules-layout.component.html',
-  styleUrls: ['./rules-layout.component.css']
+  styleUrls: ['./rules-layout.component.css'],
+  imports: [CommonModule]
 })
 export class RulesLayoutComponent implements AfterViewInit {
+    isMobileMenuOpen: boolean = true;
 
   ngAfterViewInit(): void {
     // Mobile menu toggle
@@ -104,5 +107,13 @@ navigateToCareer() {
 
 navigateToLogin(){
   this.router.navigate(['/login']);
+}
+
+toggleMobileMenu() {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
+
+  mobileMenuVisible(): boolean {
+  return this.isMobileMenuOpen;
 }
 }
