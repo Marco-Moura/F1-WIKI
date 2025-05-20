@@ -1,3 +1,7 @@
+VERCEL
+
+f1-wiki-one.vercel.app
+
 # F1
 
 Este projeto foi gerado com o [Angular CLI](https://github.com/angular/angular-cli) na versão 19.2.11.
