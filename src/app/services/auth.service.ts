@@ -9,6 +9,11 @@ interface LoginResponse {
   error?: string;
 }
 
+interface User {
+  fullname: string;
+  username: string;
+}
+
 @Injectable({ providedIn: 'root' })
 export class AuthService {
   private baseUrl = 'http://localhost:8080';

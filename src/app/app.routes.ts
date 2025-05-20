@@ -7,6 +7,8 @@ import { RulesComponent } from './pages/rules/rules.component';
 import { CareerComponent } from './pages/career/career.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { ServicesTermsComponent } from './components/services-terms/services-terms.component';
+import { PrivacyPoliticsComponent } from './components/privacy-politics/privacy-politics.component';
 
 
 
@@ -47,5 +49,13 @@ export const routes: Routes = [
     {
         path: 'signup',
         component: SignupComponent
+    },
+    {
+        path: 'Termos-Serviço',
+        component: ServicesTermsComponent
+    },
+    {
+        path: 'Politicas-Privacidade',
+        component: PrivacyPoliticsComponent
     }
 ];

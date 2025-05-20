@@ -1,6 +1,7 @@
-import { Component, AfterViewInit, OnInit } from '@angular/core';
+import { Component, AfterViewInit, } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-home-layout',
@@ -8,15 +9,16 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./home-layout.component.css'],
   imports: [CommonModule]
 })
-export class HomeLayoutComponent implements AfterViewInit, OnInit {
+export class HomeLayoutComponent implements AfterViewInit {
   mobileMenuVisible: boolean = true;
   private currentIndex: number = 0;
   private totalSlides: number = 0;
   private interval: any;
+  fullName: string = '';
+  menuOpen: boolean = false;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private AuthService : AuthService) {}
 
-  ngOnInit(): void{}
 
   ngAfterViewInit() {
     // Verifica se o objeto document está disponível

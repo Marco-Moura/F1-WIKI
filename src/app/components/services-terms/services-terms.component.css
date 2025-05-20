@@ -1,0 +1,32 @@
+ @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Titillium+Web:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Titillium Web', sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+        
+        .f1-title {
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 1px;
+        }
+        
+        .checkered-bg {
+            background: 
+                linear-gradient(45deg, #000 25%, transparent 25%) -50px 0,
+                linear-gradient(-45deg, #000 25%, transparent 25%) -50px 0,
+                linear-gradient(45deg, transparent 75%, #000 75%),
+                linear-gradient(-45deg, transparent 75%, #000 75%);
+            background-size: 100px 100px;
+            height: 8px;
+        }
+        
+        .flag-stripe {
+            height: 4px;
+            background: linear-gradient(90deg, 
+                #000000 0%, #000000 20%,
+                #ffffff 20%, #ffffff 40%,
+                #ff0000 40%, #ff0000 60%,
+                #000000 60%, #000000 80%,
+                #ffffff 80%, #ffffff 100%);
+        }

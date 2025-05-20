@@ -4,7 +4,7 @@ import { HomeLayoutComponent } from "../../components/home-layout/home-layout.co
 @Component({
   selector: 'app-home',
   imports: [
-    HomeLayoutComponent
+    HomeLayoutComponent,
 ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'

@@ -96,4 +96,8 @@ export class SignupComponent {
   navigateToLogin(): void {
     this.router.navigate(['/login']);
   }
+
+  navigateToTerms(){
+    this.router.navigate(['/Termos-Serviço'])
+  }
 }

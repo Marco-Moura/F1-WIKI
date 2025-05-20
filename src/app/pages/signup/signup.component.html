@@ -160,9 +160,11 @@
             />
             <label for="terms" class="ml-2 block text-sm text-gray-300">
               Eu li e aceito os
-              <a href="#" class="text-red-500 hover:text-red-400">Termos de Serviço</a>
+              <!-- <a href="#" class="text-red-500 hover:text-red-400">Termos de Serviço</a> -->
+               <button class="text-red-500 hover:text-red-400" (click)="navigateToTerms()">Termos de Serviço</button>
               e as
-              <a href="#" class="text-red-500 hover:text-red-400">Politicas de Privacidade</a>
+              <!-- <a href="#" class="text-red-500 hover:text-red-400" (click)="navigateToTerms()">Politicas de Privacidade</a> -->
+               <button class="text-red-500 hover:text-red-400" (click)="navigateToTerms()">Politicas de Privacidade</button>
             </label>
           </div>
 
