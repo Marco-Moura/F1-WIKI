@@ -10,6 +10,7 @@ import { CommonModule } from '@angular/common';
 })
 export class HistoryLayoutComponent implements AfterViewInit {
      isMobileMenuOpen: boolean = true;
+     mobileMenuVisible: boolean = true;
 
 
   constructor(private router: Router) {}
@@ -124,11 +125,7 @@ navigateToCareer() {
 navigateToLogin(){
   this.router.navigate(['/login']);
 }
-toggleMobileMenu() {
-    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+toggleMobileMenu(): void {
+    this.mobileMenuVisible = !this.mobileMenuVisible;
   }
-
-  mobileMenuVisible(): boolean {
-  return this.isMobileMenuOpen;
-}
 }

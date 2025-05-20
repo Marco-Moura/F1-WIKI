@@ -83,8 +83,6 @@ mongoose.connect("mongodb+srv://marcoau4564:1234@web.chnsiby.mongodb.net/", {
     console.log(`Não foi possivel sincronizar o banco de dados. ${error.message}`);
 })
 
-
-
 createServer.listen(port,()=>{
     console.log(`Servidor rodando na porta ${port}`);
 });

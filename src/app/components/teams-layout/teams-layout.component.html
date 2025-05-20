@@ -7,6 +7,18 @@
                 <button (click)="navigateToHome()"><img src="/assets/FORMULA_WIKI_LOGO-removebg-preview.png" alt="F1 Logo" class="h-12 mr-4"></button>
                 <h1 class="text-2xl font-bold text-red-600">FORMULA WIKI</h1>
             </div>
+            <!-- Mobile Menu -->
+            <div *ngIf="mobileMenuVisible" class="md:hidden bg-gray-800 absolute left-0 right-0 top-full shadow-lg">
+            <div class="flex flex-col space-y-4 p-4">
+                <button (click)="navigateToHome()" class="text-white hover:text-red-500 transition duration-300">HOME</button>
+                <button (click)="navigateToTeams()" class="text-red-500 hover:text-red-400 transition duration-300">EQUIPES</button>
+                <button (click)="navigateToDrivers()" class="text-white hover:text-red-500 transition duration-300">CORREDORES</button>
+                <button (click)="navigateToHistory()" class="text-white hover:text-red-500 transition duration-300">HISTORIA</button>
+                <button (click)="navigateToRules()" class="text-white hover:text-red-500 transition duration-300">REGRAS</button>
+                <button (click)="navigateToCareer()" class="text-white hover:text-red-500 transition duration-300">CARREIRA</button>
+                <button (click)="navigateToLogin()" class="text-white hover:text-red-500 transition duration-300">LOGIN</button>
+            </div>
+        </div>
             <nav class="hidden md:flex space-x-8">
                 <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToHome()">HOME</button>
                 <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToTeams()">EQUIPES</button>
@@ -17,22 +29,10 @@
                 <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToLogin()">LOGIN</button>
             </nav>
             <button class="md:hidden text-white" (click)="toggleMobileMenu()">
-                <i class="fas fa-bars text-2xl"></i>
+                Close
+                
             </button>
 
-        </div>
-        
-        <!-- Mobile Menu -->
-        <div *ngIf="mobileMenuVisible" class="md:hidden bg-gray-800 absolute left-0 right-0 top-full shadow-lg">
-            <div class="flex flex-col space-y-4 p-4">
-                <button (click)="navigateToHome()" class="text-white hover:text-red-500 transition duration-300">HOME</button>
-                <button (click)="navigateToTeams()" class="text-red-500 hover:text-red-400 transition duration-300">EQUIPES</button>
-                <button (click)="navigateToDrivers()" class="text-white hover:text-red-500 transition duration-300">CORREDORES</button>
-                <button (click)="navigateToHistory()" class="text-white hover:text-red-500 transition duration-300">HISTORIA</button>
-                <button (click)="navigateToRules()" class="text-white hover:text-red-500 transition duration-300">REGRAS</button>
-                <button (click)="navigateToCareer()" class="text-white hover:text-red-500 transition duration-300">CARREIRA</button>
-                <button (click)="navigateToLogin()" class="text-white hover:text-red-500 transition duration-300">LOGIN</button>
-            </div>
         </div>
     </header>
 
@@ -464,8 +464,70 @@
                     </div>
                 </div>
             </div>
+            <div class="w-full p-6 mt-10 bg-[#0d1117] h-50px text-white">
+  <h2 class="text-3xl font-bold mb-6 text-center">Comparador de Equipes</h2>
+
+  <!-- Seletores de equipes -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+    <!-- Equipe 1 -->
+    <div>
+      <label class="block text-lg font-medium mb-2">Equipe 1</label>
+      <select class="w-full p-2 text-black rounded" [(ngModel)]="selectedTeam1">
+        <option *ngFor="let team of teams" [ngValue]="team">{{ team.name }}</option>
+      </select>
+    </div>
+
+    <!-- Equipe 2 -->
+    <div>
+      <label class="block text-lg font-medium mb-2">Equipe 2</label>
+      <select class="w-full p-2 text-black rounded" [(ngModel)]="selectedTeam2">
+        <option *ngFor="let team of teams" [ngValue]="team">{{ team.name }}</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Botão -->
+  <div class="text-center mb-6">
+    <button 
+      class="px-8 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold text-lg rounded transition"
+      (click)="mostrarComparacao = true"
+      [disabled]="!selectedTeam1 || !selectedTeam2"
+    >
+      Comparar Equipes
+    </button>
+  </div>
+
+  <!-- Tabela de comparação -->
+<div 
+  *ngIf="mostrarComparacao"
+  class="bg-white shadow-lg rounded-lg p-6 border border-gray-200 transition-all duration-500 animate-fade-in text-black"
+>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <!-- Equipe 1 -->
+    <div class="p-6 border rounded-lg bg-gray-100 w-full">
+      <h3 class="text-2xl font-bold text-red-700 mb-4">{{ selectedTeam1.name }}</h3>
+      <p class="text-lg"><span class="font-semibold">Chefe:</span> {{ selectedTeam1.teamPrincipal }}</p>
+      <p class="text-lg"><span class="font-semibold">Pilotos:</span> {{ selectedTeam1.drivers.join(', ') }}</p>
+      <p class="text-lg"><span class="font-semibold">Motor:</span> {{ selectedTeam1.engine }}</p>
+      <p class="text-lg"><span class="font-semibold">Estreia:</span> {{ selectedTeam1.firstEntry }}</p>
+      <p class="text-lg"><span class="font-semibold">Títulos:</span> {{ selectedTeam1.titles }}</p>
+    </div>
+
+    <!-- Equipe 2 -->
+    <div class="p-6 border rounded-lg bg-gray-100 w-full">
+      <h3 class="text-2xl font-bold text-blue-700 mb-4">{{ selectedTeam2.name }}</h3>
+      <p class="text-lg"><span class="font-semibold">Chefe:</span> {{ selectedTeam2.teamPrincipal }}</p>
+      <p class="text-lg"><span class="font-semibold">Pilotos:</span> {{ selectedTeam2.drivers.join(', ') }}</p>
+      <p class="text-lg"><span class="font-semibold">Motor:</span> {{ selectedTeam2.engine }}</p>
+      <p class="text-lg"><span class="font-semibold">Estreia:</span> {{ selectedTeam2.firstEntry }}</p>
+      <p class="text-lg"><span class="font-semibold">Títulos:</span> {{ selectedTeam2.titles }}</p>
+    </div>
         </div>
-    </section>
+        </div>
+        </div>
+    </div>
+</section>
+  
 
     <!-- Footer -->
     <footer class="bg-black py-12 px-6">

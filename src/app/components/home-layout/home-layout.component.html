@@ -8,20 +8,7 @@
                 <button (click)="navigateToHome()"><img src="/assets/FORMULA_WIKI_LOGO-removebg-preview.png" alt="F1 Logo" class="h-12 mr-4"></button>
                 <h1 class="text-2xl font-bold text-red-600">FORMULA WIKI</h1>
             </div>
-            <nav class="hidden md:flex space-x-8">
-                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToHome()">HOME</button>
-                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToTeams()">EQUIPES</button>
-                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToDrivers()">CORREDORES</button>
-                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToHistory()">HISTORIA</button>
-                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToRules()">REGRAS</button>
-                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToCareer()">CARREIRA</button>
-                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToLogin()">LOGIN</button>
-            </nav>
-            <button class="md:hidden text-white" (click)="toggleMobileMenu()">
-                <i class="fas fa-bars text-2xl"></i>
-            </button>
-        </div>
-        <div *ngIf="mobileMenuVisible" class="md:hidden bg-gray-800 absolute left-0 right-0 top-full shadow-lg">
+            <div *ngIf="mobileMenuVisible" class="md:hidden bg-gray-800 absolute left-0 right-0 top-full shadow-lg">
             <div class="flex flex-col space-y-4 p-4">
                 <button (click)="navigateToHome()" class="text-red-500 hover:text-red-400 transition duration-300">HOME</button>
                 <button (click)="navigateToTeams()" class="text-white hover:text-red-500 transition duration-300">EQUIPES</button>
@@ -32,6 +19,20 @@
                 <button (click)="navigateToLogin()" class="text-white hover:text-red-500 transition duration-300">LOGIN</button>
             </div>
         </div>
+            <nav class="hidden md:flex space-x-8">
+                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToHome()">HOME</button>
+                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToTeams()">EQUIPES</button>
+                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToDrivers()">CORREDORES</button>
+                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToHistory()">HISTORIA</button>
+                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToRules()">REGRAS</button>
+                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToCareer()">CARREIRA</button>
+                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToLogin()">LOGIN</button>
+            </nav>
+            <button class="md:hidden text-white" (click)="toggleMobileMenu()">
+                Close 
+            </button>
+        </div>
+
     </header>
 
     <!-- Hero Carousel -->
