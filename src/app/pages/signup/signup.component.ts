@@ -88,9 +88,6 @@ export class SignupComponent {
     this.errorMessage = err.error?.message || 'Erro ao criar conta';
   }
 });
-
-
-
 }
 
   navigateToLogin(): void {
