@@ -11,7 +11,7 @@ import cors from 'cors';
 
 
 const allowedOrigins = [
-  'http://localhost:4200', // frontend local
+  'http://localhost:8080', // frontend local
   'https://f1-wiki-mocha.vercel.app/', // frontend na Vercel
 ];
 
