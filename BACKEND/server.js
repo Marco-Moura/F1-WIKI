@@ -12,7 +12,7 @@ import cors from 'cors';
 
 const allowedOrigins = [
   'http://localhost:8080', // frontend local
-  'https://f1-wiki-mocha.vercel.app/', // frontend na Vercel
+  'https://f1-wiki-mocha.vercel.app', // frontend na Vercel
 ];
 
 app.use(cors({
