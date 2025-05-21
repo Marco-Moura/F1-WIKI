@@ -9,10 +9,15 @@ import mongoose from 'mongoose';
 import userModel from "./src/models/userModel.js";
 import cors from 'cors';
 
+const allowedOrigins = [
+  'https://f1-wiki-mocha.vercel.app',
+  'http://localhost:4200',
+];
 
 app.use(cors({
-  origin: ['https://f1-wiki-frontend.onrender.com', 'http://localhost:4200'],
-  methods: ['GET', 'POST'],
+  origin: allowedOrigins, // simples e seguro
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
 }));
 
