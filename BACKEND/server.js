@@ -7,7 +7,7 @@ dotenv.config();
 import bcrypt from "bcrypt";
 import mongoose from 'mongoose';
 import userModel from "./src/models/userModel.js";
-import cors from "cors";
+import cors from 'cors';
 
 
 app.use(cors());
@@ -73,7 +73,7 @@ app.post("/login", async (req, res) => {
 });
 
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3000;
 
 mongoose.connect("mongodb+srv://marcoau4564:1234@web.chnsiby.mongodb.net/", {
     dbName:"LoginUser"
