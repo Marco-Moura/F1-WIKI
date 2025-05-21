@@ -10,7 +10,11 @@ import userModel from "./src/models/userModel.js";
 import cors from 'cors';
 
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://f1-wiki-orcin.vercel.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.disable("x-powered-by")
