@@ -10,22 +10,10 @@ import userModel from "./src/models/userModel.js";
 import cors from 'cors';
 
 
-const allowedOrigins = [
-  'https://f1-wiki-mocha.vercel.app', // frontend na Vercel
-];
-
 app.use(cors({
-  origin: function (origin, callback) {
-    console.log("Origem da requisição:", origin); // log útil
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      console.log("Origem bloqueada pelo CORS:", origin);
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  origin: ['https://f1-wiki-frontend.onrender.com', 'http://localhost:4200'],
+  methods: ['GET', 'POST'],
+  credentials: true
 }));
 
 app.use(express.json());
