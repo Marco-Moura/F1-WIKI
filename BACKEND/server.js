@@ -10,6 +10,7 @@ import userModel from "./src/models/userModel.js";
 import cors from 'cors';
 
 
+
 const allowedOrigins = [
   'http://localhost:8080', // frontend local
   'https://f1-wiki-mocha.vercel.app', // frontend na Vercel
@@ -23,12 +24,13 @@ app.use(cors({
       callback(new Error('Not allowed by CORS'));
     }
   },
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   credentials: true
 }));
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.disable("x-powered-by")
+app.options('*', cors());
 
 
 app.post("/signup", async (req, res) => {

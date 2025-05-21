@@ -25,11 +25,11 @@ export class AuthService {
     return this.http.post<LoginResponse>(`${this.baseUrl}/login`, { email, password });
   }
 
-  signup(fullname: string, email: string, password: string) {
-    return this.http.post(`${this.baseUrl}/signup`, {
-      fullname,
-      email,
-      password
-    });
-  }
+  signup(fullname: string, email: string, password: string): Observable<LoginResponse> {
+  return this.http.post<LoginResponse>(`${this.baseUrl}/signup`, {
+    fullname,
+    email,
+    password
+  });
+}
 }
