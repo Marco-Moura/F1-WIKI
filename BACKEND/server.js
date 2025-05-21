@@ -9,7 +9,6 @@ import mongoose from 'mongoose';
 import userModel from "./src/models/userModel.js";
 import cors from 'cors';
 
-const cors = require('cors');
 
 const allowedOrigins = [
   'https://f1-wiki-mocha.vercel.app', // frontend na Vercel
@@ -29,7 +28,11 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
-app.options('*', cors());
+app.options('*', cors({
+  origin: allowedOrigins,
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
