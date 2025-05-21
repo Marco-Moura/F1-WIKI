@@ -11,7 +11,7 @@ import cors from 'cors';
 
 
 app.use(cors({
-  origin: 'https://f1-wiki-orcin.vercel.app',
+  origin: 'https://f1-wiki-backend.onrender.com',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));
