@@ -9,22 +9,16 @@ import mongoose from 'mongoose';
 import userModel from "./src/models/userModel.js";
 import cors from 'cors';
 
-const allowedOrigins = [
-  'https://f1-wiki-mocha.vercel.app',
-  'http://localhost:4200',
-];
 
 app.use(cors({
-  origin: allowedOrigins, // simples e seguro
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
+  origin: ['https://f1-wiki-mocha.vercel.app', 'http://localhost:4200'],
+  methods: ['GET', 'POST'],
   credentials: true
 }));
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.disable("x-powered-by")
-
 
 
 app.post("/signup", async (req, res) => {
