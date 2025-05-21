@@ -12,16 +12,16 @@ import cors from 'cors';
 
 
 const allowedOrigins = [
-  'http://localhost:8080', // frontend local
   'https://f1-wiki-mocha.vercel.app', // frontend na Vercel
 ];
 
 app.use(cors({
   origin: function (origin, callback) {
-    console.log("Origem da requisição:", origin); // <-- útil para debug
+    console.log("Origem da requisição:", origin); // log útil
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
+      console.log("Origem bloqueada pelo CORS:", origin);
       callback(new Error('Not allowed by CORS'));
     }
   },
