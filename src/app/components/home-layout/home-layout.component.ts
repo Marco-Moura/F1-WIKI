@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
@@ -13,19 +13,23 @@ export class HomeLayoutComponent implements AfterViewInit {
   mobileMenuVisible: boolean = true;
   private currentIndex: number = 0;
   private totalSlides: number = 0;
-  private interval: any;
-  fullName: string = '';
-  menuOpen: boolean = false;
+  private carouselInterval: any;
+  private countdownInterval: any;
 
-  constructor(private router: Router, private AuthService : AuthService) {}
+  // propriedades para countdown
+  days: string = '00';
+  hours: string = '00';
+  minutes: string = '00';
+  seconds: string = '00';
 
+  constructor(
+    private router: Router,
+    private authService: AuthService
+  ) {}
 
   ngAfterViewInit() {
-    // Verifica se o objeto document está disponível
-    if (typeof document !== 'undefined') {
-      this.initializeCarousel();
-      this.updateCountdown();
-    }
+    this.initializeCarousel();
+    this.startCountdown(5); // Inicia contagem para 5 dias à frente
   }
 
   private initializeCarousel(): void {
@@ -36,42 +40,36 @@ export class HomeLayoutComponent implements AfterViewInit {
     const indicators = document.querySelectorAll('.carousel-indicator');
 
     this.totalSlides = slides.length;
-
-    // Set initial position
     this.updateCarousel(carousel, indicators);
 
-    // Event listeners
+    this.carouselInterval = setInterval(() => this.nextSlide(carousel, indicators), 10000);
+
     nextBtn.addEventListener('click', () => {
-      clearInterval(this.interval);
+      clearInterval(this.carouselInterval);
       this.nextSlide(carousel, indicators);
-      this.interval = setInterval(() => this.nextSlide(carousel, indicators), 10000);
+      this.carouselInterval = setInterval(() => this.nextSlide(carousel, indicators), 10000);
     });
 
     prevBtn.addEventListener('click', () => {
-      clearInterval(this.interval);
+      clearInterval(this.carouselInterval);
       this.prevSlide(carousel, indicators);
-      this.interval = setInterval(() => this.nextSlide(carousel, indicators), 10000);
+      this.carouselInterval = setInterval(() => this.nextSlide(carousel, indicators), 10000);
     });
 
     indicators.forEach(indicator => {
       indicator.addEventListener('click', () => {
-        clearInterval(this.interval);
+        clearInterval(this.carouselInterval);
         this.currentIndex = parseInt(indicator.getAttribute('data-index') || '0', 10);
         this.updateCarousel(carousel, indicators);
-        this.interval = setInterval(() => this.nextSlide(carousel, indicators), 10000);
+        this.carouselInterval = setInterval(() => this.nextSlide(carousel, indicators), 10000);
       });
     });
   }
 
   private updateCarousel(carousel: HTMLElement, indicators: NodeListOf<Element>): void {
     carousel.style.transform = `translateX(-${this.currentIndex * 100}%)`;
-
     indicators.forEach((indicator, index) => {
-      if (index === this.currentIndex) {
-        indicator.classList.add('bg-opacity-100');
-      } else {
-        indicator.classList.remove('bg-opacity-100');
-      }
+      indicator.classList.toggle('bg-opacity-100', index === this.currentIndex);
     });
   }
 
@@ -85,60 +83,40 @@ export class HomeLayoutComponent implements AfterViewInit {
     this.updateCarousel(carousel, indicators);
   }
 
-  private updateCountdown(): void {
+  private startCountdown(daysAhead: number): void {
     const countDownDate = new Date();
-    countDownDate.setDate(countDownDate.getDate() + 5); // Exemplo: 5 dias a partir de agora
-    countDownDate.setHours(20, 0, 0, 0); // Definido para 20:00
+    countDownDate.setDate(countDownDate.getDate() + daysAhead);
+    countDownDate.setHours(20, 0, 0, 0);
 
-    this.interval = setInterval(() => {
-      const now = new Date().getTime();
+    this.countdownInterval = setInterval(() => {
+      const now = Date.now();
       const distance = countDownDate.getTime() - now;
 
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      document.getElementById("countdown-days")!.innerHTML = days.toString().padStart(2, '0');
-      document.getElementById("countdown-hours")!.innerHTML = hours.toString().padStart(2, '0');
-document.getElementById("countdown-minutes")!.innerHTML = minutes.toString().padStart(2, '0');
-      document.getElementById("countdown-seconds")!.innerHTML = seconds.toString().padStart(2, '0');
-      // Se a contagem regressiva terminar, exibe "00"
       if (distance < 0) {
-        clearInterval(this.interval);
-        document.getElementById("countdown-days")!.innerHTML = "00";
-        document.getElementById("countdown-hours")!.innerHTML = "00";
-        document.getElementById("countdown-minutes")!.innerHTML = "00";
-        document.getElementById("countdown-seconds")!.innerHTML = "00";
+        clearInterval(this.countdownInterval);
+        this.days = this.hours = this.minutes = this.seconds = '00';
+        return;
       }
+
+      const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const s = Math.floor((distance % (1000 * 60)) / 1000);
+
+      this.days    = String(d).padStart(2, '0');
+      this.hours   = String(h).padStart(2, '0');
+      this.minutes = String(m).padStart(2, '0');
+      this.seconds = String(s).padStart(2, '0');
     }, 1000);
   }
-  // Função para navegar até a página "Teams"
-  navigateToTeams() {
-    this.router.navigate(['teams']); // Substitua '/teams' pela rota correta se necessário
-  }
-  navigateToHome() {
-  this.router.navigate(['/home']); // Substitua pela rota correta para a página inicial
-}
-navigateToDrivers() {
-  this.router.navigate(['/drivers']); // Substitua pela rota correta para a página de drivers
-}
-navigateToHistory() {
-  this.router.navigate(['/history']);
-}
 
-navigateToRules() {
-  this.router.navigate(['/rules']); // Substitua pela rota correta para a página de regras
-}
-navigateToCareer() {
-  this.router.navigate(['/career'])
-}
-
-navigateToLogin(){
-  this.router.navigate(['/login']);
-}
-
-toggleMobileMenu(): void {
-    this.mobileMenuVisible = !this.mobileMenuVisible;
-  }
+  // métodos de navegação...
+  navigateToTeams() { this.router.navigate(['teams']); }
+  navigateToHome()  { this.router.navigate(['/home']); }
+  navigateToDrivers() { this.router.navigate(['/drivers']); }
+  navigateToHistory() { this.router.navigate(['/history']); }
+  navigateToRules()   { this.router.navigate(['/rules']); }
+  navigateToCareer()  { this.router.navigate(['/career']); }
+  navigateToLogin()   { this.router.navigate(['/login']); }
+  toggleMobileMenu(): void { this.mobileMenuVisible = !this.mobileMenuVisible; }
 }

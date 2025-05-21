@@ -44,7 +44,7 @@
                 <div class="carousel-slide w-full h-full flex-shrink-0 relative">
                     <div class="absolute inset-0 bg-black opacity-50"></div>
 
-                    <iframe 
+                    <!-- <iframe 
                     width="100%" 
                     height="100%" 
                     src="https://www.youtube.com/embed/iwB0_lview4?autoplay=1&controls=0&loop=1&playlist=iwB0_lview4&modestbranding=1&rel=0&cc_load_policy=0&mute=1" 
@@ -52,7 +52,7 @@
                     frameborder="0" 
                     allow="autoplay; encrypted-media" 
                     allowfullscreen>
-                    </iframe>
+                    </iframe> -->
 
                     <div class="absolute inset-0 flex items-center justify-center">
                         <div class="text-center px-4 max-w-4xl fade-in">
@@ -69,7 +69,7 @@
                 <!-- Slide 2 -->
                 <div class="carousel-slide w-full h-full flex-shrink-0 relative">
                     <div class="absolute inset-0 bg-black opacity-50"></div>
-                    <iframe 
+                    <!-- <iframe 
   width="100%" 
   height="100%" 
   src="https://www.youtube.com/embed/QRlpWz5f-QY?autoplay=1&controls=0&loop=1&playlist=QRlpWz5f-QY&modestbranding=1&rel=0&cc_load_policy=0&mute=1&start=9" 
@@ -77,7 +77,7 @@
   frameborder="0" 
   allow="autoplay; encrypted-media" 
   allowfullscreen>
-</iframe>
+</iframe> -->
 
 
                     <div class="absolute inset-0 flex items-center justify-center">
@@ -95,13 +95,13 @@
                 <!-- Slide 3 -->
                 <div class="carousel-slide w-full h-full flex-shrink-0 relative">
                     <div class="absolute inset-0 bg-black opacity-50"></div>
-                    <iframe width="100%" height="100%"
+                    <!-- <iframe width="100%" height="100%"
     src="https://www.youtube.com/embed/ueedmcB7Cds?autoplay=1&mute=1&controls=0&loop=1&playlist=ueedmcB7Cds&modestbranding=1&rel=0&cc_load_policy=0"
     title="YouTube video player"
     frameborder="0"
     allow="autoplay; encrypted-media"
     allowfullscreen>
-</iframe>
+</iframe> -->
                     <div class="absolute inset-0 flex items-center justify-center">
                         <div class="text-center px-4 max-w-4xl fade-in">
                             <h2 class="text-4xl md:text-6xl font-bold mb-4 text-red-600">CIRCUITOS LENDÁRIOS</h2>
@@ -207,24 +207,24 @@ McLaren domina com inovação tecnológica</h3>
                     <h2 class="text-3xl font-bold mb-4">PRÓXIMA CORRIDA: Autódromo Enzo e Dino Ferrari</h2>
                     <p class="text-xl mb-6">A transmissão será feita pela Band (TV aberta), Bandsports (TV paga) e pelo serviço de streaming F1TV Pro. A Band também disponibilizará cobertura ao vivo em seu site e app.</p>
                     
-                    <div class="grid grid-cols-4 gap-4 mb-8">
-                        <div class="bg-gray-800 rounded-lg p-4 text-center">
-                            <div class="text-4xl font-bold text-red-600" id="countdown-days">00</div>
-                            <div class="text-sm uppercase">Dias</div>
-                        </div>
-                        <div class="bg-gray-800 rounded-lg p-4 text-center">
-                            <div class="text-4xl font-bold text-red-600" id="countdown-hours">00</div>
-                            <div class="text-sm uppercase">Horas</div>
-                        </div>
-                        <div class="bg-gray-800 rounded-lg p-4 text-center">
-                            <div class="text-4xl font-bold text-red-600" id="countdown-minutes">00</div>
-                            <div class="text-sm uppercase">Minutos</div>
-                        </div>
-                        <div class="bg-gray-800 rounded-lg p-4 text-center">
-                            <div class="text-4xl font-bold text-red-600" id="countdown-seconds">00</div>
-                            <div class="text-sm uppercase">Segundos</div>
-                        </div>
-                    </div>
+                    <div class="countdown flex justify-center space-x-8 text-center mt-8 text-white">
+    <div>
+      <div class="text-5xl font-bold">{{ days }}</div>
+      <div class="text-sm">Dias</div>
+    </div>
+    <div>
+      <div class="text-5xl font-bold">{{ hours }}</div>
+      <div class="text-sm">Horas</div>
+    </div>
+    <div>
+      <div class="text-5xl font-bold">{{ minutes }}</div>
+      <div class="text-sm">Minutos</div>
+    </div>
+    <div>
+      <div class="text-5xl font-bold">{{ seconds }}</div>
+      <div class="text-sm">Segundos</div>
+    </div>
+  </div>
                     
                     <a href="https://racingnews365.com/formula-1-circuits"><button class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition duration-300">
                          VER DETALHES DA CORRIDA

@@ -16,6 +16,7 @@ interface User {
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
+  // private baseUrl = 'http://localhost:8080';
   private baseUrl = 'https://f1-wiki-backend.onrender.com';
 
   constructor(private http: HttpClient) {}
