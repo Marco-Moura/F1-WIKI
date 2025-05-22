@@ -29,7 +29,7 @@
                 <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToLogin()">LOGIN</button>
             </nav>
             <button class="md:hidden text-white" (click)="toggleMobileMenu()">
-                Close 
+                <span class="material-symbols-outlined">menu</span>
             </button>
         </div>
 
@@ -37,93 +37,85 @@
 
     <!-- Hero Carousel -->
     <div class="relative overflow-hidden h-screen">
-        <div class="absolute inset-0 bg-f1-pattern"></div>
-        <div class="relative h-full flex items-center">
-            <div id="carousel" class="w-full h-full flex">
-                <!-- Slide 1 -->
-                <div class="carousel-slide w-full h-full flex-shrink-0 relative">
-                    <div class="absolute inset-0 bg-black opacity-50"></div>
+  <div class="absolute inset-0 bg-f1-pattern"></div>
+  <div class="relative h-full flex items-center">
+    <div id="carousel" class="w-full h-full flex">
 
-                    <iframe 
-                    width="100%" 
-                    height="100%" 
-                    src="https://www.youtube.com/embed/iwB0_lview4?autoplay=1&controls=0&loop=1&playlist=iwB0_lview4&modestbranding=1&rel=0&cc_load_policy=0&mute=1" 
-                    title="YouTube video player" 
-                    frameborder="0" 
-                    allow="autoplay; encrypted-media" 
-                    allowfullscreen>
-                    </iframe>
+      <!-- Slide 1 -->
+      <div class="carousel-slide w-full h-full flex-shrink-0 relative">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <iframe 
+          class="absolute top-0 left-0 w-full h-full object-cover md:static md:w-full md:h-full md:object-contain"
+          src="https://www.youtube.com/embed/iwB0_lview4?autoplay=1&controls=0&loop=1&playlist=iwB0_lview4&modestbranding=1&rel=0&cc_load_policy=0&mute=1" 
+          title="YouTube video player"
+          frameborder="0"
+          allow="autoplay; encrypted-media"
+          allowfullscreen>
+        </iframe>
 
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <div class="text-center px-4 max-w-4xl fade-in">
-                            <h2 class="text-4xl md:text-6xl font-bold mb-4 text-red-600 slide-in-left">O PINÁCULO DO AUTOMOBILISMO</h2>  
-                            <p class="pb-4 text-white">O auge da engenharia, velocidade e competição no mundo das corridas. É onde a paixão pelo desempenho se encontra com a inovação tecnológica, desafiando os limites humanos e mecânicos a cada curva.</p>
-                            <a href="https://www.formula1.com/" target="_blank"><button class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
-                                EXPLORE AGORA
-                            </button>
-                            </a>
-                    </div>
-            </div>
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="text-center px-4 max-w-4xl fade-in">
+            <h2 class="text-4xl md:text-6xl font-bold mb-4 text-red-600 slide-in-left">O PINÁCULO DO AUTOMOBILISMO</h2>  
+            <p class="pb-4 text-white">O auge da engenharia, velocidade e competição no mundo das corridas. É onde a paixão pelo desempenho se encontra com a inovação tecnológica, desafiando os limites humanos e mecânicos a cada curva.</p>
+            <a href="https://www.formula1.com/" target="_blank">
+              <button class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+                EXPLORE AGORA
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="carousel-slide w-full h-full flex-shrink-0 relative">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <iframe 
+          class="absolute top-0 left-0 w-full h-full object-cover md:static md:w-full md:h-full md:object-contain"
+          src="https://www.youtube.com/embed/QRlpWz5f-QY?autoplay=1&controls=0&loop=1&playlist=QRlpWz5f-QY&modestbranding=1&rel=0&cc_load_policy=0&mute=1&start=9" 
+          title="YouTube video player"
+          frameborder="0"
+          allow="autoplay; encrypted-media"
+          allowfullscreen>
+        </iframe>
+
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="text-center px-4 max-w-4xl fade-in">
+            <h2 class="text-4xl md:text-6xl font-bold mb-4 text-red-600">TEMPORADA 2025</h2>
+            <p class="pb-4 text-white">A Temporada 2025 da Fórmula 1 promete ser uma das mais emocionantes da história, marcada por inovações tecnológicas, rivalidades intensas e circuitos desafiadores. Com novas regulamentações, carros mais eficientes e estratégias ousadas, as equipes entram na disputa com sede de vitória e superação.</p>
+            <a href="https://f1calendar.com/pt-BR" target="_blank">
+              <button class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+                VEJA O CALENDARIO
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="carousel-slide w-full h-full flex-shrink-0 relative">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <iframe 
+          class="absolute top-0 left-0 w-full h-full object-cover md:static md:w-full md:h-full md:object-contain"
+          src="https://www.youtube.com/embed/ueedmcB7Cds?autoplay=1&mute=1&controls=0&loop=1&playlist=ueedmcB7Cds&modestbranding=1&rel=0&cc_load_policy=0" 
+          title="YouTube video player"
+          frameborder="0"
+          allow="autoplay; encrypted-media"
+          allowfullscreen>
+        </iframe>
+
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="text-center px-4 max-w-4xl fade-in">
+            <h2 class="text-4xl md:text-6xl font-bold mb-4 text-red-600">CIRCUITOS LENDÁRIOS</h2>
+            <p class="pb-4 text-white">Mais do que pistas de corrida, são templos sagrados onde a velocidade beija o limite e a história é escrita a cada curva.</p>
+            <a href="https://racingnews365.com/formula-1-circuits" target="_blank">
+              <button class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+                EXPLORE AS CORRIDAS
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
-                
-                <!-- Slide 2 -->
-                <div class="carousel-slide w-full h-full flex-shrink-0 relative">
-                    <div class="absolute inset-0 bg-black opacity-50"></div>
-                    <iframe 
-                        width="100%" 
-                        height="100%" 
-                        src="https://www.youtube.com/embed/QRlpWz5f-QY?autoplay=1&controls=0&loop=1&playlist=QRlpWz5f-QY&modestbranding=1&rel=0&cc_load_policy=0&mute=1&start=9" 
-                        title="YouTube video player" 
-                        frameborder="0" 
-                        allow="autoplay; encrypted-media" 
-                        allowfullscreen>
-                    </iframe>
-
-
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <div class="text-center px-4 max-w-4xl fade-in">
-                            <h2 class="text-4xl md:text-6xl font-bold mb-4 text-red-600">TEMPORADA 2025</h2>
-                            <p class="pb-4 text-white">A Temporada 2025 da Fórmula 1 promete ser uma das mais emocionantes da história, marcada por inovações tecnológicas, rivalidades intensas e circuitos desafiadores. Com novas regulamentações, carros mais eficientes e estratégias ousadas, as equipes entram na disputa com sede de vitória e superação.</p>
-                            <a href="https://f1calendar.com/pt-BR" target="_blank"><button class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
-                                VEJA O CALENDARIO
-                            </button>
-                        </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Slide 3 -->
-                <div class="carousel-slide w-full h-full flex-shrink-0 relative">
-                    <div class="absolute inset-0 bg-black opacity-50"></div>
-                    <iframe width="100%" height="100%"
-                        src="https://www.youtube.com/embed/ueedmcB7Cds?autoplay=1&mute=1&controls=0&loop=1&playlist=ueedmcB7Cds&modestbranding=1&rel=0&cc_load_policy=0"
-                        title="YouTube video player"
-                        frameborder="0"
-                        allow="autoplay; encrypted-media"
-                        allowfullscreen>
-                    </iframe>
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <div class="text-center px-4 max-w-4xl fade-in">
-                            <h2 class="text-4xl md:text-6xl font-bold mb-4 text-red-600">CIRCUITOS LENDÁRIOS</h2>
-                            <p class="pb-4 text-white">Mais do que pistas de corrida, são templos sagrados onde a velocidade beija o limite e a história é escrita a cada curva.</p>
-                            <a href="https://racingnews365.com/formula-1-circuits" target="_blank"><button class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
-                                EXPLRE AS CORRIDAS
-                            </button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Carousel Controls -->
-            <button id="prevBtn" class="absolute left-32 top-1/2 transform -translate-y-1/2 inline-block px-8 py-4 bg-transparent border-2 border-white rounded-full text-white uppercase text-[1.2rem] font-semibold tracking-wide transition-all duration-300 hover:text-red-700 hover:border-white">
-  < <i class="fas fa-chevron-left text-xl"></i>
-</button>
-
-<button id="nextBtn" class="absolute right-32 top-1/2 transform -translate-y-1/2 inline-block px-8 py-4 bg-transparent border-2 border-white rounded-full text-white uppercase text-[1.2rem] font-semibold tracking-wide transition-all duration-300  hover:text-red-700 hover:border-white">
-  > <i class="fas fa-chevron-right text-xl"></i> 
-</button>
-
             
             <!-- Carousel Indicators -->
             <div class="absolute bottom-8 left-0 right-0 flex justify-center space-x-2">

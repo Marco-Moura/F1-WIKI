@@ -1,4 +1,4 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit, ElementRef, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
@@ -24,12 +24,17 @@ export class HomeLayoutComponent implements AfterViewInit {
 
   constructor(
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
+    private el: ElementRef, private renderer: Renderer2
   ) {}
 
-  ngAfterViewInit() {
+   ngAfterViewInit(): void {
+    const carousel = this.el.nativeElement.querySelector('.carousel');
+    if (carousel) {
+      this.renderer.setStyle(carousel, 'display', 'block');
     this.initializeCarousel();
-    this.startCountdown(5); // Inicia contagem para 5 dias à frente
+    this.startCountdown(3);
+    }
   }
 
   private initializeCarousel(): void {

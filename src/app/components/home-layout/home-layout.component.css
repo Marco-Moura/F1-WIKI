@@ -130,3 +130,42 @@
   margin: 10px 0;
   font-weight: bold;
 }
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 1.8rem !important; /* reduz título */
+  }
+  p {
+    font-size: 0.875rem !important; /* texto menor */
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  button {
+    padding: 0.5rem 1.5rem !important;
+    font-size: 0.9rem !important;
+  }
+  .carousel-slide > div.text-center {
+    max-width: 90vw !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  iframe {
+    min-height: 200px !important;
+  }
+}
+
+/* Para telas médias a partir de 768px (desktop/tablet) */
+@media (min-width: 768px) {
+  h2 {
+    font-size: 3.75rem !important; /* texto grande */
+  }
+  p {
+    font-size: 1.125rem !important;
+    max-width: 700px !important;
+  }
+  .carousel-slide > div.text-center {
+    max-width: 768px !important;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
