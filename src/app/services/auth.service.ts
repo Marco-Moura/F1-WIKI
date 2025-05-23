@@ -74,4 +74,13 @@ export class AuthService {
       return null;
     }
   }
+
+  get currentUser(): User | null {
+    return this.currentUserSubject.value;
+  }
+
+  /** Retorna true se o usuário estiver logado */
+  isLoggedIn(): boolean {
+  return this.currentUserSubject.value !== null;
+}
 }

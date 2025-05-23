@@ -1,0 +1,52 @@
+        @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Titillium Web', sans-serif;
+            background-color: #f8f8f8;
+        }
+        
+        /* background-image: url('https://www.formula1.com/etc/designs/fom-website/images/patterns/plus_x2.png'); */
+
+        div .relative{
+            background-image: url('https://www.formula1.com/etc/designs/fom-website/images/patterns/plus_x2.png');
+        }
+
+        .f1-divider {
+            height: 4px;
+            background: linear-gradient(90deg, #e10600 0%, #15151e 100%);
+        }
+        
+        .faq-item {
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            transform: translateX(5px);
+        }
+        
+        .chevron {
+            transition: transform 0.3s ease;
+        }
+        
+        .active .chevron {
+            transform: rotate(180deg);
+        }
+        
+        .comment-card {
+            border-left: 3px solid #e10600;
+            transition: all 0.3s ease;
+        }
+        
+        .comment-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tab-button {
+            transition: all 0.3s ease;
+        }
+        
+        .tab-button.active {
+            background-color: #e10600;
+            color: white;
+        }

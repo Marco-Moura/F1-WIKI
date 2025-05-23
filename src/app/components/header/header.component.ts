@@ -11,17 +11,16 @@ import { isPlatformBrowser } from '@angular/common';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AuthService, User } from '../../services/auth.service';
-import { HeaderComponent } from "../header/header.component";
 
 @Component({
-  selector: 'app-home-layout',
+  selector: 'app-header',
   standalone: true,
-  templateUrl: './home-layout.component.html',
-  styleUrls: ['./home-layout.component.css'],
-  imports: [CommonModule, HeaderComponent]
+  imports: [CommonModule],
+  templateUrl: './header.component.html',
+  styleUrl: './header.component.css'
 })
-export class HomeLayoutComponent implements OnInit, AfterViewInit {
-  mobileMenuVisible = true;
+export class HeaderComponent {
+mobileMenuVisible = true;
   private currentIndex = 0;
   private totalSlides = 0;
   private carouselInterval!: number;

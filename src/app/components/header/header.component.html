@@ -1,0 +1,68 @@
+<!-- <body class="bg-gray-900 text-white font-sans"> -->
+    <div class="bg-gray-900 text-white font-sans">
+    <!-- Header -->
+    <header class="bg-black py-4 px-6 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <button (click)="navigateToHome()"><img src="/assets/FORMULA_WIKI_LOGO-removebg-preview.png" alt="F1 Logo" class="h-12 mr-4"></button>
+                <h1 class="text-2xl font-bold text-red-600">FORMULA WIKI</h1>
+            </div>
+            <div *ngIf="mobileMenuVisible" class="md:hidden bg-gray-800 absolute left-0 right-0 top-full shadow-lg">
+            <div class="flex flex-col space-y-4 p-4">
+                <button (click)="navigateToHome()" class="text-white hover:text-red-500 transition duration-300">
+                  HOME
+                </button>
+                <button (click)="navigateToTeams()" class="text-white hover:text-red-500 transition duration-300">EQUIPES</button>
+                <button (click)="navigateToDrivers()" class="text-white hover:text-red-500 transition duration-300">CORREDORES</button>
+                <button (click)="navigateToHistory()" class="text-red-500 hover:text-red-400 transition duration-300">HISTORIA</button>
+                <button (click)="navigateToRules()" class="text-white hover:text-red-500 transition duration-300">REGRAS</button>
+                <button (click)="navigateToCareer()" class="text-white hover:text-red-500 transition duration-300">CARREIRA</button>
+                <button (click)="navigateToLogin()" class="text-white hover:text-red-500 transition duration-300">LOGIN</button>
+            </div>
+        </div>
+<nav class="hidden md:flex items-center space-x-8">
+  <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToHome()">HOME</button>
+  <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToTeams()">EQUIPES</button>
+  <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToDrivers()">CORREDORES</button>
+  <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToHistory()">HISTÓRIA</button>
+  <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToRules()">REGRAS</button>
+  <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToCareer()">CARREIRA</button>
+
+  <!-- coloca o ícone aqui, como mais um “item” do flex -->
+  <div class="relative inline-block text-left user-menu-container">
+    <button (click)="toggleUserMenu()" class="focus:outline-none text-white hover:text-red-500 transition duration-300">
+      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+      </svg>
+    </button>
+    <div *ngIf="isUserMenuOpen"
+         class="absolute right-0 mt-2 w-60 h-55 bg-gray-800 text-white rounded-lg shadow-lg z-50">
+      <div class="px-4 py-3 border-b border-gray-700">
+        <p class="text-sm font-medium">
+          Olá, {{ user?.fullname || 'visitante' }}!
+        </p>
+        <p class="text-xs text-gray-400">
+          {{ user ? 'Bem-vindo de volta!' : 'Faça login ou registre-se' }}
+        </p>
+      </div>
+      <a *ngIf="!user" (click)="navigateToLogin()"
+         class="block px-4 py-2 text-sm hover:bg-red-500 cursor-pointer">
+        Login
+      </a>
+      <a *ngIf="!user" (click)="navigateToSignup()"
+         class="block px-4 py-2 text-sm hover:bg-red-500 cursor-pointer">
+        Registro
+      </a>
+      <a *ngIf="user" (click)="logout()"
+         class="block px-4 py-2 text-sm hover:bg-red-500 cursor-pointer">
+        Logout
+      </a>
+    </div>
+  </div>
+</nav>
+            <button class="md:hidden text-white" (click)="toggleMobileMenu()">
+              <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+    </header>

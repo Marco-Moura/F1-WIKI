@@ -9,6 +9,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { ServicesTermsComponent } from './components/services-terms/services-terms.component';
 import { PrivacyPoliticsComponent } from './components/privacy-politics/privacy-politics.component';
+import { FAQComponent } from './pages/faq/faq.component';
 
 
 
@@ -59,5 +60,9 @@ export const routes: Routes = [
     {
         path: 'Politicas-Privacidade',
         component: PrivacyPoliticsComponent
+    },
+    {
+        path: 'faq',
+        component: FAQComponent
     }
 ];
