@@ -17,6 +17,7 @@ import { AuthService, User } from '../../services/auth.service';
   selector: 'app-career-layout',
   templateUrl: './career-layout.component.html',
   styleUrls: ['./career-layout.component.css'],
+  standalone: true,
   imports: [CommonModule]
 })
 export class CareerLayoutComponent implements AfterViewInit, OnInit {
@@ -25,7 +26,6 @@ export class CareerLayoutComponent implements AfterViewInit, OnInit {
 
   mobileMenuVisible: boolean = true;
 
-  // ✅ Controle do menu de usuário
   isUserMenuOpen = false;
   user: User | null = null;
 
@@ -53,13 +53,25 @@ export class CareerLayoutComponent implements AfterViewInit, OnInit {
       this.mobileMenu.nativeElement.classList.toggle('hidden');
     });
 
-    // FAQ accordion
-    this.el.nativeElement.querySelectorAll('.faq-question').forEach((question: HTMLElement) => {
-      this.renderer.listen(question, 'click', () => {
-        const answer = question.nextElementSibling as HTMLElement;
-        const icon = question.querySelector('i');
-        answer?.classList.toggle('hidden');
-        icon?.classList.toggle('rotate-180');
+    // FAQ accordion (garante renderização completa)
+    setTimeout(() => {
+      const faqQuestions = this.el.nativeElement.querySelectorAll('.faq-question');
+      faqQuestions.forEach((question: HTMLElement) => {
+        this.renderer.listen(question, 'click', () => {
+          const answer = question.nextElementSibling as HTMLElement;
+          const icon = question.querySelector('i');
+
+          if (answer) {
+            const isHidden = answer.classList.contains('hidden');
+            if (isHidden) {
+              answer.classList.remove('hidden');
+              icon?.classList.add('rotate-180');
+            } else {
+              answer.classList.add('hidden');
+              icon?.classList.remove('rotate-180');
+            }
+          }
+        });
       });
     });
 
@@ -101,7 +113,6 @@ export class CareerLayoutComponent implements AfterViewInit, OnInit {
 
     // Intersection Observer for animations
     const observerOptions = { threshold: 0.1 };
-
     const observer = new IntersectionObserver((entries, obs) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -111,7 +122,8 @@ export class CareerLayoutComponent implements AfterViewInit, OnInit {
       });
     }, observerOptions);
 
-    sections.forEach((section: HTMLElement) => {
+    const animatedSections = this.el.nativeElement.querySelectorAll('.regulation-section');
+    animatedSections.forEach((section: HTMLElement) => {
       observer.observe(section);
     });
   }
@@ -128,18 +140,17 @@ export class CareerLayoutComponent implements AfterViewInit, OnInit {
     this.mobileMenuVisible = !this.mobileMenuVisible;
   }
 
-  // ✅ Controle do menu de usuário
   toggleUserMenu() { this.isUserMenuOpen = !this.isUserMenuOpen; }
 
-  navigateToSignup() { 
-    this.router.navigate(['/signup']); 
-    this.isUserMenuOpen = false; 
+  navigateToSignup() {
+    this.router.navigate(['/signup']);
+    this.isUserMenuOpen = false;
   }
 
-  logout() { 
-    this.authService.logout(); 
-    this.router.navigate(['/']); 
-    this.isUserMenuOpen = false; 
+  logout() {
+    this.authService.logout();
+    this.router.navigate(['/']);
+    this.isUserMenuOpen = false;
   }
 
   @HostListener('document:click', ['$event.target'])

@@ -63,7 +63,9 @@
   </div>
 </nav>
             <button class="md:hidden text-white" (click)="toggleMobileMenu()">
-              <span class="material-symbols-outlined">menu</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
             </button>
         </div>
     </header>
@@ -779,125 +781,6 @@ Algumas funções exigem licenças ou certificações específicas, conforme des
                         <li>- Esteja preparado para começar em cargos juniores e progredir</li>
                         <li>-Considere mudar-se para o Reino Unido/Itália/Suíça, onde a maioria das equipes está sediada</li>
                     </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- FAQ -->
-        <section id="faq" class="regulation-section mb-20 fade-in">
-            <h2 class="text-3xl font-bold mb-8 border-b border-gray-700 pb-4 flex items-center">
-                <i class="fas fa-question-circle text-red-600 mr-4"></i>
-                PERGUNTAS FREQUENTES
-            </h2>
-            
-            <div class="bg-gray-800 rounded-lg overflow-hidden">
-                <!-- FAQ Item -->
-                <div class="border-b border-gray-700">
-                    <button class="faq-question w-full text-left p-6 flex justify-between items-center">
-                        <span class="text-xl font-bold">Qual é a idade mínima para trabalhar na F1?</span>
-                        <i class="fas fa-chevron-down text-red-600 transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-answer px-6 pb-6 hidden">
-                        <p class="text-gray-300">
-                            Para a maioria das vagas, a idade mínima é 18 anos devido a requisitos de viagem e seguro. Programas para pilotos juniores podem aceitar
-candidatos mais jovens (geralmente maiores de 13 anos para programas de kart que atendem academias de F1).
-                        </p>
-                    </div>
-                </div>
-                
-                <!-- FAQ Item -->
-                <div class="border-b border-gray-700">
-                    <button class="faq-question w-full text-left p-6 flex justify-between items-center">
-                        <span class="text-xl font-bold">Preciso me mudar para trabalhar na F1?</span>
-                        <i class="fas fa-chevron-down text-red-600 transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-answer px-6 pb-6 hidden">
-                        <p class="text-gray-300">
-                           A maioria das equipes de F1 está sediada no Reino Unido (70%), Itália (20%) ou Suíça (10%). Cargos em fábricas exigirão
-mudança para essas áreas. Cargos itinerantes (por exemplo, equipe de corrida) geralmente moram perto da fábrica, mas viajam 50% do ano.
-                        </p>
-                    </div>
-                </div>
-                
-                <!-- FAQ Item -->
-                <div class="border-b border-gray-700">
-                    <button class="faq-question w-full text-left p-6 flex justify-between items-center">
-                        <span class="text-xl font-bold">Quão competitivos são os empregos na F1??</span>
-                        <i class="fas fa-chevron-down text-red-600 transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-answer px-6 pb-6 hidden">
-                        <p class="text-gray-300">
-                            Extremamente competitivo. As melhores equipes recebem mais de 500 candidaturas para cada vaga de engenharia. Sua melhor chance é:
-                        </p>
-                        <ul class="mt-2 text-gray-300 space-y-1">
-                            <li>- Ganhe experiência primeiro em fórmulas juniores</li>
-                            <li>- Concluir estágios relevantes</li>
-                            <li>- Desenvolver habilidades especializadas (por exemplo, CFD, tecnologia de baterias)</li>
-                            <li>- Rede dentro da indústria</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <!-- FAQ Item -->
-                <div class="border-b border-gray-700">
-                    <button class="faq-question w-full text-left p-6 flex justify-between items-center">
-                        <span class="text-xl font-bold">Qual é a faixa salarial na F1?</span>
-                        <i class="fas fa-chevron-down text-red-600 transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-answer px-6 pb-6 hidden">
-                        <p class="text-gray-300">
-                           Os salários variam muito de acordo com a função e a experiência:
-                        </p>
-                        <ul class="mt-2 text-gray-300 space-y-1">
-                            <li>- Engenheiros graduados: £ 25.000-£ 35.000</li>
-                            <li>- Engenheiros seniores: £ 50.000-£ 90.000</li>
-                            <li>- Engenheiros-chefes: £ 100.000+</li>
-                            <li>- Mecânica de corrida: £ 30.000-£ 60.000</li>
-                            <li>- Motoristas: £ 150.000 a £ 50 milhões+</li>
-                        </ul>
-                        <p class="mt-2 text-gray-300">
-                           Observação: os salários geralmente são mais baixos do que em funções equivalentes na indústria automotiva devido à alta demanda por trabalho na F1.
-                        </p>
-                    </div>
-                </div>
-                
-                <!-- FAQ Item -->
-                <div class="border-b border-gray-700">
-                    <button class="faq-question w-full text-left p-6 flex justify-between items-center">
-                        <span class="text-xl font-bold">Posso entrar na F1 sem ter diploma?</span>
-                        <i class="fas fa-chevron-down text-red-600 transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-answer px-6 pb-6 hidden">
-                        <p class="text-gray-300">
-                            Para funções técnicas, normalmente é necessário um diploma. No entanto, para estas posições, você pode não precisar de um:
-                        </p>
-                        <ul class="mt-2 text-gray-300 space-y-1">
-                            <li>- Mecânica (caminho de aprendizagem disponível)</li>
-                            <li>- Pit crew (athletic background can substitute)</li>
-                            <li>- Hospitalidade/logística (experiência é mais valorizada do que diplomas)</li>
-                            <li>- Funções na mídia (o portfólio geralmente é mais importante)</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <!-- FAQ Item -->
-                <div>
-                    <button class="faq-question w-full text-left p-6 flex justify-between items-center">
-                        <span class="text-xl font-bold">Como obtenho a acreditação da FIA?</span>
-                        <i class="fas fa-chevron-down text-red-600 transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-answer px-6 pb-6 hidden">
-                        <p class="text-gray-300">
-                            A acreditação da FIA é obrigatória para todo o pessoal que trabalha em corridas. Sua equipe de F1 normalmente solicitará essa acreditação em seu nome
-após a contratação. Os requisitos incluem:
-                        </p>
-                        <ul class="mt-2 text-gray-300 space-y-1">
-                            <li>- Ficha criminal limpa</li>
-                            <li>- Autorização médica</li>
-                            <li>- Comprovante de emprego em equipe licenciada</li>
-                            <li>- Conclusão do treinamento de ética da FIA</li>
-                        </ul>
-                    </div>
                 </div>
             </div>
         </section>
