@@ -1,7 +1,7 @@
-import { Component, AfterViewInit, ElementRef, Renderer2 } from '@angular/core';
+import { Component, AfterViewInit, ElementRef, Renderer2, OnInit, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { AuthService } from '../../services/auth.service';
+import { AuthService, User } from '../../services/auth.service';
 
 @Component({
   selector: 'app-home-layout',
@@ -9,32 +9,44 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./home-layout.component.css'],
   imports: [CommonModule]
 })
-export class HomeLayoutComponent implements AfterViewInit {
-  mobileMenuVisible: boolean = true;
-  private currentIndex: number = 0;
-  private totalSlides: number = 0;
+export class HomeLayoutComponent implements OnInit, AfterViewInit {
+  mobileMenuVisible = true;
+  private currentIndex = 0;
+  private totalSlides = 0;
   private carouselInterval: any;
   private countdownInterval: any;
 
-  // propriedades para countdown
-  days: string = '00';
-  hours: string = '00';
-  minutes: string = '00';
-  seconds: string = '00';
+  // countdown
+  days = '00';
+  hours = '00';
+  minutes = '00';
+  seconds = '00';
+
+  // user menu
+  isUserMenuOpen = false;
+  user: User | null = null;
 
   constructor(
     private router: Router,
     private authService: AuthService,
-    private el: ElementRef, private renderer: Renderer2
+    private el: ElementRef,
+    private renderer: Renderer2
   ) {}
 
-   ngAfterViewInit(): void {
+  ngOnInit(): void {
+    this.authService.currentUser$.subscribe(u => this.user = u);
+  }
+
+  ngAfterViewInit(): void {
+    // carousel logic
     const carousel = this.el.nativeElement.querySelector('.carousel');
     if (carousel) {
       this.renderer.setStyle(carousel, 'display', 'block');
-    this.initializeCarousel();
-    this.startCountdown(3);
+      this.initializeCarousel();
     }
+    
+    // countdown logic
+    this.startCountdown(3);
   }
 
   private initializeCarousel(): void {
@@ -115,13 +127,41 @@ export class HomeLayoutComponent implements AfterViewInit {
     }, 1000);
   }
 
-  // métodos de navegação...
+  // navegações padrão
   navigateToTeams() { this.router.navigate(['teams']); }
   navigateToHome()  { this.router.navigate(['/home']); }
   navigateToDrivers() { this.router.navigate(['/drivers']); }
   navigateToHistory() { this.router.navigate(['/history']); }
   navigateToRules()   { this.router.navigate(['/rules']); }
   navigateToCareer()  { this.router.navigate(['/career']); }
-  navigateToLogin()   { this.router.navigate(['/login']); }
   toggleMobileMenu(): void { this.mobileMenuVisible = !this.mobileMenuVisible; }
+  nnavigateToSignup(): void { this.router.navigate(['/signup']); }
+
+  // user menu actions
+  toggleUserMenu() {
+    this.isUserMenuOpen = !this.isUserMenuOpen;
+  }
+
+  navigateToLogin() {
+    this.router.navigate(['/login']);
+    this.isUserMenuOpen = false;
+  }
+
+  navigateToRegister() {
+    this.router.navigate(['/signup']);
+    this.isUserMenuOpen = false;
+  }
+
+  logout() {
+    this.authService.logout();
+    this.router.navigate(['/home']);
+    this.isUserMenuOpen = false;
+  }
+
+  @HostListener('document:click', ['$event.target'])
+  onClickOutside(target: HTMLElement) {
+    if (!target.closest('.user-menu-container')) {
+      this.isUserMenuOpen = false;
+    }
+  }
 }

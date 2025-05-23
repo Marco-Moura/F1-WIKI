@@ -10,7 +10,9 @@
             </div>
             <div *ngIf="mobileMenuVisible" class="md:hidden bg-gray-800 absolute left-0 right-0 top-full shadow-lg">
             <div class="flex flex-col space-y-4 p-4">
-                <button (click)="navigateToHome()" class="text-red-500 hover:text-red-400 transition duration-300">HOME</button>
+                <button (click)="navigateToHome()" class="text-red-500 hover:text-red-400 transition duration-300">
+                  HOME
+                </button>
                 <button (click)="navigateToTeams()" class="text-white hover:text-red-500 transition duration-300">EQUIPES</button>
                 <button (click)="navigateToDrivers()" class="text-white hover:text-red-500 transition duration-300">CORREDORES</button>
                 <button (click)="navigateToHistory()" class="text-white hover:text-red-500 transition duration-300">HISTORIA</button>
@@ -26,13 +28,46 @@
                 <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToHistory()">HISTORIA</button>
                 <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToRules()">REGRAS</button>
                 <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToCareer()">CARREIRA</button>
-                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToLogin()">LOGIN</button>
+               <div class="relative inline-block text-left">
+                  <div class="relative inline-block text-left user-menu-container">
+                    <button (click)="toggleUserMenu()" class="focus:outline-none">
+                      <span class="material-symbols-outlined text-white text-2xl">
+                        account_circle
+                      </span>
+                    </button>
+
+                    <div *ngIf="isUserMenuOpen"
+                        class="absolute right-7 mt-2 w-48 bg-gray-800 text-white rounded-lg shadow-lg z-50">
+      
+                      <div class="px-4 py-3 border-b border-gray-700">
+                        <p class="text-sm font-medium">
+                          Olá, {{ user?.fullname || 'visitante' }}!
+                        </p>
+                        <p class="text-xs text-gray-400">
+                          {{ user ? 'Bem-vindo de volta!' : 'Faça login ou registre-se' }}
+                        </p>
+                      </div>
+
+                      <a *ngIf="!user" (click)="navigateToLogin()"
+                        class="block px-4 py-2 text-sm hover:bg-red-500 cursor-pointer">
+                        Login
+                      </a>
+                      <a *ngIf="!user" (click)="navigateToRegister()"
+                        class="block px-4 py-2 text-sm hover:bg-red-500 cursor-pointer">
+                        Registro
+                      </a>
+                      <a *ngIf="user" (click)="logout()"
+                        class="block px-4 py-2 text-sm hover:bg-red-500 cursor-pointer">
+                        Logout
+                      </a>
+                    </div>
+                  </div>
+              </div>
             </nav>
             <button class="md:hidden text-white" (click)="toggleMobileMenu()">
                 <span class="material-symbols-outlined">menu</span>
             </button>
         </div>
-
     </header>
 
     <!-- Hero Carousel -->
@@ -132,7 +167,6 @@
             <h2 class="text-3xl font-bold mb-12 text-center relative">
                 <span class="relative inline-block">
                     ÚLTIMAS NOTÍCIAS
-                    <span class="absolute bottom-0 left-0 w-full h-1 bg-red-600"></span>
                 </span>
             </h2>
             
