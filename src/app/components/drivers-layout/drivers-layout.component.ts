@@ -1,46 +1,66 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener, Inject, PLATFORM_ID } from '@angular/core';
 import { Router } from '@angular/router';
-import { CommonModule } from '@angular/common';
-
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { AuthService, User } from '../../services/auth.service';
 
 @Component({
   selector: 'app-drivers-layout',
   templateUrl: './drivers-layout.component.html',
   styleUrls: ['./drivers-layout.component.css'],
+  standalone: true,
   imports: [CommonModule]
 })
-export class DriversLayoutComponent {
+export class DriversLayoutComponent implements OnInit {
   mobileMenuVisible: boolean = true;
+  isUserMenuOpen: boolean = false;
+  user: User | null = null;
+  isBrowser: boolean;
 
-  constructor( private router: Router) {}
-  
-  navigateToTeams() {
-  this.router.navigate(['teams']); // Substitua '/teams' pela rota correta se necessário
+  constructor(
+    private router: Router,
+    private authService: AuthService,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {
+    this.isBrowser = isPlatformBrowser(this.platformId);
   }
 
-  navigateToHome() {
-  this.router.navigate(['/home']); // Substitua pela rota correta para a página inicial
-}
-navigateToDrivers() {
-  this.router.navigate(['/drivers']); // Substitua pela rota correta para a página de drivers
-}
-navigateToHistory() {
-  this.router.navigate(['/history']);
-}
+  ngOnInit(): void {
+    if (this.isBrowser) {
+      this.authService.currentUser$.subscribe(u => this.user = u);
+    }
+  }
 
-navigateToRules() {
-  this.router.navigate(['/rules']); // Substitua pela rota correta para a página de regras
-}
-navigateToCareer() {
-  this.router.navigate(['/career'])
-}
+  navigateToTeams() { this.router.navigate(['teams']); }
+  navigateToHome() { this.router.navigate(['/home']); }
+  navigateToDrivers() { this.router.navigate(['/drivers']); }
+  navigateToHistory() { this.router.navigate(['/history']); }
+  navigateToRules() { this.router.navigate(['/rules']); }
+  navigateToCareer() { this.router.navigate(['/career']); }
 
-navigateToLogin(){
-  this.router.navigate(['/login']);
-}
+  toggleMobileMenu(): void { this.mobileMenuVisible = !this.mobileMenuVisible; }
 
-toggleMobileMenu(): void {
-    this.mobileMenuVisible = !this.mobileMenuVisible;
+  toggleUserMenu(): void { this.isUserMenuOpen = !this.isUserMenuOpen; }
+
+  navigateToLogin(): void {
+    this.router.navigate(['/login']);
+    this.isUserMenuOpen = false;
+  }
+
+  navigateToSignup(): void {
+    this.router.navigate(['/signup']);
+    this.isUserMenuOpen = false;
+  }
+
+  logout(): void {
+    this.authService.logout();
+    this.router.navigate(['/home']);
+    this.isUserMenuOpen = false;
+  }
+
+  @HostListener('document:click', ['$event.target'])
+  onClickOutside(target: HTMLElement): void {
+    if (!target.closest('.user-menu-container')) {
+      this.isUserMenuOpen = false;
+    }
   }
 }
-

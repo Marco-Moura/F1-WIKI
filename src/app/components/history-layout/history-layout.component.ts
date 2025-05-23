@@ -1,24 +1,44 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ElementRef, Renderer2, HostListener, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { AuthService, User } from '../../services/auth.service';
 
 @Component({
   selector: 'app-history-layout',
+  standalone: true,
   templateUrl: './history-layout.component.html',
   styleUrls: ['./history-layout.component.css'],
   imports: [CommonModule]
 })
-export class HistoryLayoutComponent implements AfterViewInit {
-     isMobileMenuOpen: boolean = true;
-     mobileMenuVisible: boolean = true;
+export class HistoryLayoutComponent implements AfterViewInit, OnInit {
+  
+  isMobileMenuOpen: boolean = true;
+  mobileMenuVisible: boolean = true;
+  isUserMenuOpen = false;
+  user: User | null = null;
+  isBrowser: boolean;
 
-
-  constructor(private router: Router) {}
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {
+    this.isBrowser = isPlatformBrowser(this.platformId);
+  }
 
   ngAfterViewInit() {
-    this.initializeMobileMenu();
-    this.initializeDecadeTabs();
-    this.initializeStatsAnimation();
+    if (this.isBrowser) {
+      this.initializeMobileMenu();
+      this.initializeDecadeTabs();
+      this.initializeStatsAnimation();
+    }
+  }
+
+  ngOnInit(): void {
+    this.authService.currentUser$.subscribe(u => {
+      this.user = u;
+    });
   }
 
   private initializeMobileMenu(): void {
@@ -38,16 +58,10 @@ export class HistoryLayoutComponent implements AfterViewInit {
 
     decadeTabs.forEach(tab => {
       tab.addEventListener('click', () => {
-        // Remove active class from all tabs
         decadeTabs.forEach(t => t.classList.remove('active'));
-
-        // Add active class to clicked tab
         tab.classList.add('active');
-
-        // Hide all decade contents
         decadeContents.forEach(content => content.classList.add('hidden'));
 
-        // Show selected decade content
         const decade = tab.getAttribute('data-decade');
         const selectedContent = document.querySelector(`.decade-content[data-decade="${decade}"]`) as HTMLElement;
         if (selectedContent) {
@@ -56,7 +70,6 @@ export class HistoryLayoutComponent implements AfterViewInit {
       });
     });
 
-    // Set 1950s as active by default
     if (decadeTabs.length > 0) {
       decadeTabs[0].classList.add('active');
     }
@@ -74,17 +87,13 @@ export class HistoryLayoutComponent implements AfterViewInit {
       });
     };
 
-    // Intersection Observer for animations
-    const observerOptions = {
-      threshold: 0.1
-    };
+    const observerOptions = { threshold: 0.1 };
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('fade-in');
 
-          // If it's the stats section, animate the bars
           if (entry.target.querySelector('.stats-bar')) {
             animateStatsBars();
           }
@@ -99,33 +108,41 @@ export class HistoryLayoutComponent implements AfterViewInit {
     });
   }
 
+  navigateToTeams() { this.router.navigate(['/teams']); }
+  navigateToHome() { this.router.navigate(['/']); }
+  navigateToDrivers() { this.router.navigate(['/drivers']); }
+  navigateToHistory() { this.router.navigate(['/history']); }
+  navigateToRules() { this.router.navigate(['/rules']); }
+  navigateToCareer() { this.router.navigate(['/career']); }
 
-
-  navigateToTeams() {
-  this.router.navigate(['teams']); // Substitua '/teams' pela rota correta se necessário
+  toggleMobileMenu(): void {
+    this.mobileMenuVisible = !this.mobileMenuVisible;
   }
 
-  navigateToHome() {
-  this.router.navigate(['/']); // Substitua pela rota correta para a página inicial
-}
-navigateToDrivers() {
-  this.router.navigate(['/drivers']); // Substitua pela rota correta para a página de drivers
-}
-navigateToHistory() {
-  this.router.navigate(['/history']);
-}
+  toggleUserMenu() { 
+    this.isUserMenuOpen = !this.isUserMenuOpen; 
+  }
 
-navigateToRules() {
-  this.router.navigate(['/rules']); // Substitua pela rota correta para a página de regras
-}
-navigateToCareer() {
-  this.router.navigate(['/career'])
-}
+  navigateToLogin() { 
+    this.router.navigate(['/login']); 
+    this.isUserMenuOpen = false; 
+  }
 
-navigateToLogin(){
-  this.router.navigate(['/login']);
-}
-toggleMobileMenu(): void {
-    this.mobileMenuVisible = !this.mobileMenuVisible;
+  navigateToRegister() { 
+    this.router.navigate(['/signup']); 
+    this.isUserMenuOpen = false; 
+  }
+
+  logout() { 
+    this.authService.logout(); 
+    this.router.navigate(['/']); 
+    this.isUserMenuOpen = false; 
+  }
+
+  @HostListener('document:click', ['$event.target'])
+  onClickOutside(target: HTMLElement) {
+    if (!target.closest('.user-menu-container')) {
+      this.isUserMenuOpen = false;
+    }
   }
 }

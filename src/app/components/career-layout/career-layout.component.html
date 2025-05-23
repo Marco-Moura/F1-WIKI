@@ -1,4 +1,6 @@
-<body class="bg-gray-900 text-gray-100 font-sans">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,600,0,0&icon_names=account_circle" />
+<!-- <body class="bg-gray-900 text-white font-sans"> -->
+    <body class="bg-gray-900 text-white font-sans">
     <!-- Header -->
     <header class="bg-black py-4 px-6 shadow-lg sticky top-0 z-50">
         <div class="container mx-auto flex justify-between items-center">
@@ -8,8 +10,10 @@
             </div>
             <div *ngIf="mobileMenuVisible" class="md:hidden bg-gray-800 absolute left-0 right-0 top-full shadow-lg">
             <div class="flex flex-col space-y-4 p-4">
-                <button (click)="navigateToHome()" class="text-white hover:text-red-500 transition duration-300">HOME</button>
-                <button (click)="navigateToTeams()" class="text-white hover:text-red-500 transition duration-300" >EQUIPES</button>
+                <button (click)="navigateToHome()" class="text-white hover:text-red-500 transition duration-300">
+                  HOME
+                </button>
+                <button (click)="navigateToTeams()" class="text-white hover:text-red-500 transition duration-300">EQUIPES</button>
                 <button (click)="navigateToDrivers()" class="text-white hover:text-red-500 transition duration-300">CORREDORES</button>
                 <button (click)="navigateToHistory()" class="text-white hover:text-red-500 transition duration-300">HISTORIA</button>
                 <button (click)="navigateToRules()" class="text-white hover:text-red-500 transition duration-300">REGRAS</button>
@@ -17,20 +21,48 @@
                 <button (click)="navigateToLogin()" class="text-white hover:text-red-500 transition duration-300">LOGIN</button>
             </div>
         </div>
-            <nav class="hidden md:flex space-x-8">
-                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToHome()">HOME</button>
-                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToTeams()">EQUIPES</button>
-                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToDrivers()">CORREDORES</button>
-                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToHistory()">HISTORIA</button>
-                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToRules()">REGRAS</button>
-                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToCareer()">CARREIRA</button>
-                <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToLogin()">LOGIN</button>
-            </nav>
+<nav class="hidden md:flex items-center space-x-8">
+  <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToHome()">HOME</button>
+  <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToTeams()">EQUIPES</button>
+  <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToDrivers()">CORREDORES</button>
+  <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToHistory()">HISTÓRIA</button>
+  <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToRules()">REGRAS</button>
+  <button class="nav-link text-white hover:text-red-500 transition duration-300" (click)="navigateToCareer()">CARREIRA</button>
+
+  <!-- coloca o ícone aqui, como mais um “item” do flex -->
+  <div class="relative inline-block text-left user-menu-container">
+    <button (click)="toggleUserMenu()" class="focus:outline-none text-white hover:text-red-500 transition duration-300">
+      <span class="material-symbols-outlined text-5xl mt-1.5">account_circle</span>
+    </button>
+    <div *ngIf="isUserMenuOpen"
+         class="absolute right-0 mt-2 w-60 h-55 bg-gray-800 text-white rounded-lg shadow-lg z-50">
+      <div class="px-4 py-3 border-b border-gray-700">
+        <p class="text-sm font-medium">
+          Olá, {{ user?.fullname || 'visitante' }}!
+        </p>
+        <p class="text-xs text-gray-400">
+          {{ user ? 'Bem-vindo de volta!' : 'Faça login ou registre-se' }}
+        </p>
+      </div>
+      <a *ngIf="!user" (click)="navigateToLogin()"
+         class="block px-4 py-2 text-sm hover:bg-red-500 cursor-pointer">
+        Login
+      </a>
+      <a *ngIf="!user" (click)="navigateToSignup()"
+         class="block px-4 py-2 text-sm hover:bg-red-500 cursor-pointer">
+        Registro
+      </a>
+      <a *ngIf="user" (click)="logout()"
+         class="block px-4 py-2 text-sm hover:bg-red-500 cursor-pointer">
+        Logout
+      </a>
+    </div>
+  </div>
+</nav>
             <button class="md:hidden text-white" (click)="toggleMobileMenu()">
-                <span class="material-symbols-outlined">menu</span>
+              <span class="material-symbols-outlined">menu</span>
             </button>
         </div>
-
     </header>
 
     <!-- Hero Section -->
@@ -903,40 +935,17 @@ após a contratação. Os requisitos incluem:
                 </div>
                 
                 <div>
-                    <h3 class="text-lg font-bold mb-4 text-white">TEAM CAREERS</h3>
+                    <h3 class="text-lg font-bold mb-4 text-white">WIKI QUICK LINKS</h3>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Mercedes</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Red Bull</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Ferrari</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">McLaren</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Alpine</a></li>
-                    </ul>
+                        <li><button class="text-gray-400 hover:text-white transition duration-300" (click)="navigateToHome()">Inicio</button></li>     
+                        <li><button class="text-gray-400 hover:text-white transition duration-300" (click)="navigateToTeams()">Equipes</button></li>     
+                        <li><button class="text-gray-400 hover:text-white transition duration-300" (click)="navigateToDrivers()">Corredores</button></li>     
+                        <li><button class="text-gray-400 hover:text-white transition duration-300" (click)="navigateToHistory()">Historia</button></li>             
+                        <li><button class="text-gray-400 hover:text-white transition duration-300" (click)="navigateToCareer()">Carreira</button></ul> 
                 </div>
-                
-                <div>
-                    <h3 class="text-lg font-bold mb-4 text-white">RESOURCES</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">FIA Regulations</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Super License Info</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Motorsport Degrees</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Apprenticeships</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3 class="text-lg font-bold mb-4 text-white">CONTACT</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Media Inquiries</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Partnerships</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Suggestions</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Report Issue</a></li>
-                    </ul>
-                </div>
-            </div>
+          
             
-            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
-                <p>© 2025 Formula One World Championship Limited. Este é um guia não oficial criado por fãs.</p>
-                <p class="mt-2 text-sm">Para vagas oficiais nas equipes, visite os sites individuais das equipes.</p>
+            <div class="border-t border-gray-800 pt-8  text-gray-400">
+                <p>© Formula wiki, todos os direitos preservados.</p>
             </div>
         </div>
-    </footer>

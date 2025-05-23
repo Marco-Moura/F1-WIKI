@@ -13,6 +13,8 @@ import { PrivacyPoliticsComponent } from './components/privacy-politics/privacy-
 
 
 export const routes: Routes = [
+
+    
     {
         path: '',
         component: HomeComponent,

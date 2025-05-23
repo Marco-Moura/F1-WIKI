@@ -1,10 +1,12 @@
-import { Component, AfterViewInit, ElementRef, Renderer2, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ElementRef, Renderer2, HostListener, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AuthService, User } from '../../services/auth.service';
 
 @Component({
   selector: 'app-home-layout',
+  standalone: true,
   templateUrl: './home-layout.component.html',
   styleUrls: ['./home-layout.component.css'],
   imports: [CommonModule]
@@ -15,6 +17,8 @@ export class HomeLayoutComponent implements OnInit, AfterViewInit {
   private totalSlides = 0;
   private carouselInterval: any;
   private countdownInterval: any;
+
+  isBrowser: boolean;
 
   // countdown
   days = '00';
@@ -27,25 +31,30 @@ export class HomeLayoutComponent implements OnInit, AfterViewInit {
   user: User | null = null;
 
   constructor(
+    @Inject(PLATFORM_ID) platformId: Object,
     private router: Router,
     private authService: AuthService,
     private el: ElementRef,
     private renderer: Renderer2
-  ) {}
+  ) {
+    this.isBrowser = isPlatformBrowser(platformId);
+  }
 
   ngOnInit(): void {
     this.authService.currentUser$.subscribe(u => this.user = u);
   }
 
   ngAfterViewInit(): void {
-    // carousel logic
+    if (!this.isBrowser) {
+      return;
+    }
+
     const carousel = this.el.nativeElement.querySelector('.carousel');
     if (carousel) {
       this.renderer.setStyle(carousel, 'display', 'block');
       this.initializeCarousel();
     }
-    
-    // countdown logic
+
     this.startCountdown(3);
   }
 
@@ -127,7 +136,7 @@ export class HomeLayoutComponent implements OnInit, AfterViewInit {
     }, 1000);
   }
 
-  // navegações padrão
+  // navegações
   navigateToTeams() { this.router.navigate(['teams']); }
   navigateToHome()  { this.router.navigate(['/home']); }
   navigateToDrivers() { this.router.navigate(['/drivers']); }
@@ -137,26 +146,11 @@ export class HomeLayoutComponent implements OnInit, AfterViewInit {
   toggleMobileMenu(): void { this.mobileMenuVisible = !this.mobileMenuVisible; }
   nnavigateToSignup(): void { this.router.navigate(['/signup']); }
 
-  // user menu actions
-  toggleUserMenu() {
-    this.isUserMenuOpen = !this.isUserMenuOpen;
-  }
-
-  navigateToLogin() {
-    this.router.navigate(['/login']);
-    this.isUserMenuOpen = false;
-  }
-
-  navigateToRegister() {
-    this.router.navigate(['/signup']);
-    this.isUserMenuOpen = false;
-  }
-
-  logout() {
-    this.authService.logout();
-    this.router.navigate(['/home']);
-    this.isUserMenuOpen = false;
-  }
+  // menu de usuário
+  toggleUserMenu() { this.isUserMenuOpen = !this.isUserMenuOpen; }
+  navigateToLogin() { this.router.navigate(['/login']); this.isUserMenuOpen = false; }
+  navigateToSignup() { this.router.navigate(['/signup']); this.isUserMenuOpen = false; }
+  logout() { this.authService.logout(); this.router.navigate(['/home']); this.isUserMenuOpen = false; }
 
   @HostListener('document:click', ['$event.target'])
   onClickOutside(target: HTMLElement) {

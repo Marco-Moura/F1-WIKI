@@ -2,11 +2,16 @@ import {
   AfterViewInit,
   Component,
   ElementRef,
+  HostListener,
+  Inject,
+  OnInit,
+  PLATFORM_ID,
   Renderer2,
   ViewChild
 } from '@angular/core';
 import { Router } from '@angular/router';
-import { CommonModule } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { AuthService, User } from '../../services/auth.service';
 
 @Component({
   selector: 'app-career-layout',
@@ -14,15 +19,35 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./career-layout.component.css'],
   imports: [CommonModule]
 })
-export class CareerLayoutComponent implements AfterViewInit {
+export class CareerLayoutComponent implements AfterViewInit, OnInit {
   @ViewChild('mobileMenuBtn') mobileMenuBtn!: ElementRef;
   @ViewChild('mobileMenu') mobileMenu!: ElementRef;
-    mobileMenuVisible: boolean = true;
 
+  mobileMenuVisible: boolean = true;
 
-  constructor(private router: Router, private renderer: Renderer2, private el: ElementRef) {}
+  // ✅ Controle do menu de usuário
+  isUserMenuOpen = false;
+  user: User | null = null;
+
+  isBrowser: boolean;
+
+  constructor(
+    private router: Router,
+    private renderer: Renderer2,
+    private el: ElementRef,
+    private authService: AuthService,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {
+    this.isBrowser = isPlatformBrowser(this.platformId);
+  }
+
+  ngOnInit(): void {
+    this.authService.currentUser$.subscribe(u => this.user = u);
+  }
 
   ngAfterViewInit(): void {
+    if (!this.isBrowser) return;
+
     // Mobile menu toggle
     this.renderer.listen(this.mobileMenuBtn.nativeElement, 'click', () => {
       this.mobileMenu.nativeElement.classList.toggle('hidden');
@@ -61,8 +86,6 @@ export class CareerLayoutComponent implements AfterViewInit {
       let current = '';
       sections.forEach((section: HTMLElement) => {
         const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-
         if (window.pageYOffset >= (sectionTop - 200)) {
           current = section.getAttribute('id') || '';
         }
@@ -93,35 +116,36 @@ export class CareerLayoutComponent implements AfterViewInit {
     });
   }
 
-  navigateToTeams() {
-    this.router.navigate(['teams']);
-  }
+  navigateToTeams() { this.router.navigate(['/teams']); }
+  navigateToHome() { this.router.navigate(['/']); }
+  navigateToDrivers() { this.router.navigate(['/drivers']); }
+  navigateToHistory() { this.router.navigate(['/history']); }
+  navigateToRules() { this.router.navigate(['/rules']); }
+  navigateToCareer() { this.router.navigate(['/career']); }
+  navigateToLogin() { this.router.navigate(['/login']); }
 
-  navigateToHome() {
-    this.router.navigate(['/home']);
-  }
-
-  navigateToDrivers() {
-    this.router.navigate(['/drivers']);
-  }
-
-  navigateToHistory() {
-    this.router.navigate(['/history']);
-  }
-
-  navigateToRules() {
-    this.router.navigate(['/rules']);
-  }
-
-  navigateToCareer() {
-    this.router.navigate(['/career']);
-  }
-
-  navigateToLogin(){
-  this.router.navigate(['/login']);
-}
-
-toggleMobileMenu(): void {
+  toggleMobileMenu(): void {
     this.mobileMenuVisible = !this.mobileMenuVisible;
+  }
+
+  // ✅ Controle do menu de usuário
+  toggleUserMenu() { this.isUserMenuOpen = !this.isUserMenuOpen; }
+
+  navigateToSignup() { 
+    this.router.navigate(['/signup']); 
+    this.isUserMenuOpen = false; 
+  }
+
+  logout() { 
+    this.authService.logout(); 
+    this.router.navigate(['/']); 
+    this.isUserMenuOpen = false; 
+  }
+
+  @HostListener('document:click', ['$event.target'])
+  onClickOutside(target: HTMLElement) {
+    if (!target.closest('.user-menu-container')) {
+      this.isUserMenuOpen = false;
+    }
   }
 }

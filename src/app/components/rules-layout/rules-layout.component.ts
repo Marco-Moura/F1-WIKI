@@ -1,45 +1,63 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit, HostListener, Inject, PLATFORM_ID, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CommonModule } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { AuthService, User } from '../../services/auth.service';
 
 @Component({
   selector: 'app-rules-layout',
+  standalone: true,
   templateUrl: './rules-layout.component.html',
   styleUrls: ['./rules-layout.component.css'],
   imports: [CommonModule]
 })
-export class RulesLayoutComponent implements AfterViewInit {
-    isMobileMenuOpen: boolean = true;
-    mobileMenuVisible: boolean = true;
+export class RulesLayoutComponent implements AfterViewInit, OnInit {
+
+  isMobileMenuOpen: boolean = true;
+  mobileMenuVisible: boolean = true;
+
+  // ✅ Controle do menu de usuário
+  isUserMenuOpen = false;
+  user: User | null = null;
+  isBrowser: boolean;
+
+  constructor(
+    private router: Router,
+    private authService: AuthService,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {
+    this.isBrowser = isPlatformBrowser(this.platformId);
+  }
+
+  ngOnInit(): void {
+    this.authService.currentUser$.subscribe(u => this.user = u);
+  }
 
   ngAfterViewInit(): void {
-    // Mobile menu toggle
+    if (!this.isBrowser) return;
+
     const mobileMenuBtn = document.getElementById('mobileMenuBtn') as HTMLElement;
     const mobileMenu = document.getElementById('mobileMenu') as HTMLElement;
 
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
 
-    // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', (e: Event) => {
         e.preventDefault();
 
-        const href = (anchor as HTMLAnchorElement).getAttribute('href');  // Acesso correto ao href
+        const href = (anchor as HTMLAnchorElement).getAttribute('href');
         const target = document.querySelector(href || '') as HTMLElement;
         if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth'
-          });
+          target.scrollIntoView({ behavior: 'smooth' });
         }
 
-        // Close mobile menu if open
-        mobileMenu.classList.add('hidden');
+        if (mobileMenu) mobileMenu.classList.add('hidden');
       });
     });
 
-    // Highlight active tab
     const tabButtons = document.querySelectorAll('.tab-button') as NodeListOf<HTMLElement>;
     const sections = document.querySelectorAll('.regulation-section') as NodeListOf<HTMLElement>;
 
@@ -48,8 +66,6 @@ export class RulesLayoutComponent implements AfterViewInit {
 
       sections.forEach(section => {
         const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-
         if (window.pageYOffset >= (sectionTop - 200)) {
           current = section.getAttribute('id') || '';
         }
@@ -63,11 +79,7 @@ export class RulesLayoutComponent implements AfterViewInit {
       });
     });
 
-    // Intersection Observer for animations
-    const observerOptions = {
-      threshold: 0.1
-    };
-
+    const observerOptions = { threshold: 0.1 };
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -82,36 +94,33 @@ export class RulesLayoutComponent implements AfterViewInit {
     });
   }
 
-  
-  constructor(private router: Router) {}
+  navigateToTeams() { this.router.navigate(['/teams']); }
+  navigateToHome() { this.router.navigate(['/']); }
+  navigateToDrivers() { this.router.navigate(['/drivers']); }
+  navigateToHistory() { this.router.navigate(['/history']); }
+  navigateToRules() { this.router.navigate(['/rules']); }
+  navigateToCareer() { this.router.navigate(['/career']); }
+  navigateToLogin() { this.router.navigate(['/login']); }
 
-  navigateToTeams() {
-  this.router.navigate(['teams']); // Substitua '/teams' pela rota correta se necessário
-  }
-
-  navigateToHome() {
-  this.router.navigate(['/home']); // Substitua pela rota correta para a página inicial
-}
-navigateToDrivers() {
-  this.router.navigate(['/drivers']); // Substitua pela rota correta para a página de drivers
-}
-navigateToHistory() {
-  this.router.navigate(['/history']);
-}
-
-navigateToRules() {
-  this.router.navigate(['/rules']); // Substitua pela rota correta para a página de regras
-}
-navigateToCareer() {
-  this.router.navigate(['/career'])
-}
-
-navigateToLogin(){
-  this.router.navigate(['/login']);
-}
-
-toggleMobileMenu(): void {
+  toggleMobileMenu(): void {
     this.mobileMenuVisible = !this.mobileMenuVisible;
   }
-}
 
+  // ✅ Controle do menu de usuário
+  toggleUserMenu() { this.isUserMenuOpen = !this.isUserMenuOpen; }
+
+  navigateToRegister() { this.router.navigate(['/signup']); this.isUserMenuOpen = false; }
+
+  logout() { 
+    this.authService.logout(); 
+    this.router.navigate(['/']); 
+    this.isUserMenuOpen = false; 
+  }
+
+  @HostListener('document:click', ['$event.target'])
+  onClickOutside(target: HTMLElement) {
+    if (!target.closest('.user-menu-container')) {
+      this.isUserMenuOpen = false;
+    }
+  }
+}
