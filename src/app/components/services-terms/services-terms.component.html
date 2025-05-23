@@ -1,106 +1,86 @@
-<body class="bg-black py-6 px-8">
-    <body class="max-w-4xl mx-auto">
-        <!-- Header with F1 branding -->
-        <header class="mb-8 text-center">
-            <div class="checkered-bg mb-2"></div>
-            <div class="flag-stripe mb-4"></div>
-            
-            <div class="flex justify-center items-center mb-4">
-                <div class="w-12 h-12 border-4 border-red-600 rounded-full flex items-center justify-center mr-3">
-                    <i class="fas fa-flag text-red-600"></i>
-                </div>
-                <h1 class="f1-title text-4xl font-bold bg-gradient-to-r from-red-600 via-white to-red-600 bg-clip-text text-transparent">
-                    TERMOS DE SERVIÇO
-                </h1>
-                <div class="w-12 h-12 border-4 border-red-600 rounded-full flex items-center justify-center ml-3">
-                    <i class="fas fa-flag text-red-600"></i>
-                </div>
-            </div>
-            
-            <div class="flag-stripe mt-4"></div>
-            <div class="checkered-bg mt-2"></div>
-        </header>
+    <body class="bg-[#0b0f1a] text-white py-6 px-4">
+  <div class="max-w-5xl mx-auto bg-[#0b0f1a] text-white py-6 px-4">
+    <!-- Título da página -->
+    <section class="text-center mb-12">
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-2">TERMOS DE SERVIÇO</h1>
+      <p class="text-gray-400 text-lg">
+        Leia com atenção os termos e condições de uso da plataforma Formula Wiki.
+      </p>
+    </section>
 
-        <!-- Main content -->
-        <main class="border-b border-gray-800 pb-8">
-            <div class="mb-8">
-                <h2 class="f1-title text-2xl font-bold text-red-600 mb-4">
-                    <i class="fas fa-chevron-right text-white mr-2"></i> INTRODUÇÃO
-                </h2>
-                <p class="text-gray-300 mb-4">
-                    Bem-vindo ao FORMULA WIKI Website ao acessar ou utilizar nosso site, você concorda em cumprir e estar sujeito aos seguintes Termos de Serviço. Leia atentamente.
-                </p>
-            </div>
-            
-            <div class="mb-8">
-                <h2 class="f1-title text-2xl font-bold text-red-600 mb-4">
-                    <i class="fas fa-chevron-right text-white mr-2"></i> USO DOS SERVIÇOS
-                </h2>
-                <p class="text-gray-300 mb-4">
-                    Você concorda em utilizar nossos serviços apenas para fins legais e de acordo com estes Termos. Você não pode:
-                </p>
-                <ul class="list-disc list-inside text-gray-300 space-y-2 pl-4">
-                    <li>Violar qualquer lei ou regulamento aplicável</li>
-                    <li>Infringir direitos de propriedade intelectual</li>
-                    <li>Utilizar nossos serviços para atividades fraudulentas</li>
-                    <li>Interferir na operação normal dos nossos serviços</li>
-                </ul>
-            </div>
-            
-            <div class="mb-8">
-                <h2 class="f1-title text-2xl font-bold text-red-600 mb-4">
-                    <i class="fas fa-chevron-right text-white mr-2"></i> CONTA DO USUÁRIO
-                </h2>
-                <p class="text-gray-300 mb-4">
-                    Para acessar certos recursos, você pode precisar criar uma conta. Você é responsável por:
-                </p>
-                <ul class="list-disc list-inside text-gray-300 space-y-2 pl-4">
-                    <li>Manter a confidencialidade de suas credenciais</li>
-                    <li>Toda atividade que ocorra em sua conta</li>
-                    <li>Fornecer informações precisas e atualizadas</li>
-                </ul>
-            </div>
-            
-            <div class="mb-8">
-                <h2 class="f1-title text-2xl font-bold text-red-600 mb-4">
-                    <i class="fas fa-chevron-right text-white mr-2"></i> PROPRIEDADE INTELECTUAL
-                </h2>
-                <p class="text-gray-300 mb-4">
-                    Todo o conteúdo, marcas registradas e outros materiais em nossos serviços são propriedade nossa ou de nossos licenciadores. Você concorda em não copiar, modificar ou criar trabalhos derivados sem nossa permissão expressa.
-                </p>
-            </div>
-            
-            <div class="mb-8">
-                <h2 class="f1-title text-2xl font-bold text-red-600 mb-4">
-                    <i class="fas fa-chevron-right text-white mr-2"></i> LIMITAÇÃO DE RESPONSABILIDADE
-                </h2>
-                <p class="text-gray-300 mb-4">
-                    Nossos serviços são fornecidos "no estado em que se encontram". Não nos responsabilizamos por quaisquer danos diretos, indiretos, incidentais ou consequenciais decorrentes do uso ou incapacidade de usar nossos serviços.
-                </p>
-            </div>
-            
-            <div class="mb-8">
-                <h2 class="f1-title text-2xl font-bold text-red-600 mb-4">
-                    <i class="fas fa-chevron-right text-white mr-2"></i> ALTERAÇÕES NOS TERMOS
-                </h2>
-                <p class="text-gray-300 mb-4">
-                    Reservamo-nos o direito de modificar estes Termos a qualquer momento. Alterações significativas serão comunicadas com antecedência razoável. O uso continuado dos serviços após tais alterações constitui sua aceitação dos novos Termos.
-                </p>
-            </div>
-            
-            <div class="mb-8">
-                <h2 class="f1-title text-2xl font-bold text-red-600 mb-4">
-                    <i class="fas fa-chevron-right text-white mr-2"></i> LEI APLICÁVEL
-                </h2>
-                <p class="text-gray-300 mb-4">
-                    Estes Termos serão regidos e interpretados de acordo com as leis do Brasil. Qualquer disputa relacionada a estes Termos será submetida à jurisdição exclusiva dos tribunais competentes.
-                </p>
-            </div>
-            
-            <div class="mt-12 text-center">
-                <button class="f1-title bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105" (click)="navigateToPolytics()">
-                    ACEITAR TERMOS
-                </button>
-            </div>
-        </main>
-    </body>
+    <!-- Conteúdo principal -->
+    <main class="grid gap-8">
+      <!-- Card 1 -->
+      <div class="bg-[#131a28] p-6 rounded-xl shadow-md border border-[#1f2a3e]">
+        <h2 class="text-2xl font-bold text-red-500 mb-4">INTRODUÇÃO</h2>
+        <p class="text-gray-300">
+          Ao acessar ou utilizar o Formula Wiki, você concorda com os seguintes termos e condições. Este é um acordo legal entre você e nós.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-[#131a28] p-6 rounded-xl shadow-md border border-[#1f2a3e]">
+        <h2 class="text-2xl font-bold text-red-500 mb-4">USO DOS SERVIÇOS</h2>
+        <p class="text-gray-300 mb-2">Você concorda em utilizar nossos serviços de forma legal. Proibido:</p>
+        <ul class="list-disc pl-6 text-gray-300 space-y-1">
+          <li>Violar leis ou regulamentos</li>
+          <li>Infringir propriedade intelectual</li>
+          <li>Praticar fraudes</li>
+          <li>Interferir na operação da plataforma</li>
+        </ul>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-[#131a28] p-6 rounded-xl shadow-md border border-[#1f2a3e]">
+        <h2 class="text-2xl font-bold text-red-500 mb-4">CONTA DO USUÁRIO</h2>
+        <p class="text-gray-300 mb-2">Você é responsável por:</p>
+        <ul class="list-disc pl-6 text-gray-300 space-y-1">
+          <li>Manter suas credenciais seguras</li>
+          <li>Atividades em sua conta</li>
+          <li>Fornecer dados corretos</li>
+        </ul>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="bg-[#131a28] p-6 rounded-xl shadow-md border border-[#1f2a3e]">
+        <h2 class="text-2xl font-bold text-red-500 mb-4">PROPRIEDADE INTELECTUAL</h2>
+        <p class="text-gray-300">
+          Todo o conteúdo pertence ao Formula Wiki ou seus licenciadores. Não copie ou distribua sem autorização.
+        </p>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="bg-[#131a28] p-6 rounded-xl shadow-md border border-[#1f2a3e]">
+        <h2 class="text-2xl font-bold text-red-500 mb-4">LIMITAÇÃO DE RESPONSABILIDADE</h2>
+        <p class="text-gray-300">
+          O serviço é fornecido "como está". Não nos responsabilizamos por danos de qualquer natureza causados pelo uso.
+        </p>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="bg-[#131a28] p-6 rounded-xl shadow-md border border-[#1f2a3e]">
+        <h2 class="text-2xl font-bold text-red-500 mb-4">ALTERAÇÕES NOS TERMOS</h2>
+        <p class="text-gray-300">
+          Podemos alterar estes termos a qualquer momento. Notificaremos mudanças relevantes com antecedência.
+        </p>
+      </div>
+
+      <!-- Card 7 -->
+      <div class="bg-[#131a28] p-6 rounded-xl shadow-md border border-[#1f2a3e]">
+        <h2 class="text-2xl font-bold text-red-500 mb-4">LEI APLICÁVEL</h2>
+        <p class="text-gray-300">
+          Estes termos seguem as leis brasileiras. Disputas devem ser resolvidas nos tribunais competentes do Brasil.
+        </p>
+      </div>
+    </main>
+
+    <!-- Botão -->
+    <div class="mt-12 text-center">
+      <button
+        class="bg-red-600 hover:bg-red-700 text-white font-semibold px-8 py-3 rounded-full transition-transform duration-300 transform hover:scale-105"
+        (click)="navigateToPolytics()"
+      >
+        ACEITAR TERMOS
+      </button>
+    </div>
+  </div>
